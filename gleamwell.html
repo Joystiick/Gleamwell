@@ -1,0 +1,1991 @@
+<title>Gleamwell Smile Co.</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Gleamwell Smile Co.: smile brighter, smile forever. A satirical horror story told through a website.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&family=VT323&family=IBM+Plex+Mono:wght@400;500;600&family=Special+Elite&family=IM+Fell+English:ital@0;1&display=swap">
+<style>
+/* Layout: a wholesome family-farm storefront (rounded type, barn red, butter yellow) wrapping a hidden green-phosphor staff terminal, which wraps a pitch-black Barn 7. Deliberately single-look: every zone sets its own colours. */
+:root{
+  --cream:#F3FBFA; --paper:#FCFEFE; --ink:#16282E; --ink-2:#4F6670; --barn:#0E9C92; --barn-d:#0A766F; --butter:#FFE27A; --grass:#4C9A3C; --pink:#F7A8B8; --line:#D3E9E6; --sky:#DDF4F2;
+  --p-bg:#060a07; --p-panel:#0c140f; --p-line:#1d3325; --p-fg:#a9d4b4; --p-dim:#5f8169; --p-red:#e0483b; --p-amber:#e2b155;
+  --f-display:"Fredoka","Nunito",system-ui,sans-serif; --f-body:"Nunito",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-term:"VT323","IBM Plex Mono",ui-monospace,monospace; --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  --f-type:"Special Elite","Courier New",monospace; --f-fell:"IM Fell English",Georgia,"Times New Roman",serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--f-body);font-size:16px;line-height:1.6;color:var(--ink);background:var(--cream);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body[data-zone="portal"]{background:var(--p-bg);color:var(--p-fg);color-scheme:dark}
+body[data-zone="barn"]{background:#000;color:#d8cfc4;color-scheme:dark}
+body.gated{overflow:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:40;background:inherit}
+h1,h2,h3,h4{line-height:1.12;margin:0;text-wrap:balance}
+p{margin:0}
+a{color:inherit}
+button{font:inherit;color:inherit;cursor:pointer}
+img,canvas,svg{max-width:100%}
+:focus-visible{outline:3px solid var(--butter);outline-offset:3px;border-radius:6px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.tnum{font-variant-numeric:tabular-nums}
+.wrap{max-width:1160px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:999px;padding:13px 24px;font-family:var(--f-display);font-weight:600;font-size:16px;letter-spacing:.01em;text-decoration:none;border:2px solid transparent;transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn-red{background:var(--barn);color:#fff;box-shadow:0 4px 0 var(--barn-d)}
+.btn-red:hover{box-shadow:0 6px 0 var(--barn-d)}
+.btn-white{background:#fff;color:var(--ink);border-color:var(--line);box-shadow:0 4px 0 var(--line)}
+.btn-ghost-d{background:transparent;color:#cbbfb2;border-color:#3a2a24}
+.btn-sm{padding:8px 16px;font-size:14px}
+.btn:disabled{opacity:.6;cursor:default;transform:none}
+
+/* ---------- public chrome ---------- */
+.pub-nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:color-mix(in srgb,var(--cream) 92%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:2px solid var(--line)}
+.nav-in{display:flex;align-items:center;gap:20px;height:70px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;flex:none}
+.logo-pig{width:40px;height:40px;display:block}
+.logo-pig svg{width:100%;height:100%}
+.logo-word{font-family:var(--f-display);font-weight:700;font-size:22px;line-height:1;color:var(--barn)}
+.logo-word small{display:block;font-family:var(--f-body);font-weight:700;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-2);margin-top:3px}
+.nav-links{display:flex;gap:4px;margin-left:auto;overflow-x:auto;scrollbar-width:none;min-width:0}
+.nav-links::-webkit-scrollbar{display:none}
+.nav-links a{text-decoration:none;font-weight:700;font-size:15px;padding:8px 12px;border-radius:999px;white-space:nowrap;color:var(--ink-2)}
+.nav-links a:hover{background:#fff;color:var(--ink)}
+.nav-links a[aria-current="page"]{background:var(--butter);color:var(--ink)}
+.cart{display:flex;align-items:center;gap:6px;text-decoration:none;font-weight:800;background:#fff;border:2px solid var(--line);border-radius:999px;padding:7px 12px;flex:none}
+@media (max-width:820px){.nav-in{flex-wrap:wrap;height:auto;padding-block:10px;gap:8px 12px}.nav-links{order:3;width:100%;margin-left:0}.cart{margin-left:auto}}
+
+.kicker{display:inline-block;font-weight:800;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--barn)}
+.sec{padding-block:88px}
+.sec-tint{background:#E6F5F3}
+.sec-head{display:flex;flex-direction:column;gap:10px;margin-bottom:40px}
+.sec-head.row{flex-direction:row;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px}
+.sec h2,.page-head h1{font-family:var(--f-display);font-weight:700;font-size:clamp(32px,4.6vw,52px);letter-spacing:-.01em}
+.lead{font-size:19px;color:var(--ink-2);max-width:60ch}
+.link-arrow{font-weight:800;color:var(--barn);text-decoration:none}
+.page-head{padding-block:72px 24px;background:linear-gradient(var(--sky),var(--cream))}
+.page-head .wrap{display:flex;flex-direction:column;gap:14px}
+
+/* hero */
+.hero{position:relative;min-height:600px;overflow:hidden;background:#cdf1f5}
+.hero-art{position:absolute;inset:0}
+.hero-svg{width:100%;height:100%;display:block}
+.hero-copy{position:relative;z-index:1;padding-block:72px;display:flex;flex-direction:column;gap:18px;align-items:flex-start}
+.hero-copy > *{max-width:520px}
+.hero h1{font-family:var(--f-display);font-weight:700;font-size:clamp(46px,7vw,84px);line-height:.98;color:var(--ink);letter-spacing:-.015em}
+.hero p{font-size:19px;color:#23383f}
+.ctas{display:flex;flex-wrap:wrap;gap:12px}
+.sun .rays{animation:spin 40s linear infinite;transform-box:fill-box;transform-origin:center}
+.cloud{animation:drift 60s linear infinite alternate}
+.c2{animation-duration:80s}
+@keyframes drift{to{transform:translateX(120px)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+.moon,.stars-n{display:none}
+.night .sky-a{stop-color:#0b1430}.night .sky-b{stop-color:#2a3558}
+.night .sun{display:none}.night .moon,.night .stars-n{display:inline}
+.night .hero-copy h1,.night .hero-copy p{color:#f4eee2}
+.night .hero-svg{filter:brightness(.55) saturate(.7)}
+.night #loftface{opacity:1}
+.far7{cursor:pointer}
+.m-wave{animation:wave 1.6s ease-in-out infinite}
+@keyframes wave{50%{transform:rotate(-16deg)}}
+@media (max-width:760px){.hero.night{background:#0b1430}.hero{min-height:0;background:linear-gradient(#cdf1f5,#e8f9fa)}.hero-art{position:relative;height:340px;order:2}.hero{display:flex;flex-direction:column}.hero-copy{padding-block:40px 8px}}
+.band{background:var(--barn);color:#fff;font-weight:800;font-family:var(--f-display);letter-spacing:.02em}
+.band-in{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 40px;padding-block:16px;font-size:16px}
+.band .hid{color:var(--barn);font-size:13px}
+.band .hid::selection{color:#fff;background:#000}
+.band span::selection{background:#000;color:#fff}
+
+.values{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr));gap:24px}
+.value{background:#fff;border:2px solid var(--line);border-radius:28px;padding:32px;display:flex;flex-direction:column;gap:12px}
+.value h3{font-family:var(--f-display);font-size:24px;font-weight:600}
+.value p{color:var(--ink-2)}
+.v-ico{width:56px;height:56px;border-radius:18px;display:grid;place-items:center}
+.v-red{background:#FCE0DC;color:var(--barn)}.v-yellow{background:#FFF0C2;color:#B07A00}.v-green{background:#DDF0D6;color:var(--grass)}
+
+.merry-sec{background:#FFE6EC}
+.merry-in{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:center}
+.merry-stage{position:relative;display:grid;place-items:center}
+.merry-btn{border:0;background:radial-gradient(circle at 50% 60%,#fff 0 55%,transparent 56%);padding:24px;border-radius:50%;width:min(360px,80vw);max-width:100%;aspect-ratio:1}
+.merry-btn svg{width:100%;height:100%}
+.speech{position:absolute;top:0;right:0;background:#fff;border:2px solid var(--line);border-radius:20px 20px 20px 4px;padding:10px 16px;font-family:var(--f-display);font-weight:600;max-width:200px}
+.merry-copy{display:flex;flex-direction:column;gap:16px;align-items:flex-start}
+.merry-copy p{font-size:18px;color:#6a3444}
+@media (max-width:760px){.merry-in{grid-template-columns:1fr}}
+
+.prod-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:24px}
+.prod{background:#fff;border:2px solid var(--line);border-radius:24px;overflow:hidden;display:flex;flex-direction:column}
+.prod-img{border:0;padding:0;background:none;display:block;width:100%}
+.prod-img svg{display:block;width:100%;height:auto}
+.prod-body{padding:20px 22px 22px;display:flex;flex-direction:column;gap:8px;flex:1}
+.prod h3{font-family:var(--f-display);font-weight:600;font-size:20px}
+.prod p{color:var(--ink-2);font-size:15px}
+.prod-foot{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:8px}
+.price{font-family:var(--f-display);font-weight:700;font-size:22px;color:var(--barn)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
+.chip{border:2px solid var(--line);background:#fff;border-radius:999px;padding:8px 16px;font-weight:800}
+.chip[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+
+.reviews{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:24px}
+.review{margin:0;background:#fff;border:2px solid var(--line);border-radius:24px;padding:28px;display:flex;flex-direction:column;gap:16px}
+.review blockquote{margin:0;font-size:18px}
+.review figcaption{display:flex;align-items:center;gap:12px;margin-top:auto}
+.review figcaption b{display:block}
+.review figcaption span{color:var(--ink-2);font-size:14px}
+.rev-face{width:52px;height:52px;border-radius:50%;flex:none}
+.stars{color:#E8A317;letter-spacing:2px}
+.news{background:var(--butter)}
+.news-in{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center}
+.news h2{font-size:clamp(28px,3.6vw,40px)}
+.news-form{display:flex;gap:10px;flex-wrap:wrap}
+.news-form input{flex:1;min-width:0;border:2px solid var(--ink);border-radius:999px;padding:12px 18px;font:inherit;background:#fff}
+.news-msg{grid-column:1/-1;font-weight:700}
+@media (max-width:760px){.news-in{grid-template-columns:1fr}}
+
+.pub-foot{background:var(--ink);color:#e9dfd2;padding-block:56px 24px}
+.foot-in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:32px}
+.foot-brand{display:flex;gap:14px;align-items:flex-start}
+.foot-brand b{font-family:var(--f-display);font-size:20px}
+.foot-brand p{color:#b9a998;font-size:14px}
+.foot-cols{display:flex;flex-wrap:wrap;gap:48px}
+.foot-cols div{display:flex;flex-direction:column;gap:8px;font-size:15px}
+.foot-cols b{color:#fff}
+.foot-cols a{text-decoration:none;color:#c9b9a8}
+.foot-cols a:hover{color:#fff}
+.staff-link{font-size:13px;opacity:.75}
+.foot-legal{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;margin-top:40px;padding-top:20px;border-top:1px solid #4a3a30;font-size:13px;color:#9a8a7a}
+
+/* story */
+.founder{display:grid;grid-template-columns:auto 1fr;gap:56px;align-items:center}
+@media (max-width:760px){.founder{grid-template-columns:1fr}}
+.photo-frame{position:relative;margin:0;background:#f4ead6;padding:14px 14px 46px;box-shadow:0 12px 30px rgba(20,40,50,.2);transform:rotate(-2deg);width:268px;max-width:100%;cursor:default;user-select:none;-webkit-user-select:none;touch-action:none}
+.photo-frame canvas{display:block;width:240px;max-width:100%;height:auto}
+.photo-frame #founder-b{position:absolute;left:14px;top:14px;opacity:0;transition:opacity .12s}
+.photo-frame.reveal #founder-b{opacity:1}
+.photo-frame.reveal{animation:jolt .3s steps(3)}
+@keyframes jolt{33%{transform:rotate(-2deg) translate(4px,-2px)}66%{transform:rotate(-1deg) translate(-3px,2px)}}
+.photo-frame figcaption{position:absolute;bottom:12px;left:0;right:0;text-align:center;font-family:var(--f-fell);font-style:italic;color:#5a4a36}
+.founder-copy{display:flex;flex-direction:column;gap:16px}
+.founder-copy p{font-size:18px;color:var(--ink-2);max-width:62ch}
+.pull{margin:8px 0 0;font-family:var(--f-display);font-size:24px;line-height:1.35;border-left:6px solid var(--butter);padding-left:20px}
+.pull cite{display:block;font-family:var(--f-body);font-size:14px;font-style:normal;color:var(--ink-2);margin-top:8px}
+.timeline{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:28px;max-width:820px}
+.timeline li{display:grid;grid-template-columns:96px 1fr;gap:20px}
+.tl-year{font-family:var(--f-display);font-weight:700;font-size:28px;color:var(--barn);line-height:1.1}
+.tl-body{display:flex;flex-direction:column;gap:8px;border-left:3px dashed #9fd6cf;padding-left:20px;padding-bottom:8px}
+.tl-body h3{font-family:var(--f-display);font-weight:600;font-size:22px}
+.tl-body p{color:var(--ink-2)}
+.tl-photo{margin:8px 0 0;background:#f4ead6;padding:10px 10px 34px;width:min(500px,100%);position:relative;box-shadow:0 8px 20px rgba(60,40,20,.18);transform:rotate(1deg)}
+.tl-photo canvas{display:block;width:100%;height:auto}
+.tl-photo figcaption{position:absolute;bottom:8px;left:12px;font-family:var(--f-fell);font-style:italic;color:#5a4a36;font-size:14px}
+
+/* products modal */
+.pd{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+@media (max-width:700px){.pd{grid-template-columns:1fr}}
+.pd-img svg{width:100%;border-radius:18px;display:block}
+.pd-copy{display:flex;flex-direction:column;gap:10px;min-width:0}
+.pd-copy h2{font-family:var(--f-display);font-size:28px}
+.nf{border:2px solid #000;padding:8px 10px;font-family:Arial,Helvetica,sans-serif;color:#000;background:#fff;max-width:340px}
+.nf-h{font-weight:900;font-size:28px;line-height:1;border-bottom:1px solid #000;padding-bottom:4px}
+.nf-s{font-size:12px;border-bottom:8px solid #000;padding:4px 0}
+.nf-cal{display:flex;justify-content:space-between;align-items:baseline;font-weight:900;font-size:22px;border-bottom:4px solid #000}
+.nf table{width:100%;border-collapse:collapse;font-size:13px}
+.nf th{text-align:left;font-weight:700;border-bottom:1px solid #000;padding:3px 0}
+.nf td{text-align:right;border-bottom:1px solid #000}
+.nf-ing{font-size:12px;margin-top:6px}
+.nf-fine{font-size:8.5px;line-height:1.35;margin-top:6px;color:#333}
+
+/* recipes + video */
+.video{max-width:860px;margin:0 auto 64px;display:flex;flex-direction:column;gap:0}
+.video-screen{position:relative;background:#000;border-radius:20px 20px 0 0;overflow:hidden;aspect-ratio:16/9;max-width:100%}
+.video-screen canvas{width:100%;height:100%;display:block}
+.v-big{position:absolute;inset:0;margin:auto;width:88px;height:88px;border-radius:50%;border:0;background:var(--barn);color:#fff;display:grid;place-items:center;box-shadow:0 8px 30px rgba(0,0,0,.35)}
+.v-bar{display:flex;align-items:center;gap:12px;background:var(--ink);color:#fff;padding:10px 16px;border-radius:0 0 20px 20px}
+.v-btn{border:0;background:none;color:#fff;font-size:18px;width:32px}
+.v-bar input{flex:1;accent-color:var(--barn);min-width:0}
+.v-time{font-variant-numeric:tabular-nums;font-size:14px;min-width:84px;text-align:right}
+.v-cap{color:var(--ink-2);margin-top:12px;font-size:15px}
+.recipes{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:24px}
+.recipe{background:#fff;border:2px solid var(--line);border-radius:24px;padding:28px;display:flex;flex-direction:column;gap:10px}
+.r-head{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+.recipe h3{font-family:var(--f-display);font-size:22px;font-weight:600}
+.recipe h4{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--barn);margin-top:6px}
+.recipe ul,.recipe ol{margin:0;padding-left:20px;color:var(--ink-2);display:flex;flex-direction:column;gap:4px}
+.pill-time{background:var(--butter);border-radius:999px;padding:2px 10px;font-weight:800;font-size:13px;white-space:nowrap}
+
+/* careers */
+.perks{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:16px;margin-bottom:56px}
+.perk{background:#fff;border:2px solid var(--line);border-radius:20px;padding:20px;display:flex;flex-direction:column;gap:4px}
+.perk b{font-family:var(--f-display);font-size:19px}
+.perk span{color:var(--ink-2);font-size:15px}
+.h-open{font-family:var(--f-display);font-size:30px;margin-bottom:16px}
+.jobs{display:flex;flex-direction:column;gap:12px;margin-bottom:64px}
+.job{background:#fff;border:2px solid var(--line);border-radius:20px}
+.job summary{list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 22px;cursor:pointer}
+.job summary::-webkit-details-marker{display:none}
+.job summary b{display:block;font-family:var(--f-display);font-size:20px;font-weight:600}
+.job summary small{color:var(--ink-2);font-size:14px}
+.job-x{font-size:28px;font-weight:300;line-height:1}
+.job[open] .job-x{transform:rotate(45deg)}
+.job-body{padding:0 22px 22px;display:flex;flex-direction:column;gap:10px;align-items:flex-start}
+.job-body h4{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--barn)}
+.job-body ul{margin:0;padding-left:20px;color:var(--ink-2)}
+.filled{font-weight:800;color:var(--barn);overflow-wrap:anywhere}
+.apply{background:#fff;border:2px solid var(--line);border-radius:28px;padding:32px;display:flex;flex-direction:column;gap:16px;max-width:680px}
+.apply h2{font-family:var(--f-display);font-size:30px}
+.f-row{display:flex;flex-direction:column;gap:6px}
+.f-row label{font-weight:800;font-size:14px}
+.f-row input,.f-row select,.f-row textarea{font:inherit;border:2px solid var(--line);border-radius:14px;padding:12px 14px;background:var(--paper);color:var(--ink)}
+.f-row input:focus,.f-row textarea:focus,.f-row select:focus{border-color:var(--barn);outline:none}
+.apply .btn{align-self:flex-start}
+.apply-result{border-radius:16px;padding:18px;background:#E6F5F3;font-weight:700}
+.apply-result.done{background:#16282E;color:#e3f1ef;font-weight:500;display:flex;flex-direction:column;gap:8px}
+.apply-result.done b{font-family:var(--f-display);font-size:20px;font-weight:600}
+.sig{font-family:var(--f-type);color:#c9a98a}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+@media (max-width:820px){.contact{grid-template-columns:1fr}}
+.contact-info{display:flex;flex-direction:column;gap:20px}
+.ci{display:flex;flex-direction:column;gap:2px}
+.ci b{font-family:var(--f-display);font-size:20px}
+.ci span{color:var(--ink-2)}
+.faq-mini{border-top:2px solid var(--line);padding-top:12px}
+.faq-mini summary{font-weight:800;cursor:pointer}
+.faq-mini p{color:var(--ink-2);margin-top:6px}
+.p404{min-height:70vh}
+.p404 canvas{width:200px;border-radius:12px}
+
+/* toast + modal */
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:60;background:var(--ink);color:#fff;font-weight:700;padding:12px 20px;border-radius:999px;box-shadow:0 10px 30px rgba(0,0,0,.25);max-width:calc(100vw - 32px);text-align:center}
+body[data-zone="portal"] .toast{background:#0f1a13;color:var(--p-fg);border:1px solid var(--p-line);font-family:var(--f-mono);border-radius:4px}
+.modal{position:fixed;inset:0;z-index:70;background:rgba(10,6,4,.6);display:grid;place-items:center;padding:24px max(16px,env(safe-area-inset-right,0px)) 24px max(16px,env(safe-area-inset-left,0px));overflow-y:auto}
+.modal-card{position:relative;background:#fff;color:var(--ink);border-radius:28px;padding:32px;width:min(860px,100%);max-height:calc(100vh - 48px);overflow:auto}
+.modal.m-dark .modal-card{background:#0b120d;color:var(--p-fg);border:1px solid var(--p-line);border-radius:6px;font-family:var(--f-mono)}
+.modal.m-wide .modal-card{width:min(1000px,100%);padding:20px}
+.modal-x{position:absolute;top:10px;right:12px;width:40px;height:40px;border:0;background:transparent;font-size:30px;line-height:1;border-radius:50%}
+.m-dark .modal-x{color:var(--p-fg)}
+
+/* ---------- login (staff) ---------- */
+.login-wrap{min-height:100vh;display:grid;place-items:center;padding:24px max(16px,env(safe-area-inset-right,0px)) 24px max(16px,env(safe-area-inset-left,0px));background:radial-gradient(ellipse at center,#0e1a12,#030504 70%)}
+.login-card{width:min(380px,100%);background:var(--p-panel);border:1px solid var(--p-line);border-radius:6px;padding:28px;display:flex;flex-direction:column;gap:18px;font-family:var(--f-mono);box-shadow:0 0 60px rgba(80,200,120,.07)}
+.login-head{display:flex;gap:12px;align-items:center}
+.login-head b{display:block;font-family:var(--f-term);font-size:26px;font-weight:400;letter-spacing:.04em;color:#cdeed5}
+.login-head small{display:block;font-size:11px;color:var(--p-dim)}
+.gh-badge{flex:none;width:42px;height:42px;border:2px solid var(--p-fg);border-radius:50%;display:grid;place-items:center;font-family:var(--f-term);font-size:22px;color:var(--p-fg)}
+.login-label{font-size:13px;color:var(--p-dim);text-transform:uppercase;letter-spacing:.1em}
+.code-boxes{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.code-boxes span{height:56px;border:1px solid var(--p-line);border-radius:4px;display:grid;place-items:center;font-family:var(--f-term);font-size:40px;color:#d9f5df;background:#08100b}
+.code-boxes span.on{border-color:var(--p-fg);box-shadow:0 0 12px rgba(169,212,180,.25)}
+.code-input{position:absolute;opacity:0;width:1px;height:1px;pointer-events:none}
+.keypad{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.keypad button{height:52px;border:1px solid var(--p-line);background:#0a130d;color:var(--p-fg);font-family:var(--f-term);font-size:28px;border-radius:4px}
+.keypad button:hover{background:#12211a}
+.keypad button:active{background:#1e3a28}
+.login-msg{min-height:1.6em;font-size:14px;text-align:center}
+.login-msg.bad{color:var(--p-red)}
+.login-msg.ok{color:#9ff0b5}
+.login-back{font-size:13px;color:var(--p-dim);text-align:center}
+.shake{animation:shake .45s}
+@keyframes shake{20%{transform:translateX(-10px)}40%{transform:translateX(9px)}60%{transform:translateX(-6px)}80%{transform:translateX(4px)}}
+
+/* ---------- portal ---------- */
+.crt{position:relative}
+.crt::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:20;background:repeating-linear-gradient(rgba(0,0,0,.18) 0 1px,transparent 1px 3px);mix-blend-mode:multiply}
+.crt::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:21;background:radial-gradient(ellipse at center,transparent 55%,rgba(0,0,0,.55));animation:flick 6s infinite}
+@keyframes flick{0%,96%,100%{opacity:1}97%{opacity:.6}98%{opacity:1}99%{opacity:.75}}
+.portal{display:grid;grid-template-columns:240px 1fr;min-height:100vh;font-family:var(--f-mono);font-size:14px}
+.p-side{border-right:1px solid var(--p-line);background:#050906;padding:20px 16px;display:flex;flex-direction:column;gap:24px;position:sticky;top:0;height:100vh}
+.p-brand{display:flex;gap:10px;align-items:center;font-family:var(--f-term);font-size:22px;line-height:1;color:#cdeed5}
+.p-brand small{display:block;font-size:14px;color:var(--p-dim);margin-top:4px}
+.p-nav{display:flex;flex-direction:column;gap:2px}
+.p-nav a{text-decoration:none;padding:8px 10px;border-radius:3px;color:var(--p-fg);white-space:nowrap}
+.p-nav a:hover{background:#0f1c14}
+.p-nav a[aria-current="page"]{background:#173022;color:#e4ffe9}
+.p-nav a[aria-current="page"]::before{content:"▸ "}
+.p-nav .p-danger{color:var(--p-red)}
+.p-user{margin-top:auto;display:flex;flex-direction:column;gap:4px;font-size:12px;color:var(--p-dim)}
+.p-user b{color:var(--p-fg)}
+.p-btn{border:1px solid var(--p-line);background:#0b1510;color:var(--p-fg);border-radius:3px;padding:8px 14px;font-family:var(--f-mono);font-size:13px;align-self:flex-start}
+.p-btn:hover{background:#13261a}
+.p-btn:disabled{opacity:.5}
+.p-main{min-width:0;display:flex;flex-direction:column}
+.p-top{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:10px max(16px,env(safe-area-inset-right,0px)) 10px 24px;border-bottom:1px solid var(--p-line);font-size:12px;color:var(--p-dim);letter-spacing:.08em}
+.p-body{padding:32px max(16px,env(safe-area-inset-right,0px)) 64px 32px;display:flex;flex-direction:column;gap:20px;min-width:0}
+.p-h1{font-family:var(--f-term);font-weight:400;font-size:clamp(38px,5vw,54px);color:#dcfbe3;letter-spacing:.02em;line-height:1}
+.p-sub{color:var(--p-dim);max-width:70ch}
+.p-sub b{color:var(--p-fg)}
+.p-sub.small{font-size:12px}
+@media (max-width:820px){.portal{grid-template-columns:1fr}.p-side{position:static;height:auto;flex-direction:row;flex-wrap:wrap;align-items:center;gap:12px;padding:12px max(16px,env(safe-area-inset-right,0px)) 12px max(16px,env(safe-area-inset-left,0px))}.p-nav{flex-direction:row;overflow-x:auto;width:100%;order:3}.p-user{margin:0 0 0 auto;flex-direction:row;align-items:center;gap:10px}.p-user span{display:none}.p-body{padding-left:max(16px,env(safe-area-inset-left,0px))}.p-top{padding-left:max(16px,env(safe-area-inset-left,0px))}}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:12px}
+.tile{border:1px solid var(--p-line);background:var(--p-panel);padding:16px;border-radius:4px;display:flex;flex-direction:column;gap:2px}
+.tile span{font-size:11px;letter-spacing:.12em;color:var(--p-dim)}
+.tile b{font-family:var(--f-term);font-weight:400;font-size:46px;line-height:1;color:#dcfbe3}
+.tile small{color:var(--p-dim);font-size:12px}
+.tile-red b{color:var(--p-red)}
+.p-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.span2{grid-column:span 2}
+@media (max-width:1000px){.p-grid{grid-template-columns:1fr}.span2{grid-column:auto}}
+.panel{border:1px solid var(--p-line);background:var(--p-panel);border-radius:4px;padding:18px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.panel h2{font-family:var(--f-term);font-weight:400;font-size:22px;letter-spacing:.06em;color:#cdeed5}
+.notices{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.notices li{border-left:2px solid var(--p-line);padding-left:12px}
+.notices b{color:var(--p-amber);margin-right:8px;font-weight:500}
+.eom canvas{width:160px;border:1px solid var(--p-line)}
+.eom b{font-size:16px;color:#dcfbe3}
+.chart-wrap{overflow-x:auto}
+.chart{width:100%;min-width:420px;height:auto}
+.chart .gridl{stroke:var(--p-line);stroke-width:1}
+.chart .axis{fill:var(--p-dim);font-size:11px;font-family:var(--f-mono)}
+.chart .axis.red{fill:var(--p-red)}
+.chart .spark{fill:none;stroke:#8fe3a6;stroke-width:2}
+.chart .dot{fill:#8fe3a6}.chart .dot-red{fill:var(--p-red)}
+.mm-text{font-family:var(--f-term);font-size:30px;min-height:1.3em;color:#dcfbe3}
+.mm-text.loud{color:var(--p-red);font-size:40px;animation:shake .4s}
+.mm-text.faint{opacity:.35;font-size:20px}
+.p-input{font:inherit;font-family:var(--f-mono);background:#08100b;border:1px solid var(--p-line);color:var(--p-fg);padding:10px 12px;border-radius:3px;min-width:0;flex:1}
+.reg-tools{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.reg-filters{display:flex;flex-wrap:wrap;gap:6px}
+.p-chip{border:1px solid var(--p-line);background:transparent;color:var(--p-dim);font-family:var(--f-mono);font-size:12px;padding:6px 10px;border-radius:3px}
+.p-chip[aria-pressed="true"]{background:#173022;color:#e4ffe9}
+.reg-none b{color:var(--p-red)}
+.reg-none{color:var(--p-fg)}
+.reg-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+.reg{border:1px solid var(--p-line);background:var(--p-panel);border-radius:4px;padding:8px;display:flex;flex-direction:column;gap:8px;text-align:left;font-family:var(--f-mono);color:var(--p-fg)}
+.reg:hover{border-color:var(--p-fg)}
+.reg-photo{display:block;aspect-ratio:4/5;background:#0a0f0c;max-width:100%}
+.reg-photo canvas{width:100%;height:100%;display:block}
+.reg-meta{display:flex;flex-direction:column;gap:4px;min-width:0}
+.reg-meta b{font-size:13px;color:#dcfbe3;font-weight:500;overflow-wrap:anywhere}
+.reg-meta small{font-size:11px;color:var(--p-dim)}
+.reg-you{border-color:var(--p-red);box-shadow:0 0 0 1px var(--p-red) inset}
+.st{display:inline-block;align-self:flex-start;font-size:10px;letter-spacing:.12em;padding:2px 6px;border-radius:2px;border:1px solid currentColor}
+.st-ok{color:#8fe3a6}.st-amb{color:var(--p-amber)}.st-dim{color:#6f7a72}.st-red{color:var(--p-red)}.st-blk{color:#fff;background:#4a0808;border-color:#7a1010}.st-you{color:#fff;background:var(--p-red);border-color:var(--p-red)}
+.dossier{display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:start}
+@media (max-width:600px){.dossier{grid-template-columns:1fr}}
+.dos-photo canvas{width:220px;max-width:100%;border:1px solid var(--p-line);display:block}
+.dos-copy{display:flex;flex-direction:column;gap:10px;min-width:0}
+.dos-copy h2{font-family:var(--f-term);font-weight:400;font-size:36px;color:#dcfbe3}
+.dos-copy dl{display:grid;grid-template-columns:auto 1fr;gap:4px 16px;margin:0;font-size:13px}
+.dos-copy dt{color:var(--p-dim)}
+.dos-copy dd{margin:0}
+.dos-note{font-family:var(--f-type);font-size:16px;color:#e6dcc0;background:#16130c;padding:14px;border-left:3px solid var(--p-amber)}
+.cams{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:12px}
+.cam{padding:0;border:1px solid var(--p-line);background:#000;border-radius:3px;aspect-ratio:16/9;max-width:100%;overflow:hidden}
+.cam:hover{border-color:var(--p-fg)}
+.cam canvas,.cam-big canvas{width:100%;height:100%;display:block}
+.cam-big{display:flex;flex-direction:column;gap:10px}
+.cam-big canvas{aspect-ratio:16/9;height:auto;background:#000}
+.memos{display:grid;grid-template-columns:260px 1fr;gap:16px;align-items:start}
+@media (max-width:860px){.memos{grid-template-columns:1fr}}
+.memo-list{display:flex;flex-direction:column;gap:6px}
+.memo-btn{text-align:left;border:1px solid var(--p-line);background:var(--p-panel);color:var(--p-fg);padding:10px 12px;border-radius:3px;font-family:var(--f-mono);display:flex;flex-direction:column}
+.memo-btn small{color:var(--p-dim);font-size:11px}
+.memo-btn b{font-weight:500;font-size:13px}
+.memo-btn[aria-pressed="true"]{background:#173022}
+.memo-bad b{color:var(--p-red)}
+.paper{position:relative;background:#efe6cf;color:#2b241a;font-family:var(--f-type);font-size:17px;line-height:1.7;padding:40px 36px;border-radius:2px;box-shadow:0 10px 30px rgba(0,0,0,.5);background-image:radial-gradient(circle at 80% 15%,rgba(140,100,40,.18) 0 40px,transparent 42px),radial-gradient(circle at 80% 15%,transparent 46px,rgba(140,100,40,.12) 47px 50px,transparent 51px);display:flex;flex-direction:column;gap:14px;min-width:0}
+.paper .stamp{position:absolute;top:22px;right:22px;transform:rotate(8deg);border:3px solid #a3201a;color:#a3201a;font-family:var(--f-mono);font-weight:600;font-size:13px;letter-spacing:.2em;padding:4px 10px;opacity:.75}
+.memo-h{display:grid;grid-template-columns:auto 1fr;gap:2px 16px;margin:0 0 10px;font-size:14px;border-bottom:1px dashed #8a7a5a;padding-bottom:12px}
+.memo-h dt{color:#6a5a40}.memo-h dd{margin:0}
+.redact{background:#111;color:#111;padding:0 3px;transition:color .2s,background .2s;border-radius:1px}
+.redact:hover,.redact:focus,.redact::selection{background:#6a0a0a;color:#ffe9e0}
+.paper-bad{animation:wob 4s infinite}
+.paper-bad p:last-child{color:#7a0a0a;letter-spacing:.02em}
+@keyframes wob{0%,100%{transform:none}50%{transform:rotate(.3deg) translateX(1px)}}
+.tape{max-width:720px}
+.cassette{display:flex;align-items:center;justify-content:space-between;gap:16px;background:#181818;border:1px solid #333;border-radius:10px;padding:18px 28px}
+.reel{width:56px;height:56px;border-radius:50%;border:6px dashed #555;background:#0a0a0a}
+.cassette.spin .reel{animation:spin 1.6s linear infinite}
+.tape-label{flex:1;text-align:center;background:#e6dcc0;color:#2b241a;font-family:var(--f-type);padding:6px;border-radius:3px}
+#wave{width:100%;height:80px;display:block;border:1px solid var(--p-line)}
+.tape-ctl{display:flex;gap:16px;align-items:center}
+.transcript{max-height:260px;overflow-y:auto;display:flex;flex-direction:column;gap:8px;font-size:15px;color:#dcfbe3}
+.transcript .cue{color:var(--p-amber);font-size:12px;letter-spacing:.1em}
+
+/* ---------- barn 7 ---------- */
+.barn{position:fixed;inset:0;background:#000;color:#d8cfc4;overflow:hidden}
+.barn canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.barn-ui{position:absolute;inset:0;display:grid;place-items:center;padding:24px max(16px,env(safe-area-inset-right,0px)) calc(24px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));pointer-events:none}
+.barn-ui > *{pointer-events:auto}
+.b-warn{max-width:560px;text-align:center;display:flex;flex-direction:column;gap:16px;align-items:center;background:rgba(0,0,0,.72);padding:36px;border:1px solid #3a0d0d}
+.b-tag{font-family:var(--f-mono);font-size:12px;letter-spacing:.2em;color:#a33}
+.b-title{font-family:var(--f-fell);font-weight:400;font-size:clamp(72px,16vw,150px);line-height:.9;color:#c21d1d;text-shadow:0 0 30px rgba(200,20,20,.45)}
+.b-sub{font-family:var(--f-mono);font-size:13px;letter-spacing:.1em;color:#d8cfc4}
+.b-body{font-family:var(--f-fell);font-size:20px;color:#a89a8e}
+.b-hold{position:relative;width:150px;height:150px;border-radius:50%;border:0;background:#140404;color:#f0d0c8;font-family:var(--f-mono);font-size:13px;letter-spacing:.06em;touch-action:none;user-select:none;-webkit-user-select:none}
+.b-hold svg{position:absolute;inset:0;width:100%;height:100%;transform:rotate(-90deg)}
+.b-hold span{position:relative}
+.ring-bg{fill:none;stroke:#3a0d0d;stroke-width:6}
+.ring{fill:none;stroke:#e02020;stroke-width:6;stroke-linecap:round;transition:stroke-dashoffset .06s linear}
+.b-back{font-family:var(--f-mono);font-size:13px;color:#776}
+.b-story{max-width:640px;display:flex;flex-direction:column;gap:32px;align-items:center;text-align:center}
+.b-lines{display:flex;flex-direction:column;gap:18px}
+.b-lines p{font-family:var(--f-fell);font-size:clamp(24px,3.6vw,36px);line-height:1.3;opacity:0;transform:translateY(8px);transition:opacity 1.4s,transform 1.4s;text-shadow:0 2px 12px #000}
+.b-lines p.in{opacity:1;transform:none}
+.b-choices{display:flex;gap:16px;flex-wrap:wrap;justify-content:center}
+.b-btn{border:1px solid #5a1a1a;background:rgba(20,4,4,.85);color:#e8d8c8;font-family:var(--f-fell);font-size:22px;padding:10px 32px}
+.b-btn:hover{background:#2a0808}
+.b-hint{position:absolute;bottom:calc(32px + env(safe-area-inset-bottom,0px));left:0;right:0;text-align:center;font-family:var(--f-mono);font-size:13px;letter-spacing:.12em;color:#9a8a7e;pointer-events:none}
+.b-hint.whisper{font-family:var(--f-fell);font-size:28px;letter-spacing:0;color:#c9b8a8}
+.stock-page{min-height:100vh;display:grid;grid-template-columns:auto minmax(0,460px);gap:48px;align-items:center;justify-content:center;padding:48px max(16px,env(safe-area-inset-right,0px)) 48px max(16px,env(safe-area-inset-left,0px));background:radial-gradient(ellipse at center,#1a0606,#000 70%)}
+@media (max-width:820px){.stock-page{grid-template-columns:1fr}}
+.idcard{width:min(420px,100%);background:#e8e0d0;color:#1a1410;border-radius:12px;padding:18px;font-family:var(--f-mono);box-shadow:0 20px 60px rgba(160,20,20,.35);transform:rotate(-2deg)}
+.id-top{display:flex;gap:10px;align-items:center;border-bottom:2px solid #1a1410;padding-bottom:10px}
+.id-top .gh-badge{border-color:#1a1410;color:#1a1410}
+.id-top b{display:block;font-size:14px;letter-spacing:.06em}
+.id-top small{font-size:10px;color:#5a4a3a}
+.id-body{display:grid;grid-template-columns:auto 1fr;gap:14px;padding-block:14px}
+.id-body canvas{width:120px;height:auto;border:2px solid #1a1410}
+.id-body dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:3px 10px;font-size:12px}
+.id-body dt{color:#6a5a4a}.id-body dd{margin:0;font-weight:600}
+.id-body .st{color:#1d6b33;border-color:#1d6b33}
+.barcode{display:flex;gap:2px;height:40px}
+.barcode i{display:block;background:#1a1410;height:100%}
+.stock-copy{display:flex;flex-direction:column;gap:18px}
+.stock-copy h1{font-family:var(--f-fell);font-weight:400;font-size:clamp(44px,6vw,72px);color:#e8dccb}
+.stock-copy p{font-family:var(--f-fell);font-size:21px;color:#a89a8e}
+.stock-ctas{display:flex;flex-wrap:wrap;gap:12px}
+.stock-fine{font-size:15px!important;color:#6a5a50!important}
+
+/* ---------- gate, scares ---------- */
+.gate{position:fixed;inset:0;z-index:100;background:radial-gradient(ellipse at center,#0d2a28,#020707 75%);display:grid;place-items:center;padding:24px max(16px,env(safe-area-inset-right,0px)) 24px max(16px,env(safe-area-inset-left,0px));overflow-y:auto}
+.g-card{width:min(560px,100%);background:#fbfffe;color:var(--ink);border-radius:24px;padding:32px;display:flex;flex-direction:column;gap:16px;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.g-tag{font-weight:800;letter-spacing:.16em;text-transform:uppercase;font-size:12px;color:var(--barn)}
+.g-card h2{font-family:var(--f-display);font-size:32px;font-weight:700}
+.g-card p{color:var(--ink-2)}
+.g-warn{background:#16282E;color:#e3f1ef;border-radius:16px;padding:16px 20px;display:flex;flex-direction:column;gap:6px}
+.g-warn ul{margin:0;padding-left:20px}
+.g-warn p{color:#9fbfc4;font-size:14px}
+.g-opt{display:flex;gap:10px;align-items:flex-start;font-weight:700;font-size:15px}
+.g-opt input{width:20px;height:20px;accent-color:var(--barn);flex:none;margin-top:2px}
+.g-btns{display:flex;flex-wrap:wrap;gap:12px}
+.g-reset{align-self:flex-start;border:0;background:none;color:var(--ink-2);text-decoration:underline;font-size:13px;padding:0}
+.scare{position:fixed;inset:0;z-index:200;background:#000}
+.scare canvas{width:100%;height:100%;display:block}
+.ghost{position:fixed;inset:0;z-index:150;pointer-events:none;display:grid;place-items:center;mix-blend-mode:screen}
+.ghost canvas{height:100vh;width:auto;max-width:none}
+.whisper{position:fixed;inset:0;z-index:150;display:grid;place-items:center;pointer-events:none;font-family:var(--f-fell);font-size:clamp(32px,7vw,90px);color:#8a0b0b;text-align:center;padding:16px;transform:scaleX(-1);text-shadow:0 0 20px rgba(0,0,0,.8);animation:shake .3s 3}
+.quake #app{animation:quake .12s infinite}
+.quake-s #app{animation:quake .12s 5}
+@keyframes quake{0%{transform:translate(4px,-3px)}50%{transform:translate(-5px,3px)}100%{transform:translate(2px,4px)}}
+.mute{position:fixed;right:max(16px,calc(env(safe-area-inset-right,0px) + 12px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:80;display:flex;gap:8px;align-items:center;border-radius:999px;border:2px solid var(--line);background:#fff;color:var(--ink);font-weight:800;font-size:13px;padding:7px 14px}
+body[data-zone="portal"] .mute,body[data-zone="barn"] .mute{background:#0b120d;border-color:#1d3325;color:var(--p-fg);font-family:var(--f-mono);font-weight:400;border-radius:3px}
+.mute[aria-pressed="false"]{opacity:.7}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001s!important;animation-iteration-count:1!important;transition-duration:.001s!important}
+  html{scroll-behavior:auto}
+}
+</style>
+<div id="app"></div>
+
+<div id="gate" class="gate" role="dialog" aria-modal="true" aria-labelledby="g-title">
+  <div class="g-card" id="g-card">
+    <p class="g-tag">Before you enter</p>
+    <h2 id="g-title">This is a work of fiction.</h2>
+    <p>Gleamwell Smile Co. is a <b>satirical horror story</b> told through a website. It is <b>not a real company, product, brand or organization</b>. Nothing here is for sale, no data you type goes anywhere, and any resemblance to real businesses or people is coincidental.</p>
+    <div class="g-warn"><b>Content warning</b>
+      <ul><li>Horror themes, disturbing imagery and implied violence</li><li>Sudden loud sounds and jumpscares</li><li>Flashing, shaking and glitching images</li></ul>
+      <p>Not recommended if you have photosensitive epilepsy or a heart condition, or if you really hate being startled.</p></div>
+    <label class="g-opt"><input type="checkbox" id="g-sound" checked> Play sound (recommended, headphones are better)</label>
+    <label class="g-opt"><input type="checkbox" id="g-intense"> Full intensity: flashes, screen shake and loud jumpscares</label>
+    <div class="g-btns"><button class="btn btn-red" id="g-enter" type="button">I understand, let me in</button><button class="btn btn-white" id="g-leave" type="button">No thanks</button></div>
+    <button class="g-reset" id="g-reset" type="button" hidden>Reset my progress</button>
+  </div>
+</div>
+
+<div id="scare" class="scare" hidden aria-hidden="true"><canvas id="scare-cv"></canvas></div>
+<div id="ghost" class="ghost" hidden aria-hidden="true"><canvas id="ghost-cv"></canvas></div>
+<div id="whisper" class="whisper" hidden aria-hidden="true"></div>
+<div id="modal" class="modal" hidden role="dialog" aria-modal="true" aria-labelledby="modal-title"><div class="modal-card"><button class="modal-x" id="modal-x" type="button" aria-label="Close">×</button><div id="modal-body"></div></div></div>
+<div id="toast" class="toast" role="status" hidden></div>
+<button id="mute" class="mute" type="button" aria-pressed="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg><span>Sound on</span></button>
+<script>
+(() => {
+'use strict';
+document.body.classList.add("gated");
+/* ============ utilities ============ */
+const clamp = (v, a = 0, b = 1) => v < a ? a : v > b ? b : v;
+const sstep = (a, b, x) => { const t = clamp((x - a) / (b - a)); return t * t * (3 - 2 * t); };
+const lerp = (a, b, t) => a + (b - a) * t;
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const wait = ms => new Promise(r => setTimeout(r, ms));
+function hash2(x, y, s) {
+  let h = Math.imul(x | 0, 374761393) ^ Math.imul(y | 0, 668265263) ^ Math.imul(s | 0, 1103515245);
+  h = Math.imul(h ^ (h >>> 13), 1274126177); h ^= h >>> 16;
+  return (h >>> 0) / 4294967296;
+}
+function vnoise(x, y, s) {
+  const xi = Math.floor(x), yi = Math.floor(y), xf = x - xi, yf = y - yi;
+  const u = xf * xf * (3 - 2 * xf), v = yf * yf * (3 - 2 * yf);
+  const a = hash2(xi, yi, s), b = hash2(xi + 1, yi, s), c = hash2(xi, yi + 1, s), d = hash2(xi + 1, yi + 1, s);
+  return a + (b - a) * u + (c - a) * v + (a - b - c + d) * u * v;
+}
+function fbm(x, y, s, oct = 4) { let t = 0, a = .5, f = 1, n = 0; for (let i = 0; i < oct; i++) { t += a * vnoise(x * f, y * f, s + i * 17); n += a; f *= 2; a *= .5; } return t / n; }
+function rng(a) { return function () { a |= 0; a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+const store = {
+  mem: {},
+  get(k) { try { const v = localStorage.getItem(k); return v === null ? (this.mem[k] ?? null) : v; } catch (e) { return this.mem[k] ?? null; } },
+  set(k, v) { this.mem[k] = v; try { localStorage.setItem(k, v); } catch (e) {} },
+  del(k) { delete this.mem[k]; try { localStorage.removeItem(k); } catch (e) {} }
+};
+const prefersReduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const SETTINGS = { intense: !prefersReduced, sound: true };
+const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const TZ = (() => { try { return Intl.DateTimeFormat().resolvedOptions().timeZone || ''; } catch (e) { return ''; } })();
+const CITY = (/^(UTC|GMT|Etc\/)/.test(TZ) || !TZ) ? 'your town' : TZ.split('/').pop().replace(/_/g, ' ');
+const fmtTime = d => d.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
+const fmtDate = d => d.toLocaleDateString('en-US', { year: 'numeric', month: '2-digit', day: '2-digit' });
+/* ============ procedural face renderer ============
+   Height-field sculpted head, lit per pixel, then graded (colour / sepia / cctv / red).
+   Every portrait, mugshot and jumpscare on the site comes out of this one function. */
+const FACE_DEFAULTS = {
+  w: 240, h: 300, seed: 1, smile: .3, open: 0, stretch: 0, teeth: false, eyes: 'open', eyeOpen: 1,
+  look: [0, 0], iris: [.36, .24, .14], irisR: .042, gaunt: 0, age: 0, hair: .6, hairCol: [.13, .09, .07],
+  tone: [.86, .66, .54], bg: [.55, .55, .55], bg2: null, light: [-.45, -.55, .75], ambient: .2, mode: 'color',
+  grain: .05, blood: 0, vignette: .55, scale: 1, tilt: 0, cy: 0, cx: 0, clothes: [.16, .17, .2], contrast: 1,
+  lips: .5, bright: 1, sockets: 0, wet: .25
+};
+function renderFace(opt) {
+  const o = Object.assign({}, FACE_DEFAULTS, opt);
+  const { w, h } = o;
+  const cv = document.createElement('canvas'); cv.width = w; cv.height = h;
+  const ctx = cv.getContext('2d'); const img = ctx.createImageData(w, h); const D = img.data;
+  const R = rng(o.seed * 9973 + 7), s = o.seed;
+  const eyeX = .29 + (R() - .5) * .04, eyeY = -.1 + (R() - .5) * .025, noseL = 1 + (R() - .5) * .3;
+  const jaw = .2 + R() * .12 + o.gaunt * .14, headA = .7 + (R() - .5) * .07 - o.gaunt * .04;
+  let L = o.light; const ll = Math.hypot(...L); L = L.map(v => v / ll);
+  const unit = 1 / (h * .34 * o.scale);
+  const ct = Math.cos(o.tilt), st = Math.sin(o.tilt);
+  const mw = .19 + .25 * o.smile + .1 * o.stretch, my = .44 + .07 * o.stretch;
+  const ohMax = o.open * (.03 + .3 * o.stretch);
+  const sockDepth = .1 + .18 * o.gaunt + o.sockets + (o.eyes === 'hollow' || o.eyes === 'pin' ? .2 : 0);
+  const mouthC = u => my - o.smile * .14 * (u / mw) * (u / mw) + o.smile * .02;
+  const streams = [];
+  if (o.blood > 0) for (const side of [-1, 1]) for (let i = 0; i < 3; i++) streams.push({ x: side * eyeX + (R() - .5) * .1, y0: eyeY + .04, len: o.blood * (.25 + R() * .55), wd: .008 + R() * .01 });
+  function sock(fx, fy) { const ex = fx > 0 ? eyeX : -eyeX, dx = fx - ex, dy = fy - eyeY; return Math.exp(-(dx * dx / (.026 + .012 * o.gaunt) + dy * dy / (.013 + .009 * o.gaunt))); }
+  function headR(fx, fy) { const a = headA * (1 - jaw * Math.pow(Math.max(0, fy), 1.6)); return (fx / a) * (fx / a) + (fy / (fy < 0 ? 1.02 : .98)) * (fy / (fy < 0 ? 1.02 : .98)); }
+  function height(fx, fy) {
+    const r = headR(fx, fy); if (r >= 1) return -1;
+    let z = Math.sqrt(1 - r);
+    const ax = Math.abs(fx);
+    z -= sockDepth * sock(fx, fy);
+    z += .05 * Math.exp(-((ax - eyeX) ** 2 / .05 + (fy + .24) ** 2 / .004));
+    z += .16 * noseL * Math.exp(-fx * fx / .0045) * sstep(-.16, .04, fy) * (1 - sstep(.2, .3, fy));
+    z += .1 * Math.exp(-(fx * fx / .008 + (fy - .22) ** 2 / .0045));
+    z -= .045 * Math.exp(-((ax - .055) ** 2 / .0008 + (fy - .275) ** 2 / .0006));
+    z += .05 * Math.exp(-((ax - .36) ** 2 / .02 + (fy - .06) ** 2 / .02));
+    z -= .12 * o.gaunt * Math.exp(-((ax - .37) ** 2 / .012 + (fy - .32) ** 2 / .025));
+    z += .04 * Math.exp(-(fx * fx / .03 + (fy - .83) ** 2 / .01));
+    if (ax < mw * 1.1) { const c = mouthC(fx), oh = ohMax * Math.sqrt(Math.max(0, 1 - (fx / mw) ** 2)); const d = Math.abs(fy - c) - oh; z += .025 * Math.exp(-(d * d) / .0006) - (d < 0 ? .06 : 0); }
+    return z;
+  }
+  const bg2 = o.bg2 || o.bg.map(v => v * .55);
+  for (let py = 0; py < h; py++) {
+    for (let px = 0; px < w; px++) {
+      let X = (px - w / 2) * unit - o.cx, Y = (py - h * .47) * unit - o.cy;
+      const fx = X * ct + Y * st, fy = -X * st + Y * ct;
+      // background
+      const sx = (px / w - .5) * 2, sy = (py / h - .5) * 2;
+      const vg = 1 - o.vignette * (sx * sx * .6 + sy * sy * .6);
+      let col = [lerp(o.bg[0], bg2[0], (sy + 1) / 2) * vg, lerp(o.bg[1], bg2[1], (sy + 1) / 2) * vg, lerp(o.bg[2], bg2[2], (sy + 1) / 2) * vg];
+      const bgcol = col.slice();
+      // body / neck
+      const ax = Math.abs(fx);
+      if (fy > 1.08 + .25 * fx * fx && ax < 1.5) { const sh = .55 + .45 * sstep(1.5, 0, ax); col = o.clothes.map(v => v * sh * vg); }
+      else if (fy > .55 && ax < .3 - .04 * Math.max(0, fy - .9) && fy < 1.35) { const sh = (.35 + .4 * sstep(.3, 0, ax)) * sstep(.55, 1.0, fy) * 1; col = o.tone.map(v => v * (.25 + sh * .6)); }
+      const r = headR(fx, fy);
+      // hair (behind/around head)
+      const hairLine = -.48 + .07 * Math.sin(fx * 5 + s) + .12 * (fbm(fx * 3, 1.3, s) - .5);
+      const rh = (fx / (headA * 1.08)) ** 2 + ((fy + .02) / 1.07) ** 2;
+      const inHair = o.hair > 0 && rh < 1 && (fy < hairLine || (r >= .955 && fy < -.15 + .35 * o.hair));
+      if (r < 1) {
+        const e = .012;
+        const h0 = height(fx, fy), hx = height(fx + e, fy), hy = height(fx, fy + e);
+        let nx = -(hx < 0 ? 0 : hx - h0) / e * .5, ny = -(hy < 0 ? 0 : hy - h0) / e * .5, nz = 1;
+        const nl = Math.hypot(nx, ny, nz); nx /= nl; ny /= nl; nz /= nl;
+        const diff = Math.max(0, nx * L[0] + ny * L[1] + nz * L[2]);
+        const rx = 2 * diff * nz - L[2]; const spec = Math.pow(Math.max(0, rx), 18) * o.wet;
+        const G = sock(fx, fy);
+        const ao = 1 - .55 * G * Math.min(1, sockDepth * 3);
+        const shade = (o.ambient + (1 - o.ambient) * diff) * ao;
+        const blot = fbm(fx * 7, fy * 7, s + 5);
+        let alb = o.tone.map((v, i) => v * (.9 + .22 * (blot - .5)));
+        const cheek = Math.exp(-((ax - .34) ** 2 / .02 + (fy - .16) ** 2 / .02));
+        alb[0] += .05 * cheek; alb[2] -= .03 * cheek;
+        if (o.age > 0) {
+          const fore = sstep(-.35, -.55, fy) * (1 - sstep(-.75, -.85, fy));
+          const wr = Math.sin(fy * 95 + fbm(fx * 4, fy * 2, s) * 6);
+          let dark = fore * Math.max(0, wr) * .12 * o.age;
+          const nlab = Math.abs(ax - (.13 + (fy - .25) * .55)); if (fy > .25 && fy < .55) dark += .14 * o.age * Math.exp(-nlab * nlab / .0004);
+          const crow = Math.exp(-((ax - eyeX - .15) ** 2 / .002 + (fy - eyeY) ** 2 / .006)); dark += crow * .1 * o.age * Math.max(0, Math.sin(fy * 140));
+          alb = alb.map(v => v * (1 - dark));
+        }
+        col = alb.map(v => v * shade + spec * .6);
+        // eyes
+        const ex = fx > 0 ? eyeX : -eyeX, dx = fx - ex, dy = fy - eyeY;
+        if (o.eyes === 'hollow' || o.eyes === 'pin') {
+          const pit = sstep(.12, .75, G);
+          col = col.map(v => v * (1 - .985 * pit));
+          if (o.eyes === 'pin') { const pd = Math.hypot(dx - o.look[0] * .02, dy - o.look[1] * .01); const glow = Math.exp(-pd * pd / .00006) + .25 * Math.exp(-pd * pd / .0007); col = col.map(v => v + glow * .95); }
+        } else {
+          const hw = .118, hh = .052 * o.eyeOpen;
+          const ee = (dx / hw) ** 2 + (dy / hh) ** 2;
+          if (o.eyes === 'closed') { if (Math.abs(dy - .01) < .006 && Math.abs(dx) < hw) col = col.map(v => v * .35); }
+          else if (ee < 1) {
+            const lid = .55 + .45 * sstep(-hh, hh * .2, dy);
+            const vein = Math.pow(Math.max(0, 1 - Math.abs(fbm(dx * 30, dy * 30, s + 9) - .5) * 9), 3) * sstep(.25, 1, ee);
+            let sc = [.9 - .1 * ee, .86 - .25 * ee - .3 * vein, .8 - .25 * ee - .3 * vein];
+            const icx = o.look[0] * .045, icy = o.look[1] * .02;
+            const ir = Math.hypot(dx - icx, dy - icy), IR = o.irisR;
+            if (ir < IR) {
+              const ang = Math.atan2(dy - icy, dx - icx);
+              const streak = .6 + .5 * vnoise(ang * 7 + 20, ir * 90, s + 3);
+              const ring = 1 - .55 * sstep(IR * .7, IR, ir);
+              sc = o.iris.map(v => v * streak * ring);
+              if (ir < IR * .42) sc = [.02, .02, .02];
+            }
+            const hl = Math.hypot(dx - icx + .014, dy - icy + .014); if (hl < .009) sc = [.98, .98, .98];
+            const edge = 1 - sstep(.7, 1, ee) * .6;
+            col = sc.map(v => v * lid * edge * (.55 + .45 * o.bright));
+          }
+        }
+        // mouth
+        if (ax < mw * 1.06) {
+          const c = mouthC(fx), oh = ohMax * Math.sqrt(Math.max(0, 1 - (fx / mw) ** 2));
+          const d = Math.abs(fy - c) - oh;
+          if (d < .024 && d >= 0) { const wgt = o.lips * (1 - d / .024) * sstep(mw * 1.06, mw * .8, ax); col = col.map((v, i) => lerp(v, [.5, .24, .23][i] * shade, wgt)); if (oh < .004 && d < .005) col = col.map(v => v * .3); }
+          if (d < 0) {
+            const t = (fy - (c - oh)) / (2 * oh + 1e-6);
+            let m = [.05, .015, .015];
+            if (o.teeth) {
+              const tw = .036 * (1 + .3 * (ax / mw)), tu = fx / tw, fr = tu - Math.floor(tu);
+              const gap = sstep(0, .14, fr) * sstep(1, .86, fr);
+              const fade = 1 - .75 * (ax / mw) ** 2;
+              const big = oh < .035;
+              let tooth = 0;
+              if (big) { tooth = Math.abs(t - .5) > .04 ? 1 : 0; }
+              else { if (t < .3) tooth = 1 - t * 1.6; else if (t > .74) tooth = (t - .74) * 2.4; }
+              if (tooth > 0) { const tc = [.88, .84, .72].map(v => v * (.45 + .55 * gap) * fade * Math.min(1, tooth + .4) * (.6 + .4 * diff)); m = tc; }
+              if (t < .05 || t > .95) m = [.45, .13, .13].map(v => v * fade);
+            }
+            col = m;
+          }
+        }
+        // blood
+        for (const b of streams) {
+          if (fy > b.y0 && fy < b.y0 + b.len) {
+            const wob = b.x + .012 * Math.sin(fy * 30 + b.x * 50);
+            const wd = b.wd * (1 - .6 * (fy - b.y0) / b.len) + .004 * (fy > b.y0 + b.len - .03 ? 1 : 0);
+            if (Math.abs(fx - wob) < wd) col = [.32 * (.7 + .5 * diff), .02, .02];
+          }
+        }
+        // edge AA into background
+        const edgeA = sstep(1, .955, r); if (edgeA < 1) { const bgc = inHair ? o.hairCol.map(v => v * .7) : bgcol; col = col.map((v, i) => lerp(bgc[i], v, edgeA)); }
+      }
+      if (inHair && (r >= .955 || fy < hairLine)) {
+        const strand = .5 + .9 * fbm(fx * 26, fy * 3, s + 3);
+        const hs = .35 + .65 * Math.max(0, -fy * L[1] + .3 - (fx * L[0]));
+        col = o.hairCol.map(v => v * strand * hs * (o.hair > .5 ? 1 : .8));
+      }
+      // grade
+      let lum = .3 * col[0] + .59 * col[1] + .11 * col[2];
+      if (o.mode === 'gray') col = [lum, lum, lum];
+      else if (o.mode === 'sepia') col = [lum * 1.08 + .03, lum * .88 + .01, lum * .64];
+      else if (o.mode === 'cctv') col = [lum * .78, lum * 1.0, lum * .84];
+      else if (o.mode === 'red') col = [lum * 1.15, lum * .42, lum * .38];
+      const g = (hash2(px, py, s + 77) - .5) * o.grain;
+      const i4 = (py * w + px) * 4;
+      for (let k = 0; k < 3; k++) D[i4 + k] = clamp(((col[k] - .5) * o.contrast + .5) * o.bright + g) * 255;
+      D[i4 + 3] = 255;
+    }
+  }
+  ctx.putImageData(img, 0, 0);
+  return cv;
+}
+/* ============ illustration: Pearl the tooth, the clinic, the products ============ */
+let svgUid = 0;
+function merrySVG({ truth = false, wave = true } = {}) {
+  const u = 'm' + (++svgUid);
+  const eyeCute = (cx) => `
+    <ellipse cx="${cx}" cy="92" rx="11.5" ry="13.5" fill="#fff" stroke="#24414d" stroke-width="2.5"/>
+    <g class="pupil-g"><circle class="mpupil" cx="${cx}" cy="94" r="6.5" fill="#10202a"/><circle cx="${cx - 2.5}" cy="91" r="2.2" fill="#fff"/></g>`;
+  const eyeTrue = (cx) => `
+    <clipPath id="${u}c${cx}"><path d="M${cx - 15} 93 Q${cx} 78 ${cx + 15} 93 Q${cx} 104 ${cx - 15} 93Z"/></clipPath>
+    <path d="M${cx - 18} 84 Q${cx} 72 ${cx + 18} 84" fill="none" stroke="#a7b6bd" stroke-width="2"/>
+    <g clip-path="url(#${u}c${cx})">
+      <rect x="${cx - 16}" y="76" width="32" height="30" fill="url(#${u}scl)"/>
+      <path d="M${cx - 15} 92 l6 1 l3 -2 M${cx + 15} 93 l-5 -1 l-3 2 M${cx - 13} 96 l5 -1" stroke="#c0283a" stroke-width=".7" fill="none" opacity=".8"/>
+      <g class="pupil-g"><circle class="mpupil" cx="${cx}" cy="91.5" r="6.8" fill="url(#${u}iris)"/><circle cx="${cx}" cy="91.5" r="2.6" fill="#050304"/><circle cx="${cx - 2.4}" cy="89.2" r="1.3" fill="#fff" opacity=".95"/></g>
+      <path d="M${cx - 16} 86 Q${cx} 79 ${cx + 16} 86 L${cx + 16} 76 L${cx - 16} 76Z" fill="#000" opacity=".28"/>
+    </g>
+    <path d="M${cx - 15} 93 Q${cx} 78 ${cx + 15} 93" fill="none" stroke="#3d2228" stroke-width="1.6"/>
+    <path d="M${cx - 13} 96 Q${cx} 103 ${cx + 13} 96" fill="none" stroke="#c9a3a8" stroke-width="1.4"/>`;
+  const mouthCute = `<path d="M76 128 Q100 150 124 128" fill="#3a1c26" stroke="#24414d" stroke-width="3" stroke-linejoin="round"/><path d="M80 130 Q100 138 120 130 L118 134 Q100 141 82 134Z" fill="#fff"/><path d="M92 141 Q100 147 108 141" fill="#e8708a"/>`;
+  let teeth = '';
+  for (let i = 0; i < 12; i++) { const x = 64 + i * 6.1, y = 125 + Math.pow((i - 5.5) / 5.5, 2) * -6 + 2; teeth += `<rect x="${x}" y="${y}" width="5.6" height="${8 + (i % 3)}" rx="1.6" fill="#efe6cf" stroke="#a89878" stroke-width=".6"/>`; }
+  for (let i = 0; i < 10; i++) { const x = 70 + i * 6.1, y = 144 - Math.pow((i - 4.5) / 4.5, 2) * 4; teeth += `<rect x="${x}" y="${y - 7}" width="5.4" height="7.5" rx="1.4" fill="#ddd2b6" stroke="#8f8064" stroke-width=".6"/>`; }
+  const mouthTrue = `<path d="M60 123 Q100 116 140 123 Q132 156 100 158 Q68 156 60 123Z" fill="#1a0507"/>
+    <path d="M60 123 Q100 116 140 123 L140 128 Q100 121 60 128Z" fill="#9c3040"/>${teeth}
+    <path d="M60 123 Q100 116 140 123 Q132 156 100 158 Q68 156 60 123Z" fill="none" stroke="#5a1520" stroke-width="2.2"/>
+    ${truth === 'blood' ? '<path d="M136 134 q3 14 1 30 q-2 4 -3 0 q-1 -14 -2 -26z" fill="#6a0606"/><path d="M66 138 q-2 10 0 18 q2 3 3 -1 q0 -9 -1 -16z" fill="#6a0606"/>' : ''}`;
+  const body = 'M40 74 Q38 22 74 24 Q100 36 126 24 Q162 22 160 74 Q160 122 150 154 L141 214 Q137 240 122 234 Q111 229 108 202 Q104 184 100 184 Q96 184 92 202 Q89 229 78 234 Q63 240 59 214 L50 154 Q40 122 40 74Z';
+  const feet = truth
+    ? '<path d="M60 214 Q63 238 78 234 Q86 230 89 214Z M111 214 Q114 230 122 234 Q137 238 140 214Z" fill="#7a0a0a" opacity=".85"/><path d="M68 236 q2 10 0 14 M131 236 q-1 8 1 13" stroke="#6a0606" stroke-width="3" stroke-linecap="round"/>'
+    : '<ellipse cx="71" cy="236" rx="20" ry="9" fill="#12A89D"/><ellipse cx="129" cy="236" rx="20" ry="9" fill="#12A89D"/><ellipse cx="66" cy="233" rx="7" ry="2.5" fill="#7fe0d6"/><ellipse cx="124" cy="233" rx="7" ry="2.5" fill="#7fe0d6"/>';
+  return `<svg class="merry ${truth ? 'merry-true' : ''}" viewBox="0 0 200 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Pearl the Gleamwell tooth">
+  <defs>
+    <radialGradient id="${u}head" cx="38%" cy="30%" r="80%"><stop offset="0" stop-color="#ffffff"/><stop offset=".6" stop-color="${truth ? '#e6e0d2' : '#EEF6F8'}"/><stop offset="1" stop-color="${truth ? '#b7ab92' : '#C6DCE3'}"/></radialGradient>
+    <radialGradient id="${u}scl" cx="50%" cy="50%" r="60%"><stop offset="0" stop-color="#f6f1ea"/><stop offset=".7" stop-color="#e6d6cf"/><stop offset="1" stop-color="#c79a98"/></radialGradient>
+    <radialGradient id="${u}iris" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#6b5a2a"/><stop offset=".55" stop-color="#7d6a3a"/><stop offset=".85" stop-color="#4a3c1a"/><stop offset="1" stop-color="#1e1608"/></radialGradient>
+  </defs>
+  <g class="m-arm-l"><path d="M48 150 Q28 166 30 194" stroke="${truth ? '#d9d1bf' : '#E8F2F5'}" stroke-width="12" stroke-linecap="round" fill="none"/><circle cx="30" cy="198" r="10" fill="#fff" stroke="#b9cfd8" stroke-width="2.5"/></g>
+  <g class="${wave ? 'm-wave' : ''}" style="transform-origin:150px 146px">
+    <path d="M150 146 Q172 128 176 104" stroke="${truth ? '#d9d1bf' : '#E8F2F5'}" stroke-width="12" stroke-linecap="round" fill="none"/>
+    ${truth ? '' : '<g transform="rotate(28 178 100)"><rect x="174" y="40" width="8" height="66" rx="4" fill="#12A89D"/><rect x="172" y="36" width="12" height="18" rx="3" fill="#0E8A81"/><path d="M172 38 h12 M172 42 h12 M172 46 h12 M172 50 h12" stroke="#fff" stroke-width="2"/></g>'}
+    <circle cx="178" cy="100" r="10" fill="#fff" stroke="#b9cfd8" stroke-width="2.5"/>
+  </g>
+  <path d="${body}" fill="url(#${u}head)" stroke="${truth ? '#8f8470' : '#AFC8D1'}" stroke-width="3" stroke-linejoin="round"/>
+  ${feet}
+  <path d="M58 52 Q62 34 80 34" stroke="#fff" stroke-width="9" stroke-linecap="round" fill="none" opacity=".9"/>
+  ${truth ? '<path d="M118 40 q6 10 2 22 M70 170 q-4 12 2 20" stroke="#8a7a58" stroke-width="2" fill="none" opacity=".6"/>' : '<path d="M164 30 l3 9 l9 3 l-9 3 l-3 9 l-3 -9 l-9 -3 l9 -3z" fill="#7fe0d6"/>'}
+  <ellipse cx="58" cy="114" rx="10" ry="6.5" fill="#F7A8B8" opacity="${truth ? .2 : .7}"/><ellipse cx="142" cy="114" rx="10" ry="6.5" fill="#F7A8B8" opacity="${truth ? .2 : .7}"/>
+  ${truth ? eyeTrue(72) + eyeTrue(128) : eyeCute(72) + eyeCute(128)}
+  ${truth ? mouthTrue : mouthCute}
+</svg>`;
+}
+function svgToImage(svg) {
+  const img = new Image();
+  img.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg.replace('<svg ', '<svg width="800" height="1000" '));
+  return img;
+}
+
+function heroSVG() {
+  let windows = '';
+  for (let i = 0; i < 7; i++) {
+    const x = 444 + i * 64, y = 284, dark = i === 6;
+    windows += `<g ${dark ? 'id="far7" class="far7" role="button" aria-label="Window of room 7"' : ''}><rect x="${x}" y="${y}" width="46" height="44" rx="3" fill="${dark ? '#141b1f' : '#BFE6F2'}" stroke="#0E8A81" stroke-width="3"/>
+      ${dark ? `<g id="loftface" opacity="0"><ellipse cx="${x + 23}" cy="${y + 22}" rx="10" ry="13" fill="#d9d0c0"/><circle cx="${x + 19}" cy="${y + 19}" r="2.2" fill="#000"/><circle cx="${x + 27}" cy="${y + 19}" r="2.2" fill="#000"/><path d="M${x + 15} ${y + 27} Q${x + 23} ${y + 34} ${x + 31} ${y + 27}" stroke="#000" stroke-width="1.8" fill="none"/><path d="M${x + 16} ${y + 28} h14" stroke="#fff" stroke-width="1.6"/></g>` : ''}
+      ${Array.from({ length: 5 }, (_, k) => `<path d="M${x + 2} ${y + 6 + k * 8} h42" stroke="${dark ? '#2a3338' : '#E9F7FB'}" stroke-width="2"/>`).join('')}</g>`;
+  }
+  const R = rng(42);
+  let flowers = '';
+  for (let i = 0; i < 40; i++) { const x = R() * 1200, y = 494 + R() * 50, c = ['#fff', '#FFD66B', '#F7A8B8'][i % 3]; flowers += `<circle cx="${x.toFixed(0)}" cy="${y.toFixed(0)}" r="${(3 + R() * 2.6).toFixed(1)}" fill="${c}"/>`; }
+  const tree = (x, s) => `<g transform="translate(${x} 470) scale(${s})"><rect x="-8" y="-70" width="16" height="70" fill="#8a5a3a"/><circle cx="0" cy="-100" r="52" fill="#5BAA45"/><circle cx="-30" cy="-80" r="34" fill="#4E9A3F"/><circle cx="28" cy="-76" r="36" fill="#62B24C"/></g>`;
+  return `<svg class="hero-svg" viewBox="0 0 1200 640" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop class="sky-a" offset="0" stop-color="#8FD7EE"/><stop class="sky-b" offset="1" stop-color="#E6F8FB"/></linearGradient>
+    <radialGradient id="sunG"><stop offset="0" stop-color="#FFF4B8"/><stop offset=".6" stop-color="#FFD66B"/><stop offset="1" stop-color="#FFC94A"/></radialGradient>
+    <linearGradient id="h1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#A8DC8A"/><stop offset="1" stop-color="#86C66A"/></linearGradient>
+    <linearGradient id="h3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6CBA55"/><stop offset="1" stop-color="#4E9A3F"/></linearGradient>
+    <linearGradient id="wall" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#E4EEF1"/></linearGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9DDDEA"/><stop offset="1" stop-color="#5FB9C9"/></linearGradient>
+  </defs>
+  <rect width="1200" height="640" fill="url(#sky)"/>
+  <g class="stars-n">${Array.from({ length: 40 }, (_, i) => `<circle cx="${(hash2(i, 1, 3) * 1200).toFixed(0)}" cy="${(hash2(i, 2, 3) * 240).toFixed(0)}" r="${(1 + hash2(i, 3, 3) * 1.4).toFixed(1)}" fill="#fff"/>`).join('')}</g>
+  <g class="sun" transform="translate(1010 110)"><g class="rays">${Array.from({ length: 12 }, (_, i) => `<rect x="-5" y="-112" width="10" height="32" rx="5" fill="#FFE08A" transform="rotate(${i * 30})"/>`).join('')}</g><circle r="62" fill="url(#sunG)"/></g>
+  <g class="moon" transform="translate(1010 110)"><circle r="48" fill="#EDEAD8"/><circle r="48" cx="18" cy="-10" fill="#1a2440"/></g>
+  <g class="clouds"><g class="cloud c1"><ellipse cx="200" cy="110" rx="70" ry="26" fill="#fff"/><ellipse cx="240" cy="94" rx="44" ry="30" fill="#fff"/><ellipse cx="170" cy="98" rx="34" ry="22" fill="#fff"/></g>
+  <g class="cloud c2"><ellipse cx="700" cy="70" rx="56" ry="20" fill="#fff"/><ellipse cx="730" cy="58" rx="34" ry="24" fill="#fff"/></g></g>
+  <path d="M0 300 Q200 250 420 290 T840 280 T1200 290 L1200 640 L0 640Z" fill="url(#h1)"/>
+  ${tree(530, .7)}${tree(1110, .8)}
+  <g class="clinic" transform="translate(760 472) scale(.8) translate(-660 -472)">
+    <rect x="420" y="262" width="480" height="210" fill="url(#wall)" stroke="#C9DCE2" stroke-width="3"/>
+    <rect x="410" y="252" width="500" height="16" rx="4" fill="#12A89D"/>
+    ${windows}
+    <rect x="596" y="364" width="128" height="108" fill="url(#glass)" stroke="#0E8A81" stroke-width="5"/>
+    <path d="M660 364 V472" stroke="#0E8A81" stroke-width="4"/><circle cx="652" cy="420" r="3" fill="#0E8A81"/><circle cx="668" cy="420" r="3" fill="#0E8A81"/>
+    <rect x="440" y="370" width="130" height="70" rx="3" fill="url(#glass)" stroke="#0E8A81" stroke-width="3"/><rect x="750" y="370" width="130" height="70" rx="3" fill="url(#glass)" stroke="#0E8A81" stroke-width="3"/>
+    <rect x="588" y="340" width="144" height="20" rx="4" fill="#fff" stroke="#C9DCE2" stroke-width="2"/>
+    <text x="660" y="354" text-anchor="middle" font-family="Nunito, sans-serif" font-weight="800" font-size="10" fill="#0E8A81" letter-spacing="1.5">DENTAL · FOREVER SMILE™</text>
+    <rect x="560" y="216" width="200" height="34" rx="8" fill="#fff" stroke="#12A89D" stroke-width="3"/>
+    <text x="660" y="240" text-anchor="middle" font-family="Fredoka, Nunito, sans-serif" font-weight="700" font-size="20" fill="#0E8A81" letter-spacing="3">GLEAMWELL</text>
+    <path d="M640 212 Q638 168 652 168 Q660 174 668 168 Q682 168 680 212 Q676 200 670 212 Q666 196 660 196 Q654 196 650 212 Q644 200 640 212Z" fill="#fff" stroke="#AFC8D1" stroke-width="3"/>
+  </g>
+  <path d="M0 470 Q300 452 640 466 T1200 462 L1200 640 L0 640Z" fill="url(#h3)"/>
+  ${flowers}
+  <rect x="0" y="548" width="1200" height="30" fill="#E4E2DA"/><rect x="0" y="574" width="1200" height="6" fill="#C8C5BB"/>
+  <rect x="0" y="580" width="1200" height="60" fill="#4b5157"/>
+  ${Array.from({ length: 13 }, (_, i) => `<rect x="${i * 100 + 20}" y="607" width="50" height="6" rx="2" fill="#F2E7B8"/>`).join('')}
+  <svg x="930" y="292" width="240" height="300" viewBox="0 0 200 250" id="hero-merry" class="hero-merry">${merrySVG().replace(/^<svg[^>]*>/, '').replace(/<\/svg>$/, '')}</svg>
+</svg>`;
+}
+
+function productSVG(kind) {
+  const u = 'p' + (++svgUid);
+  let art = '';
+  const tube = (col, band, label) => `<g transform="rotate(-14 150 115)"><path d="M70 92 L210 86 Q226 86 226 100 L226 130 Q226 144 210 144 L70 138 Z" fill="${col}"/><rect x="70" y="90" width="18" height="50" rx="3" fill="${band}" opacity=".7"/><path d="M60 96 h10 v40 h-10 z" fill="#d9e4e8"/><rect x="226" y="100" width="26" height="30" rx="5" fill="${band}"/><path d="M96 104 q60 -6 116 -2" stroke="#fff" stroke-width="5" opacity=".6" fill="none"/><text x="150" y="127" text-anchor="middle" font-family="Fredoka, Nunito, sans-serif" font-weight="700" font-size="15" fill="${band}">${label}</text></g>`;
+  if (kind === 'paste') art = tube('#FFFFFF', '#12A89D', 'WHITEN+');
+  if (kind === 'kids') art = tube('#FFD3DD', '#E8708A', 'BUBBLEGUM') + `<g transform="translate(70 150)"><circle r="16" fill="#fff" stroke="#E8708A" stroke-width="2"/><circle cx="-5" cy="-2" r="2" fill="#10202a"/><circle cx="5" cy="-2" r="2" fill="#10202a"/><path d="M-5 5 q5 4 10 0" stroke="#10202a" stroke-width="1.6" fill="none"/></g>`;
+  if (kind === 'brush') art = `<rect x="100" y="150" width="100" height="26" rx="10" fill="#E4EEF1"/><rect x="136" y="44" width="28" height="118" rx="13" fill="#fff" stroke="#AFC8D1" stroke-width="2"/><rect x="136" y="110" width="28" height="30" fill="#12A89D"/><circle cx="150" cy="96" r="6" fill="#12A89D"/><rect x="143" y="22" width="14" height="30" rx="5" fill="#fff" stroke="#AFC8D1" stroke-width="2"/><path d="M145 26 h10 M145 31 h10 M145 36 h10" stroke="#7fe0d6" stroke-width="2.5"/>`;
+  if (kind === 'strips') art = `<rect x="76" y="56" width="148" height="104" rx="10" fill="#cfd9de"/><rect x="76" y="56" width="148" height="104" rx="10" fill="url(#${u}foil)"/><path d="M118 104 q32 26 64 0" stroke="#12A89D" stroke-width="7" fill="none" stroke-linecap="round"/><text x="150" y="88" text-anchor="middle" font-family="Fredoka, Nunito, sans-serif" font-weight="700" font-size="14" fill="#0E8A81">OVERNIGHT</text><rect x="96" y="160" width="110" height="14" rx="7" fill="#fff" opacity=".9"/><rect x="104" y="174" width="96" height="10" rx="5" fill="#fff" opacity=".7"/>`;
+  if (kind === 'gummies') { art = `<rect x="112" y="50" width="76" height="22" rx="5" fill="#E8708A"/><rect x="104" y="70" width="92" height="110" rx="16" fill="#fff" stroke="#E0C9CF" stroke-width="2"/><rect x="104" y="96" width="92" height="50" fill="#FFD3DD"/><text x="150" y="126" text-anchor="middle" font-family="Fredoka, Nunito, sans-serif" font-weight="700" font-size="13" fill="#C0506A">LITTLE SMILES</text>`; [[70, 150, '#FF9AB0'], [222, 140, '#9FE6DF'], [60, 108, '#FFD66B'], [236, 96, '#FF9AB0']].forEach(([x, y, c]) => { art += `<path transform="translate(${x} ${y}) scale(.9)" d="M-12 -6 Q-12 -16 -5 -16 Q0 -13 5 -16 Q12 -16 12 -6 Q12 4 9 9 Q7 16 4 13 Q2 6 0 6 Q-2 6 -4 13 Q-7 16 -9 9 Q-12 4 -12 -6Z" fill="${c}" opacity=".95"/>`; }); }
+  if (kind === 'veneers') {
+    art = `<rect x="56" y="54" width="188" height="122" rx="14" fill="#2b1f2a"/><rect x="64" y="62" width="172" height="106" rx="10" fill="#3b2a38"/>`;
+    for (const [row, cy, r] of [[0, 104, 64], [1, 150, 54]]) {
+      const n = row ? 9 : 10;
+      for (let i = 0; i < n; i++) { const a = Math.PI * (.15 + .7 * i / (n - 1)), x = 150 - Math.cos(a) * r * 1.25, y = cy - Math.sin(a) * r * .45 * (row ? -1 : 1) * .6;
+        const odd = !row && i === 6; const col = odd ? '#e8dcb8' : '#F6F2E8';
+        art += `<rect x="${(x - 6).toFixed(1)}" y="${(y - 9).toFixed(1)}" width="12" height="18" rx="4" fill="${col}" stroke="#cbbfa8" stroke-width=".8"/>${odd ? `<rect x="${(x - 2.5).toFixed(1)}" y="${(y - 4).toFixed(1)}" width="5" height="4" rx="1" fill="#8a8f94"/><path d="M${x.toFixed(1)} ${(y + 9).toFixed(1)} q1 6 -1 10" stroke="#7a1010" stroke-width="2.4" fill="none"/>` : ''}`; }
+    }
+  }
+  const bgc = { paste: '#DDF4F1', kids: '#FFE6EC', brush: '#E3F0F7', strips: '#EEF2F5', gummies: '#FFF0C2', veneers: '#ECE3F2' }[kind];
+  return `<svg viewBox="0 0 300 220" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <defs><linearGradient id="${u}foil" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f2f6f8"/><stop offset=".5" stop-color="#c9d5db"/><stop offset="1" stop-color="#eef3f5"/></linearGradient></defs>
+  <rect width="300" height="220" fill="${bgc}"/>
+  <ellipse cx="150" cy="196" rx="110" ry="10" fill="#000" opacity=".06"/>
+  ${art}
+  <g transform="translate(14 14)"><rect width="112" height="28" rx="14" fill="#12A89D"/><path transform="translate(16 14) scale(.62)" d="M-12 -6 Q-12 -16 -5 -16 Q0 -13 5 -16 Q12 -16 12 -6 Q12 4 9 9 Q7 16 4 13 Q2 6 0 6 Q-2 6 -4 13 Q-7 16 -9 9 Q-12 4 -12 -6Z" fill="#fff"/><text x="30" y="19" font-family="Fredoka, Nunito, sans-serif" font-weight="700" font-size="11.5" fill="#fff" letter-spacing=".6">GLEAMWELL</text></g>
+</svg>`;
+}
+
+/* sepia photograph of the Room 7 wing opening, 1988: look closely at the doorway */
+function renderBarnPhoto(w = 480, h = 320) {
+  const c = document.createElement('canvas'); c.width = w; c.height = h; const x = c.getContext('2d');
+  const g = x.createLinearGradient(0, 0, 0, h); g.addColorStop(0, '#d9c7a4'); g.addColorStop(1, '#a8916c');
+  x.fillStyle = g; x.fillRect(0, 0, w, h);
+  x.fillStyle = '#8f7a58'; x.fillRect(0, h * .72, w, h);
+  const bx = w * .2, bw = w * .6, by = h * .26;
+  x.fillStyle = '#c9b58e'; x.fillRect(bx, by, bw, h * .75 - by);
+  x.fillStyle = '#6d5a40'; x.fillRect(bx - 6, by - 8, bw + 12, 10);
+  for (let i = 0; i < 6; i++) { x.fillStyle = '#5a4a33'; x.fillRect(bx + 14 + i * (bw - 28) / 6, by + 16, (bw - 28) / 6 - 12, h * .1); }
+  x.fillStyle = '#3a2c1c'; x.font = `bold ${h * .055}px Georgia, serif`; x.textAlign = 'center'; x.fillText('WING 7', bx + bw / 2, by + h * .2);
+  const dx = bx + bw * .36, dw = bw * .28, dy = by + h * .24, dh = h * .75 - dy;
+  x.fillStyle = '#0c0906'; x.fillRect(dx, dy, dw, dh);
+  const R = rng(1988);
+  for (let i = 0; i < 60; i++) {
+    const fx = dx + 6 + R() * (dw - 12), fy = dy + 10 + Math.pow(R(), .7) * (dh - 20), r = 2 + (fy - dy) / dh * 3.2;
+    x.fillStyle = `rgba(210,196,168,${.25 + R() * .45})`; x.beginPath(); x.ellipse(fx, fy, r, r * 1.25, 0, 0, 7); x.fill();
+    x.fillStyle = 'rgba(0,0,0,.8)'; x.fillRect(fx - r * .5, fy - r * .25, r * .32, r * .32); x.fillRect(fx + r * .2, fy - r * .25, r * .32, r * .32);
+    x.fillStyle = 'rgba(240,235,220,.9)'; x.fillRect(fx - r * .45, fy + r * .42, r * .9, r * .22);
+  }
+  x.strokeStyle = '#3a2c1c'; x.lineWidth = 2; x.beginPath(); x.moveTo(bx - 20, h * .7); x.lineTo(bx + bw + 20, h * .7); x.stroke();
+  for (let i = 0; i < 9; i++) {
+    const px = w * .14 + i * w * .085, py = h * .78;
+    x.fillStyle = i % 3 ? '#2e2418' : '#d8ccb2'; x.fillRect(px - 9, py - 34, 18, 46);
+    x.fillStyle = '#cdb994'; x.beginPath(); x.arc(px, py - 42, 8, 0, 7); x.fill();
+    x.fillStyle = '#2e2418'; x.fillRect(px - 3, py - 44, 2, 2); x.fillRect(px + 2, py - 44, 2, 2);
+  }
+  grainify(x, w, h, .2, 1988, true);
+  return c;
+}
+function grainify(x, w, h, amt, seed, old) {
+  const d = x.getImageData(0, 0, w, h), D = d.data;
+  for (let py = 0; py < h; py++) for (let px = 0; px < w; px++) {
+    const i = (py * w + px) * 4, n = (hash2(px, py, seed) - .5) * 255 * amt;
+    const sx = px / w - .5, sy = py / h - .5, v = old ? 1 - (sx * sx + sy * sy) * 1.6 : 1;
+    for (let k = 0; k < 3; k++) D[i + k] = clamp((D[i + k] + n) * v / 255) * 255;
+  }
+  x.putImageData(d, 0, 0);
+  if (old) { x.strokeStyle = 'rgba(255,250,235,.35)'; x.lineWidth = 1; const R = rng(seed); for (let i = 0; i < 9; i++) { const sx = R() * w; x.beginPath(); x.moveTo(sx, 0); x.lineTo(sx + (R() - .5) * 30, h); x.stroke(); } }
+}
+
+/* shared animated noise */
+const NOISE = (() => { const c = document.createElement('canvas'); c.width = 256; c.height = 144; const x = c.getContext('2d'); const id = x.createImageData(256, 144);
+  return { c, tick() { const a = id.data; for (let i = 0; i < a.length; i += 4) { const v = Math.random() * 255 | 0; a[i] = a[i + 1] = a[i + 2] = v; a[i + 3] = 255; } x.putImageData(id, 0, 0); } }; })();
+
+/* scrawled handwriting onto a canvas */
+function scrawl(x, text, cx, cy, size, color = '#7a0b0b', seed = 1) {
+  const R = rng(seed);
+  x.save(); x.font = `italic ${size}px "IM Fell English", Georgia, serif`; x.textAlign = 'center'; x.textBaseline = 'middle';
+  for (let k = 0; k < 3; k++) { x.globalAlpha = .55; x.fillStyle = color; x.fillText(text, cx + (R() - .5) * 2.5, cy + (R() - .5) * 2.5); }
+  x.restore();
+}
+/* ============ sound: everything is synthesised, nothing is loaded ============ */
+const AU = {
+  ctx: null, master: null, verb: null, amb: [], ambName: 'none',
+  init() {
+    if (this.ctx) { this.ctx.resume && this.ctx.resume(); return true; }
+    const AC = window.AudioContext || window.webkitAudioContext; if (!AC) return false;
+    const ctx = this.ctx = new AC();
+    const comp = ctx.createDynamicsCompressor(); comp.threshold.value = -10; comp.ratio.value = 6; comp.connect(ctx.destination);
+    this.master = ctx.createGain(); this.master.gain.value = SETTINGS.sound ? .85 : 0; this.master.connect(comp);
+    const len = ctx.sampleRate * 3, ir = ctx.createBuffer(2, len, ctx.sampleRate);
+    for (let ch = 0; ch < 2; ch++) { const d = ir.getChannelData(ch); for (let i = 0; i < len; i++) d[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / len, 2.6); }
+    this.verb = ctx.createConvolver(); this.verb.buffer = ir; const vg = ctx.createGain(); vg.gain.value = .55; this.verb.connect(vg); vg.connect(this.master);
+    const nb = ctx.createBuffer(1, ctx.sampleRate * 2, ctx.sampleRate), nd = nb.getChannelData(0); for (let i = 0; i < nd.length; i++) nd[i] = Math.random() * 2 - 1; this.noiseBuf = nb;
+    const curve = new Float32Array(1024); for (let i = 0; i < 1024; i++) { const x = i / 512 - 1; curve[i] = Math.tanh(x * 6); } this.curve = curve;
+    this.setAmbient(this.ambName, true);
+    return true;
+  },
+  get t() { return this.ctx ? this.ctx.currentTime : 0; },
+  ok() { return !!(this.ctx && SETTINGS.sound); },
+  mute(on) { SETTINGS.sound = on; if (this.master) this.master.gain.setTargetAtTime(on ? .85 : 0, this.t, .1); if (!on) try { speechSynthesis.cancel(); } catch (e) {} },
+  env(g, t, a, peak, rel) { g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(peak, t + a); g.gain.exponentialRampToValueAtTime(.0001, t + a + rel); },
+  tone(f, dur, { type = 'sine', gain = .2, a = .01, when = 0, wet = 0, detune = 0, dest = null } = {}) {
+    if (!this.ok()) return; const t = this.t + when, o = this.ctx.createOscillator(), g = this.ctx.createGain();
+    o.type = type; o.frequency.value = f; o.detune.value = detune; this.env(g, t, a, gain, dur); o.connect(g); g.connect(dest || this.master);
+    if (wet) { const s = this.ctx.createGain(); s.gain.value = wet; g.connect(s); s.connect(this.verb); }
+    o.start(t); o.stop(t + a + dur + .05); return o;
+  },
+  noise(dur, { gain = .3, f = 1000, q = 1, type = 'bandpass', when = 0, a = .005, wet = 0, sweep = 0 } = {}) {
+    if (!this.ok()) return; const t = this.t + when, n = this.ctx.createBufferSource(); n.buffer = this.noiseBuf; n.loop = true;
+    const bf = this.ctx.createBiquadFilter(); bf.type = type; bf.frequency.setValueAtTime(f, t); if (sweep) bf.frequency.exponentialRampToValueAtTime(sweep, t + dur); bf.Q.value = q;
+    const g = this.ctx.createGain(); this.env(g, t, a, gain, dur); n.connect(bf); bf.connect(g); g.connect(this.master);
+    if (wet) { const s = this.ctx.createGain(); s.gain.value = wet; g.connect(s); s.connect(this.verb); }
+    n.start(t); n.stop(t + dur + a + .05);
+  },
+  beep(f = 880) { this.tone(f, .08, { type: 'square', gain: .05 }); },
+  buzz() { this.tone(110, .35, { type: 'sawtooth', gain: .16 }); this.tone(116, .35, { type: 'square', gain: .08 }); },
+  click() { this.noise(.03, { gain: .2, f: 3000, q: 2 }); },
+  knock(when = 0, loud = 1) { this.tone(90, .18, { gain: .7 * loud, when, wet: .4 }); this.noise(.06, { gain: .5 * loud, f: 400, q: 1.5, when, wet: .4 }); },
+  thump(when = 0, amt = 1) { if (!this.ok()) return; const t = this.t + when, o = this.ctx.createOscillator(), g = this.ctx.createGain(); o.frequency.setValueAtTime(75, t); o.frequency.exponentialRampToValueAtTime(36, t + .2); this.env(g, t, .012, .6 * amt, .26); o.connect(g); g.connect(this.master); o.start(t); o.stop(t + .35); },
+  heartbeat(n = 1, gap = .9) { for (let i = 0; i < n; i++) { this.thump(i * gap); this.thump(i * gap + .2, .6); } },
+  creak(dur = 2.2) {
+    if (!this.ok()) return; const t = this.t, o = this.ctx.createOscillator(), g = this.ctx.createGain(), f = this.ctx.createBiquadFilter();
+    o.type = 'sawtooth'; o.frequency.setValueAtTime(70, t); for (let i = 0; i < 18; i++) o.frequency.linearRampToValueAtTime(60 + Math.random() * 90, t + dur * i / 18);
+    f.type = 'bandpass'; f.frequency.value = 700; f.Q.value = 4; g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(.35, t + .2); g.gain.linearRampToValueAtTime(.0001, t + dur);
+    o.connect(f); f.connect(g); g.connect(this.master); const s = this.ctx.createGain(); s.gain.value = .5; g.connect(s); s.connect(this.verb); o.start(t); o.stop(t + dur + .1);
+  },
+  breath(dur = 2.4, when = 0) { this.noise(dur, { gain: .14, f: 1600, q: .8, when, a: dur * .45, wet: .3, sweep: 900 }); },
+  glitch() { for (let i = 0; i < 6; i++) this.tone(200 + Math.random() * 2400, .03, { type: 'square', gain: .08, when: i * .035 }); },
+  scream(level = 1) {
+    if (!this.ok()) return; const ctx = this.ctx, t = this.t, L = SETTINGS.intense ? level : level * .35;
+    const sh = ctx.createWaveShaper(); sh.curve = this.curve; const out = ctx.createGain(); out.gain.setValueAtTime(.55 * L, t); out.gain.exponentialRampToValueAtTime(.001, t + 1.6);
+    sh.connect(out); out.connect(this.master); const wet = ctx.createGain(); wet.gain.value = .6; out.connect(wet); wet.connect(this.verb);
+    [470, 655, 930, 1380, 1720].forEach((f, i) => {
+      const o = ctx.createOscillator(); o.type = i % 2 ? 'sawtooth' : 'square';
+      o.frequency.setValueAtTime(f * .7, t); o.frequency.exponentialRampToValueAtTime(f * 1.5, t + .18); o.frequency.exponentialRampToValueAtTime(f * 1.2, t + 1.4);
+      const lfo = ctx.createOscillator(), lg = ctx.createGain(); lfo.frequency.value = 23 + i * 4; lg.gain.value = f * .06; lfo.connect(lg); lg.connect(o.frequency);
+      const g = ctx.createGain(); g.gain.value = .3 - i * .04; o.connect(g); g.connect(sh); o.start(t); o.stop(t + 1.6); lfo.start(t); lfo.stop(t + 1.6);
+    });
+    this.noise(1.3, { gain: .8 * L, f: 2500, q: .5, type: 'highpass', wet: .5 });
+    const b = ctx.createOscillator(), bg = ctx.createGain(); b.frequency.setValueAtTime(90, t); b.frequency.exponentialRampToValueAtTime(28, t + .7); this.env(bg, t, .005, 1 * L, .8); b.connect(bg); bg.connect(this.master); b.start(t); b.stop(t + .9);
+  },
+  sting() { this.tone(1975, 1.6, { type: 'sawtooth', gain: .08, wet: .8 }); this.tone(2093, 1.6, { type: 'sawtooth', gain: .08, wet: .8 }); this.noise(.4, { gain: .4, f: 5000, type: 'highpass', wet: .6 }); },
+  // the Gladhaven jingle. 'happy' in the shop; 'wrong' behind the door
+  JINGLE: [[67, .5], [64, .5], [67, .5], [72, 1], [71, .5], [69, .5], [67, 1], [64, .5], [65, .5], [67, .5], [69, .5], [67, 1.5], [60, 1.5]],
+  jingle(mode = 'happy', when = 0) {
+    if (!this.ok()) return 0;
+    const wrong = mode === 'wrong', beat = wrong ? .62 : .26; let t = when;
+    for (const [m0, d] of this.JINGLE) {
+      let m = m0; if (wrong && [64, 69, 71].includes(m)) m -= 1;
+      const f = 440 * Math.pow(2, (m - 69) / 12) * (wrong ? .5 : 1);
+      if (wrong) { for (let v = 0; v < 4; v++) this.voice(f * (v === 3 ? .5 : 1), d * beat * 1.1, t, (v - 1.5) * 14); }
+      else { this.tone(f, d * beat * .9, { type: 'triangle', gain: .14, when: t, wet: .15 }); this.tone(f * 2, d * beat * .5, { type: 'square', gain: .025, when: t }); }
+      t += d * beat;
+    }
+    return t;
+  },
+  voice(f, dur, when, detune) {
+    const ctx = this.ctx, t = this.t + when, o = ctx.createOscillator(); o.type = 'sawtooth'; o.frequency.value = f; o.detune.value = detune;
+    const vib = ctx.createOscillator(), vg = ctx.createGain(); vib.frequency.value = 5 + Math.random(); vg.gain.value = f * .012; vib.connect(vg); vg.connect(o.frequency);
+    const g = ctx.createGain(); g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(.05, t + .12); g.gain.linearRampToValueAtTime(.0001, t + dur);
+    [[750, 6], [1150, 8], [2600, 10]].forEach(([ff, q], i) => { const b = ctx.createBiquadFilter(); b.type = 'bandpass'; b.frequency.value = ff; b.Q.value = q; const bg = ctx.createGain(); bg.gain.value = [1, .6, .25][i]; o.connect(b); b.connect(bg); bg.connect(g); });
+    g.connect(this.master); const s = ctx.createGain(); s.gain.value = 1.2; g.connect(s); s.connect(this.verb);
+    o.start(t); o.stop(t + dur + .1); vib.start(t); vib.stop(t + dur + .1);
+  },
+  speak(text, { rate = .8, pitch = .3, volume = .9 } = {}) {
+    if (!SETTINGS.sound || !('speechSynthesis' in window)) return;
+    try { const u = new SpeechSynthesisUtterance(text); u.rate = rate; u.pitch = pitch; u.volume = volume; speechSynthesis.speak(u); } catch (e) {}
+  },
+  stopAmb() { this.amb.forEach(n => { try { n.stop ? n.stop() : clearInterval(n); } catch (e) {} }); this.amb = []; },
+  setAmbient(name, force) {
+    if (this.ambName === name && !force) return; this.ambName = name; if (!this.ctx) return; this.stopAmb();
+    const ctx = this.ctx, bus = ctx.createGain(); bus.gain.value = 0; bus.gain.setTargetAtTime(1, ctx.currentTime, .8); bus.connect(this.master);
+    const osc = (f, type, g, filt) => { const o = ctx.createOscillator(); o.type = type; o.frequency.value = f; const gg = ctx.createGain(); gg.gain.value = g; if (filt) { o.connect(filt); filt.connect(gg); } else o.connect(gg); gg.connect(bus); o.start(); this.amb.push(o); return o; };
+    const noiseLoop = (g, f, q, type = 'bandpass') => { const n = ctx.createBufferSource(); n.buffer = this.noiseBuf; n.loop = true; const b = ctx.createBiquadFilter(); b.type = type; b.frequency.value = f; b.Q.value = q; const gg = ctx.createGain(); gg.gain.value = g; n.connect(b); b.connect(gg); gg.connect(bus); n.start(); this.amb.push(n); return { b, gg }; };
+    if (name === 'clinic') {
+      noiseLoop(.012, 400, .4, 'lowpass');
+      const chords = [[261.6, 329.6, 392], [220, 277.2, 329.6], [246.9, 311.1, 370], [196, 246.9, 293.7]]; let ci = 0;
+      this.amb.push(setInterval(() => { chords[ci++ % 4].forEach((f, i) => this.tone(f, 2.6, { type: 'sine', gain: .022, a: .6, when: i * .04, wet: .5 })); }, 3200));
+      this.amb.push(setInterval(() => { if (Math.random() < .35) { const o = this.tone(2350, 1.6, { type: 'sawtooth', gain: .006, a: .3, wet: .9 }); if (o) o.frequency.linearRampToValueAtTime(2600, this.t + 1.4); } }, 9000));
+    } else if (name === 'portal') {
+      osc(60, 'sine', .05); const lp = ctx.createBiquadFilter(); lp.type = 'lowpass'; lp.frequency.value = 500; osc(120, 'square', .012, lp);
+      noiseLoop(.012, 3800, 6);
+      this.amb.push(setInterval(() => { if (Math.random() < .45) { this.noise(.25, { gain: .18, f: 300 + Math.random() * 500, q: 3, wet: 1 }); this.tone(140 + Math.random() * 60, .5, { type: 'triangle', gain: .05, wet: 1 }); } }, 7000));
+    } else if (name === 'barn') {
+      const lp = ctx.createBiquadFilter(); lp.type = 'lowpass'; lp.frequency.value = 160; lp.Q.value = 8;
+      [41.2, 41.6, 61.7].forEach(f => osc(f, 'sawtooth', .07, lp));
+      const lfo = ctx.createOscillator(), lg = ctx.createGain(); lfo.frequency.value = .08; lg.gain.value = 70; lfo.connect(lg); lg.connect(lp.frequency); lfo.start(); this.amb.push(lfo);
+      noiseLoop(.03, 900, 1);
+      this.amb.push(setInterval(() => this.heartbeat(1), 1300));
+    } else if (name === 'static') {
+      noiseLoop(.06, 2000, .3, 'highpass');
+    }
+  }
+};
+/* ============ jumpscares ============ */
+const SCARE_SRC = {};
+function scareSource(kind) {
+  if (SCARE_SRC[kind]) return SCARE_SRC[kind];
+  let c;
+  if (kind === 'face') c = renderFace({ w: 300, h: 400, seed: 666, scale: 1.55, cy: -.05, smile: 1, open: 1, stretch: 1, teeth: true, eyes: 'hollow', gaunt: 1, hair: .15, hairCol: [.05, .04, .04], light: [.1, .8, .6], ambient: .04, bg: [.01, .01, .01], mode: 'gray', blood: 1.2, contrast: 1.5, grain: .12, clothes: [0, 0, 0], tilt: .12, vignette: .9 });
+  else if (kind === 'face2') c = renderFace({ w: 300, h: 400, seed: 13, scale: 1.7, cy: -.12, smile: 1, open: .45, stretch: .5, teeth: true, eyes: 'pin', gaunt: .8, hair: 0, light: [0, .7, .7], ambient: .03, bg: [0, 0, 0], mode: 'red', contrast: 1.6, grain: .14, clothes: [0, 0, 0], tilt: -.2, vignette: .9 });
+  else if (kind === 'stare') c = renderFace({ w: 300, h: 400, seed: 21, scale: 1.45, smile: .95, open: .3, teeth: true, eyeOpen: 1.5, irisR: .026, gaunt: .5, hair: .4, light: [0, -.2, 1], ambient: .15, bg: [.05, .05, .05], mode: 'cctv', contrast: 1.3, grain: .2, vignette: .9 });
+  else if (kind === 'merry') {
+    c = document.createElement('canvas'); c.width = 400; c.height = 500; const x = c.getContext('2d');
+    const g = x.createRadialGradient(200, 230, 20, 200, 250, 330); g.addColorStop(0, '#3a0808'); g.addColorStop(1, '#000'); x.fillStyle = g; x.fillRect(0, 0, 400, 500);
+    if (MERRY_TRUE_IMG.complete && MERRY_TRUE_IMG.naturalWidth) { x.drawImage(MERRY_TRUE_IMG, -40, 0, 480, 600); }
+    x.globalCompositeOperation = 'multiply'; x.fillStyle = '#b06060'; x.fillRect(0, 0, 400, 500); x.globalCompositeOperation = 'source-over';
+    grainify(x, 400, 500, .22, 7, true);
+  }
+  return (SCARE_SRC[kind] = c);
+}
+const MERRY_TRUE_IMG = svgToImage(merrySVG({ truth: 'blood', wave: false }));
+function tinted(src, color) {
+  const c = document.createElement('canvas'); c.width = src.width; c.height = src.height; const x = c.getContext('2d');
+  x.drawImage(src, 0, 0); x.globalCompositeOperation = 'multiply'; x.fillStyle = color; x.fillRect(0, 0, c.width, c.height); return c;
+}
+let scaring = false;
+function jumpscare(kind = 'face', { dur = 1150, line = '', swap = null, level = 1 } = {}) {
+  if (scaring) return Promise.resolve(); scaring = true;
+  return new Promise(resolve => {
+    const wrap = $('#scare'), cv = $('#scare-cv'), x = cv.getContext('2d');
+    const W = cv.width = innerWidth, H = cv.height = innerHeight;
+    const src = scareSource(kind), alt = swap ? scareSource(swap) : null;
+    const red = tinted(src, '#ff2020'), cyan = tinted(src, '#20ffff');
+    wrap.hidden = false; AU.scream(level);
+    const intense = SETTINGS.intense, start = performance.now(), D = intense ? dur : 800;
+    if (intense) document.body.classList.add('quake');
+    const frame = now => {
+      const t = clamp((now - start) / D);
+      const s0 = alt && t > .55 && t < .7 ? alt : src;
+      const sw = s0.width, sh = s0.height;
+      const zoom = intense ? .88 + .4 * (1 - Math.pow(1 - t, 3)) : 1;
+      const sc = Math.max(H / sh, W / sw * .5) * zoom;
+      const A = intense ? 46 * (1 - t * .7) : 0;
+      const ox = (Math.random() - .5) * A, oy = (Math.random() - .5) * A;
+      const dw = sw * sc, dh = sh * sc, dx = (W - dw) / 2 + ox, dy = (H - dh) / 2 + oy;
+      x.globalCompositeOperation = 'source-over'; x.globalAlpha = 1; x.fillStyle = '#000'; x.fillRect(0, 0, W, H);
+      x.drawImage(s0, dx, dy, dw, dh);
+      if (intense) {
+        const ca = 8 + 26 * Math.random();
+        x.globalCompositeOperation = 'screen'; x.globalAlpha = .55;
+        if (s0 === src) { x.drawImage(red, dx + ca, dy, dw, dh); x.drawImage(cyan, dx - ca, dy + ca * .3, dw, dh); }
+        x.globalCompositeOperation = 'source-over'; x.globalAlpha = 1;
+        for (let i = 0; i < 5; i++) { if (Math.random() < .55) { const y = Math.random() * H, hh = 8 + Math.random() * 70; x.drawImage(cv, 0, y, W, hh, (Math.random() - .5) * 120, y, W, hh); } }
+        if (t < .07) { x.fillStyle = `rgba(255,255,255,${1 - t / .07})`; x.fillRect(0, 0, W, H); }
+        if (t > .38 && t < .42) { x.globalCompositeOperation = 'difference'; x.fillStyle = '#fff'; x.fillRect(0, 0, W, H); x.globalCompositeOperation = 'source-over'; }
+      }
+      NOISE.tick(); x.globalAlpha = .2; x.globalCompositeOperation = 'overlay'; x.drawImage(NOISE.c, 0, 0, W, H); x.globalAlpha = 1; x.globalCompositeOperation = 'source-over';
+      x.fillStyle = 'rgba(0,0,0,.3)'; for (let y = 0; y < H; y += 3) x.fillRect(0, y, W, 1);
+      if (line) { x.font = `${Math.min(W, H) * .09}px "IM Fell English", Georgia, serif`; x.textAlign = 'center'; x.fillStyle = '#e8d8c8'; x.fillText(line, W / 2 + (Math.random() - .5) * A * .4, H * .88); }
+      if (t > .9) { x.fillStyle = `rgba(0,0,0,${(t - .9) * 10})`; x.fillRect(0, 0, W, H); }
+      if (t < 1) requestAnimationFrame(frame);
+      else { wrap.hidden = true; document.body.classList.remove('quake'); scaring = false; resolve(); }
+    };
+    requestAnimationFrame(frame);
+  });
+}
+/* a face that is there for a fraction of a second, and then isn't */
+function subliminal(kind = 'stare', ms = 120, alpha = .35) {
+  if (!SETTINGS.intense || scaring) return;
+  const wrap = $('#ghost'); const cv = $('#ghost-cv'); const src = scareSource(kind);
+  cv.width = src.width; cv.height = src.height; cv.getContext('2d').drawImage(src, 0, 0);
+  wrap.style.opacity = alpha; wrap.hidden = false; setTimeout(() => { wrap.hidden = true; }, ms);
+}
+/* ============ the public website ============ */
+const CODE = '47193';
+const isStock = () => store.get('gh-stock') === '1';
+const isUnlocked = () => store.get('gh-unlocked') === '1';
+let CLEAN = [];
+const onClean = fn => CLEAN.push(fn);
+function every(ms, fn) { const id = setInterval(fn, ms); onClean(() => clearInterval(id)); return id; }
+function later(ms, fn) { const id = setTimeout(fn, ms); onClean(() => clearTimeout(id)); return id; }
+function loop(fn) { let on = true, id; const f = t => { if (!on) return; fn(t); id = requestAnimationFrame(f); }; id = requestAnimationFrame(f); onClean(() => { on = false; cancelAnimationFrame(id); }); }
+function listen(el, ev, fn, opt) { el.addEventListener(ev, fn, opt); onClean(() => el.removeEventListener(ev, fn, opt)); }
+
+function toast(msg, ms = 3200) { const t = $('#toast'); t.textContent = msg; t.hidden = false; clearTimeout(toast.id); toast.id = setTimeout(() => { t.hidden = true; }, ms); }
+function openModal(html, cls = '') {
+  const m = $('#modal'); m.className = 'modal ' + cls; $('#modal-body').innerHTML = html; m.hidden = false;
+  $('#modal-x').focus();
+}
+function closeModal() { const m = $('#modal'); m.hidden = true; $('#modal-body').innerHTML = ''; if (closeModal.after) { const f = closeModal.after; closeModal.after = null; f(); } }
+
+const PIG_MINI = `<svg viewBox="0 0 40 40" aria-hidden="true"><path d="M8 15 Q7 4 15 5 Q20 8 25 5 Q33 4 32 15 Q32 25 30 30 Q28 38 25 35 Q23 28 20 28 Q17 28 15 35 Q12 38 10 30 Q8 25 8 15Z" fill="#fff" stroke="#12A89D" stroke-width="2.4" stroke-linejoin="round"/><circle cx="15.5" cy="16" r="1.8" fill="#10202a"/><circle cx="24.5" cy="16" r="1.8" fill="#10202a"/><path d="M15 21 q5 4 10 0" stroke="#10202a" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg>`;
+
+const NAV = [['home', 'Home'], ['story', 'Our Story'], ['products', 'Products'], ['tips', 'Smile Tips'], ['careers', 'Careers'], ['contact', 'Contact']];
+let cartN = +(store.get('gh-cart') || 0);
+function publicShell(route, inner) {
+  return `<div class="pub ${isStock() ? 'is-stock' : ''}">
+  <header class="pub-nav"><div class="wrap nav-in">
+    <a class="logo" href="#home" aria-label="Gleamwell home"><span class="logo-pig">${PIG_MINI}</span><span class="logo-word">Gleamwell<small>Smile Co. · est. 1962</small></span></a>
+    <nav class="nav-links" aria-label="Main">${NAV.map(([k, l]) => `<a href="#${k}" ${k === route ? 'aria-current="page"' : ''}>${l}</a>`).join('')}</nav>
+    <a class="cart" href="#products" aria-label="Cart"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M2 3h3l2.6 12.4a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 2-1.6L21 7H6"/></svg><span id="cart-n">${cartN}</span></a>
+  </div></header>
+  <main id="main">${inner}</main>
+  <footer class="pub-foot"><div class="wrap foot-in">
+    <div class="foot-brand"><span class="logo-pig">${PIG_MINI}</span><div><b>Gleamwell Smile Co.</b><p>1 Harrow Lane, Harlow County<br>Smile forever.</p></div></div>
+    <div class="foot-cols">
+      <div><b>Shop</b><a href="#products">All products</a><a href="#tips">Smile tips</a><a href="#products">Where to buy</a></div>
+      <div><b>Company</b><a href="#story">Our story</a><a href="#careers">Careers</a><a href="#contact">Book a visit</a></div>
+      <div><b>Help</b><a href="#contact">FAQ</a><a href="#contact">Product recalls</a><a href="#login" class="staff-link">Staff login</a></div>
+    </div>
+  </div>
+  <div class="wrap foot-legal"><span>© 1962–2026 Gleamwell Smile Co. All smiles reserved${isStock() ? '. Including yours, GW-P-1205' : ''}.</span><span>A fictional company. This site is satire.</span></div></footer>
+</div>`;
+}
+
+/* ---------- HOME ---------- */
+function pageHome() {
+  const night = new Date().getHours() < 4;
+  const stock = isStock();
+  return publicShell('home', `
+  <section class="hero ${night ? 'night' : ''}">
+    <div class="hero-art">${heroSVG()}</div>
+    <div class="wrap hero-copy">
+      <span class="kicker">${stock ? 'Welcome back, GW-P-1205' : 'Family-run since 1962'}</span>
+      <h1>${night ? "We're closed.<br>Stop smiling." : 'Smile brighter.<br>Smile forever.'}</h1>
+      <p>${night ? 'The clinic is closed. Every patient is resting in their chair. Please do not come in to check on them.' : 'For over sixty years the Gleam family has cared for smiles the old-fashioned way, with gentle hands, honest products and a little bit of magic. Our patients never stop smiling. Just ask them.'}</p>
+      <div class="ctas"><a class="btn btn-red" href="#products">Shop the smile kit</a><a class="btn btn-white" href="#contact">Book a visit</a></div>
+    </div>
+  </section>
+  <div class="band"><div class="wrap band-in"><span>Family-run since 1962</span><span>11 million smiles</span><span>Gentle, painless care</span><span>Dentist recommended</span><span class="hid">the teeth are real ① 4</span></div></div>
+
+  <section class="sec"><div class="wrap">
+    <div class="sec-head"><span class="kicker">The Gleamwell difference</span><h2>Care that sticks with you.</h2></div>
+    <div class="values">
+      <article class="value"><div class="v-ico v-red"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.5-9.3C1.1 8.3 3.3 5 6.6 5c2 0 3.4 1.1 4.4 2.5C12 6.1 13.4 5 15.4 5c3.3 0 5.5 3.3 4.1 6.7C19.5 16.4 12 21 12 21z"/></svg></div><h3>Gentle hands</h3><p>Every patient is greeted by name, settled into a warm chair and cared for by the same family that started it all.</p></article>
+      <article class="value"><div class="v-ico v-yellow"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9.5h.01M15 9.5h.01"/></svg></div><h3>Smiles that last forever</h3><p>Our Forever Smile™ treatment keeps you smiling at every stage of life. Patients tell us they simply can't stop.</p></article>
+      <article class="value"><div class="v-ico v-green"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg></div><h3>From our family to yours</h3><p>Every Gleamwell product carries a little piece of the clinic. Some carry a little more than others.</p></article>
+    </div>
+  </div></section>
+
+  <section class="sec merry-sec"><div class="wrap merry-in">
+    <div class="merry-stage"><button class="merry-btn" id="home-merry" type="button" aria-label="Pearl the tooth">${merrySVG({ truth: false })}</button><div class="speech" id="merry-speech">Hi friend! I'm Pearl!</div></div>
+    <div class="merry-copy"><span class="kicker">Meet our mascot</span><h2>Say hello to Pearl.</h2>
+      <p>Pearl has been the smiling face of Gleamwell since 1974. Kids adore her, parents trust her, and every morning at six she plays over the clinic speakers to remind our patients how happy they are.</p>
+      <p>Pearl is always smiling. Pearl has never once stopped smiling.</p>
+      <button class="btn btn-red" id="sing" type="button"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>Sing the brushing song</button>
+    </div>
+  </div></section>
+
+  <section class="sec sec-tint"><div class="wrap">
+    <div class="sec-head row"><div><span class="kicker">Bestsellers</span><h2>Everything for a brighter smile.</h2></div><a class="link-arrow" href="#products">See all products →</a></div>
+    <div class="prod-grid">${PRODUCTS.slice(0, 3).map(prodCard).join('')}</div>
+  </div></section>
+
+  <section class="sec"><div class="wrap">
+    <div class="sec-head"><span class="kicker">Reviews</span><h2>Families love Gleamwell.</h2></div>
+    <div class="reviews">
+      ${[['Carla M.', 'Topeka, KS', 'My teeth have never been this white. My sister asked where I got them done and I couldn\'t stop smiling long enough to answer.', 31],
+         ['Ben & Tasha O.', 'Fresno, CA', 'Our kids love the Little Smiles gummies. They ask for them every night and they smile all the way through dinner. All the way through.', 32],
+         ['Greg L.', 'Akron, OH', 'Had the Forever Smile done in March. Haven\'t stopped smiling since. I can\'t. Five stars.', 33]]
+        .map(([n, c, q, s]) => `<figure class="review"><div class="stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>“${q}”</blockquote><figcaption><canvas class="rev-face" data-seed="${s}" width="56" height="56" aria-hidden="true"></canvas><span><b>${n}</b>${c}</span></figcaption></figure>`).join('')}
+    </div>
+  </div></section>
+
+  <section class="sec news"><div class="wrap news-in">
+    <div><h2>Join the Gleamwell family</h2><p>Brushing tips, new products and coupons, once a month. We'll never share your address.</p></div>
+    <form id="news-form" class="news-form"><label class="sr" for="news-email">Email address</label><input id="news-email" type="email" required placeholder="you@example.com"><button class="btn btn-red" type="submit">Sign me up</button></form>
+    <p id="news-msg" class="news-msg" role="status"></p>
+  </div></section>`);
+}
+function mountHome() {
+  $$('.rev-face').forEach(c => { const f = renderFace({ w: 112, h: 112, seed: +c.dataset.seed, smile: .95, open: .15, teeth: true, scale: .85, cy: .12, hair: .8, tone: [[.86, .66, .54], [.6, .42, .3], [.9, .72, .6]][c.dataset.seed % 3], bg: [.75, .93, .9], grain: .03 }); c.width = 112; c.height = 112; c.getContext('2d').drawImage(f, 0, 0); });
+  if (isStock()) $$('#hero-merry .mpupil, #home-merry .mpupil').forEach(p => p.setAttribute('fill', '#5a4a1a'));
+  const pupils = $$('.mpupil');
+  let idle = performance.now();
+  listen(window, 'pointermove', e => {
+    for (const p of pupils) {
+      const r = p.ownerSVGElement.getBoundingClientRect(); const cx = r.left + r.width / 2, cy = r.top + r.height * .37;
+      const dx = e.clientX - cx, dy = e.clientY - cy, d = Math.hypot(dx, dy) || 1, k = Math.min(1, d / 400) * 3.5;
+      p.parentNode.setAttribute('transform', `translate(${(dx / d * k).toFixed(2)} ${(dy / d * k).toFixed(2)})`);
+    }
+    idle = performance.now(); const lf = $('#loftface'); if (lf && lf.getAttribute('opacity') !== '0' && !$('.hero.night')) lf.setAttribute('opacity', '0');
+  }, { passive: true });
+  listen(window, 'scroll', () => { idle = performance.now(); }, { passive: true });
+  // idle: someone at the window of room 7
+  every(1000, () => { if (performance.now() - idle > 30000) { const lf = $('#loftface'); if (lf && lf.getAttribute('opacity') === '0') { lf.setAttribute('opacity', '1'); AU.breath(2); } } });
+  const f7 = $('#far7'); if (f7) listen(f7, 'click', () => { AU.knock(0); AU.knock(.3); AU.knock(.6); toast('Room 7 is closed.'); });
+  let clicks = 0, clickT = 0;
+  const lines = ["Hi friend! I'm Pearl!", 'Brush twice a day!', 'Hee hee! Sparkly!', 'Please stop poking me, friend.', ''];
+  listen($('#home-merry'), 'click', async () => {
+    const now = performance.now(); if (now - clickT > 2500) clicks = 0; clickT = now; clicks++;
+    AU.tone(520 + clicks * 80, .12, { type: 'triangle', gain: .1 });
+    $('#merry-speech').textContent = lines[Math.min(clicks - 1, 3)];
+    if (clicks >= 5) {
+      clicks = 0; const btn = $('#home-merry');
+      btn.innerHTML = merrySVG({ truth: true, wave: false }); $('#merry-speech').textContent = 'help us';
+      AU.glitch(); AU.speak('help us', { rate: .55, pitch: .1, volume: .6 }); subliminal('stare', 90, .25);
+      await wait(1400); if (!btn.isConnected) return;
+      btn.innerHTML = merrySVG({ truth: false }); $('#merry-speech').textContent = 'Hee hee! Just kidding, friend!';
+    }
+  });
+  listen($('#sing'), 'click', () => { AU.init(); AU.jingle('happy'); $('#merry-speech').textContent = '♪ Gleamwell, Gleamwell, smile all day ♪'; });
+  listen($('#news-form'), 'submit', e => { e.preventDefault(); $('#news-msg').textContent = "Thanks for signing up! We'll be in touch. We already had your address, but it's nice that you offered."; });
+  bindProductButtons();
+}
+
+/* ---------- STORY ---------- */
+function pageStory() {
+  const tl = [
+    ['1962', 'One chair and a dream', 'Dr. Walter "Doc" Gleam opens a one-chair practice above the hardware store in Harlow County and pulls his first tooth for a quarter.'],
+    ['1974', 'The Forever Smile™', 'After years of research, Doc Gleam introduces the Forever Smile™: a treatment that keeps a smile in place for good. Pearl joins the family the same year.'],
+    ['1981', 'Gleamwell goes national', 'Gleamwell toothpaste arrives in stores across the country. Families can finally take a little piece of the clinic home.'],
+    ['1988', 'The Room 7 wing opens', 'Our newest wing opens with a ribbon-cutting for the whole town.', true],
+    ['1989', 'Room 7 closes', ''],
+    ['2003', 'Doc Gleam retires', 'Walter steps back from the business and retires to the clinic. He is still there.'],
+    ['2026', 'Still family-run', 'Today Gleamwell cares for more than 11 million smiles. Our family keeps growing every year.']
+  ];
+  return publicShell('story', `
+  <section class="page-head"><div class="wrap"><span class="kicker">Our story</span><h1>Sixty years of smiles.</h1><p class="lead">Gleamwell began with one man who believed a smile is the most important thing a person owns. He was right. He was more right than anybody expected.</p></div></section>
+  <section class="sec"><div class="wrap founder">
+    <figure class="photo-frame" id="founder" tabindex="0" aria-label="Portrait of Dr. Walter Gleam, 1962"><canvas id="founder-a" width="240" height="300"></canvas><canvas id="founder-b" width="240" height="300" aria-hidden="true"></canvas><figcaption>Dr. Walter Gleam, 1962</figcaption></figure>
+    <div class="founder-copy"><span class="kicker">Our founder</span><h2>Dr. Walter "Doc" Gleam</h2>
+      <p>Walter grew up the son of a dock worker who never once smiled. He swore that one day nobody who sat in his chair would ever have to stop.</p>
+      <p>"A smiling patient is a still patient," he liked to say. "And a still patient never fights." He spent the rest of his life making sure every patient at Gleamwell was both.</p>
+      <blockquote class="pull">“Hold a smile in place long enough and the person behind it stops arguing.”<cite>Dr. Walter Gleam, 1974</cite></blockquote>
+    </div>
+  </div></section>
+  <section class="sec sec-tint"><div class="wrap">
+    <div class="sec-head"><span class="kicker">Timeline</span><h2>How we got here.</h2></div>
+    <ol class="timeline">${tl.map(([y, t, d, photo]) => `<li><span class="tl-year">${y}</span><div class="tl-body"><h3>${t}</h3>${d ? `<p>${d}</p>` : ''}${photo ? '<figure class="tl-photo"><canvas id="barn-photo" width="480" height="320" aria-label="Old photograph of the Room 7 wing opening"></canvas><figcaption>Wing 7 ribbon-cutting, June 1988. Everyone came.</figcaption></figure>' : ''}</div></li>`).join('')}</ol>
+  </div></section>`);
+}
+function mountStory() {
+  const a = renderFace({ w: 240, h: 300, seed: 1962, smile: .45, open: .1, teeth: true, age: 1, hair: 0, mode: 'sepia', bg: [.72, .7, .66], clothes: [.82, .8, .76], grain: .1, look: [.1, 0] });
+  const b = renderFace({ w: 240, h: 300, seed: 1962, smile: 1, open: .35, teeth: true, eyes: 'hollow', age: 1, hair: 0, mode: 'sepia', bg: [.6, .58, .54], clothes: [.82, .8, .76], grain: .14, blood: .6, contrast: 1.25 });
+  $('#founder-a').getContext('2d').drawImage(a, 0, 0);
+  const bx = $('#founder-b').getContext('2d'); bx.drawImage(b, 0, 0); grainify(bx, 240, 300, .05, 3, true); scrawl(bx, '② 7', 182, 262, 40, '#5a0505', 2);
+  const fr = $('#founder'); let timer = null, shown = false;
+  const start = () => { clearTimeout(timer); timer = setTimeout(() => { fr.classList.add('reveal'); shown = true; AU.breath(1.6); AU.tone(1400, .8, { type: 'sine', gain: .03, wet: .6 }); }, 2500); };
+  const stop = () => { clearTimeout(timer); if (shown) timer = setTimeout(() => { fr.classList.remove('reveal'); shown = false; }, 1600); };
+  ['pointerenter', 'pointerdown', 'focus'].forEach(e => listen(fr, e, start));
+  ['pointerleave', 'pointerup', 'pointercancel', 'blur'].forEach(e => listen(fr, e, stop));
+  onClean(() => clearTimeout(timer));
+  const bp = $('#barn-photo'); if (bp) bp.getContext('2d').drawImage(renderBarnPhoto(480, 320), 0, 0);
+}
+
+/* ---------- PRODUCTS ---------- */
+const STD = { act: 'Sodium fluoride 0.24% (0.15% w/v fluoride ion)', use: 'Anticavity toothpaste', warn: 'Keep out of reach of children under 6. If more than used for brushing is swallowed, get medical help.' };
+const PRODUCTS = [
+  { id: 'paste', kind: 'paste', cat: 'paste', name: 'Gleamwell Whiten+ Toothpaste', price: 4.49, blurb: 'Clinically brighter in seven days. You won\'t be able to stop smiling.', ...STD },
+  { id: 'kids', kind: 'kids', cat: 'kids', name: "Pearl's Bubblegum Kids Toothpaste", price: 3.99, blurb: 'Gentle, sparkly and sugar-free. Pearl\'s personal favorite.', ...STD },
+  { id: 'brush', kind: 'brush', cat: 'tools', name: 'Gleamwell Sonic Brush', price: 49.99, blurb: 'Gentle enough for twice a day. Strong enough for anything.', act: 'None', use: 'Removes plaque. Removes everything.', warn: 'Do not use on anyone who is not asleep.' },
+  { id: 'strips', kind: 'strips', cat: 'whitening', name: 'Overnight Whitening Strips', price: 24.99, blurb: 'Wear them while you sleep. Wake up smiling. Keep smiling.', act: 'Hydrogen peroxide 6%', use: 'Tooth whitening', warn: 'Do not wear for more than one night. If you wake up still wearing them, do not take them off yourself.' },
+  { id: 'gummies', kind: 'gummies', cat: 'kids', name: 'Little Smiles Gummy Vitamins', price: 8.99, blurb: 'A lunchbox favorite shaped like tiny teeth. Made by little smilers, for little smilers.', act: 'Calcium, vitamin D3, fluoride', use: 'Supports strong teeth in children', warn: 'Contains enamel from Gleamwell donors (junior).' },
+  { id: 'veneers', kind: 'veneers', cat: 'whitening', name: 'Forever Smile™ Veneer Kit (Limited)', price: 299.0, blurb: 'Small batch. Supply varies with intake. Every set is crafted from genuine enamel.', act: 'Human enamel 100%', use: 'Permanent smile', warn: 'Do not attempt removal. Do not ask where they came from.', limited: true }
+];
+function prodCard(p) {
+  return `<article class="prod" data-cat="${p.cat}"><button class="prod-img" type="button" data-detail="${p.id}" aria-label="Details for ${esc(p.name)}">${productSVG(p.kind)}</button>
+  <div class="prod-body"><h3>${p.name}</h3><p>${p.blurb}</p><div class="prod-foot"><span class="price">$${p.price.toFixed(2)}</span><button class="btn btn-sm btn-red" type="button" data-add="${p.id}">Add to cart</button></div></div></article>`;
+}
+function pageProducts() {
+  return publicShell('products', `
+  <section class="page-head"><div class="wrap"><span class="kicker">Products</span><h1>Smile essentials, from our family to yours.</h1><p class="lead">Every Gleamwell product is developed, tested and packed by the same family that started it all.</p></div></section>
+  <section class="sec"><div class="wrap">
+    <div class="chips" role="group" aria-label="Filter products">${[['all', 'All'], ['paste', 'Toothpaste'], ['tools', 'Brushes'], ['whitening', 'Whitening'], ['kids', 'For kids']].map(([k, l], i) => `<button class="chip" type="button" data-f="${k}" aria-pressed="${i === 0}">${l}</button>`).join('')}</div>
+    <div class="prod-grid" id="prod-grid">${PRODUCTS.map(prodCard).join('')}</div>
+  </div></section>`);
+}
+function nutrition(p) {
+  return `<div class="nf"><div class="nf-h">Drug Facts</div>
+  <table><tbody><tr><th>Active ingredient</th><td>${p.act}</td></tr><tr><th>Purpose</th><td>${p.use}</td></tr></tbody></table>
+  <p class="nf-ing"><b>Warnings:</b> ${p.warn}</p>
+  ${p.limited ? '<p class="nf-ing"><b>Inactive ingredients:</b> gratitude, porcelain glaze, a little bit of someone.</p><p class="nf-fine">Lot no. ③ 1 · Crafted in Room 7 · Each set is unique and may contain fillings from a previous owner. If a tooth looks familiar, please return it to Gleamwell. Someone is looking for it.</p>' : '<p class="nf-fine">Brush thoroughly at least twice daily, or as directed by a dentist. Store at room temperature.</p>'}</div>`;
+}
+function bindProductButtons() {
+  $$('[data-add]').forEach(b => listen(b, 'click', () => {
+    const p = PRODUCTS.find(x => x.id === b.dataset.add);
+    if (p.limited) { toast('Sold out. Supply is replenished as new donors arrive. We are always looking for new donors.'); AU.buzz(); return; }
+    cartN++; store.set('gh-cart', cartN); const n = $('#cart-n'); if (n) n.textContent = cartN; AU.beep(1320); toast(`Added ${p.name} to your cart.`);
+  }));
+  $$('[data-detail]').forEach(b => listen(b, 'click', () => {
+    const p = PRODUCTS.find(x => x.id === b.dataset.detail);
+    openModal(`<div class="pd"><div class="pd-img">${productSVG(p.kind)}</div><div class="pd-copy"><h2 id="modal-title">${p.name}</h2><p class="price">$${p.price.toFixed(2)}</p><p>${p.blurb}</p>${nutrition(p)}</div></div>`, 'm-light');
+  }));
+}
+function mountProducts() {
+  $$('.chip').forEach(c => listen(c, 'click', () => {
+    $$('.chip').forEach(x => x.setAttribute('aria-pressed', x === c)); const f = c.dataset.f;
+    $$('#prod-grid .prod').forEach(p => { p.hidden = !(f === 'all' || p.dataset.cat === f); });
+  }));
+  bindProductButtons();
+}
+
+/* ---------- SMILE TIPS + clinic tour video ---------- */
+function pageTips() {
+  const R = [
+    ['The two-minute brush', '2 min', ['A Gleamwell Sonic Brush', 'A pea-sized blob of Whiten+', 'A mirror'], ['Brush every surface in small circles for two full minutes.', 'Smile at yourself in the mirror until your reflection smiles back.', 'If it keeps smiling after you stop, call the clinic.']],
+    ['Floss like Doc Gleam', '1 min', ['Gleamwell floss', 'Patience'], ['Wind the floss around two fingers.', 'Slide it gently between each tooth. Count them as you go.', 'If you count more teeth than you had yesterday, that\'s normal. Keep counting.']],
+    ["Pearl's bedtime routine", '5 min', ['Little Smiles gummies', 'Pearl\'s Bubblegum toothpaste', 'A night light'], ['Brush with your little one and sing the brushing song together.', 'Tuck them in nice and snug, smiling. Smiling helps them sleep.', 'Don\'t check on them if you hear them giggling at night. Pearl is with them.']]
+  ];
+  return publicShell('tips', `
+  <section class="page-head"><div class="wrap"><span class="kicker">Smile tips</span><h1>Brush like a Gleam.</h1><p class="lead">Simple habits from our family clinic. Start with a tour of where it all happens.</p></div></section>
+  <section class="sec"><div class="wrap">
+    <div class="video"><div class="video-screen"><canvas id="tour" width="640" height="360" aria-label="Gleamwell clinic tour video"></canvas><button class="v-big" id="v-big" type="button" aria-label="Play the clinic tour"><svg width="34" height="34" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4v16l13-8z"/></svg></button></div>
+      <div class="v-bar"><button id="v-play" type="button" class="v-btn" aria-label="Play">▶</button><label class="sr" for="v-seek">Seek</label><input id="v-seek" type="range" min="0" max="2400" value="0" step="1"><span id="v-time" class="v-time">0:00 / 0:24</span></div>
+      <p class="v-cap">Take the Gleamwell clinic tour (1994). Our patients are resting, so we kept them off camera.</p></div>
+    <div class="recipes">${R.map(([n, t, ing, st]) => `<article class="recipe"><div class="r-head"><h3>${n}</h3><span class="pill-time">${t}</span></div><h4>You'll need</h4><ul>${ing.map(i => `<li>${i}</li>`).join('')}</ul><h4>How to</h4><ol>${st.map(i => `<li>${i}</li>`).join('')}</ol></article>`).join('')}</div>
+  </div></section>`);
+}
+const MERRY_IMG = svgToImage(merrySVG({ wave: false }));
+function mountTips() {
+  const cv = $('#tour'), x = cv.getContext('2d'), W = 640, H = 360, DUR = 24;
+  let t = 0, playing = false, last = 0, flashed = false, startedSong = false;
+  const stare = scareSource('face');
+  const seek = $('#v-seek'), play = $('#v-play'), big = $('#v-big'), lab = $('#v-time');
+  const fmt = s => `0:${String(Math.floor(s)).padStart(2, '0')}`;
+  function sky() { const g = x.createLinearGradient(0, 0, 0, H); g.addColorStop(0, '#8FD7EE'); g.addColorStop(1, '#E6F8FB'); x.fillStyle = g; x.fillRect(0, 0, W, H); }
+  function hills(off = 0) { x.fillStyle = '#86C66A'; x.beginPath(); x.moveTo(0, 240); for (let i = 0; i <= W; i += 20) x.lineTo(i, 236 + Math.sin((i + off) / 90) * 10); x.lineTo(W, H); x.lineTo(0, H); x.fill(); x.fillStyle = '#4b5157'; x.fillRect(0, 316, W, 44); x.fillStyle = '#F2E7B8'; for (let i = 0; i < 8; i++) x.fillRect(((i * 100 - off) % 800 + 800) % 800 - 100, 336, 50, 4); }
+  function caption(s) { x.fillStyle = 'rgba(0,0,0,.55)'; x.fillRect(0, H - 52, W, 52); x.fillStyle = '#fff'; x.font = '600 22px Fredoka, Nunito, sans-serif'; x.textAlign = 'center'; x.fillText(s, W / 2, H - 19); }
+  function pearl(cx, cy, s, bob = 0) { if (MERRY_IMG.complete && MERRY_IMG.naturalWidth) x.drawImage(MERRY_IMG, cx - 80 * s, cy - 100 * s + bob, 160 * s, 200 * s); }
+  function clinic(cx, cy, s) { x.save(); x.translate(cx, cy); x.scale(s, s); x.fillStyle = '#fff'; x.fillRect(-150, -90, 300, 170); x.fillStyle = '#12A89D'; x.fillRect(-156, -98, 312, 12); x.fillStyle = '#BFE6F2'; for (let i = 0; i < 7; i++) x.fillRect(-138 + i * 40, -72, 30, 28); x.fillStyle = '#141b1f'; x.fillRect(-138 + 6 * 40, -72, 30, 28); x.fillStyle = '#5FB9C9'; x.fillRect(-36, -10, 72, 90); x.strokeStyle = '#0E8A81'; x.lineWidth = 4; x.strokeRect(-36, -10, 72, 90); x.beginPath(); x.moveTo(0, -10); x.lineTo(0, 80); x.stroke(); x.restore(); }
+  function draw() {
+    x.save();
+    if (t < 5) { sky(); hills(t * 30); pearl(W / 2, 200, 1, Math.abs(Math.sin(t * 4)) * -16); x.fillStyle = '#0E8A81'; x.font = '700 40px Fredoka, Nunito, sans-serif'; x.textAlign = 'center'; x.globalAlpha = clamp(t / 1.2); x.fillText('Welcome to Gleamwell!', W / 2, 70); x.globalAlpha = 1; }
+    else if (t < 10) { const k = (t - 5) / 5; sky(); hills(150); clinic(W / 2, 220, 1 + k * .35); caption('Our patients love their visits.'); x.fillStyle = 'rgba(255,255,255,.9)'; x.font = '14px Nunito, sans-serif'; x.textAlign = 'center'; x.fillText('(patients not pictured)', W / 2, 40); }
+    else if (t < 14.5) { x.fillStyle = '#e6f2f2'; x.fillRect(0, 0, W, H); x.fillStyle = '#6b7880'; x.fillRect(0, 210, W, 40); x.fillStyle = '#4a565e'; for (let i = -1; i < 14; i++) x.fillRect(((i * 60 + t * 80) % (W + 60)) - 60, 210, 6, 40); for (let i = 0; i < 6; i++) { const px = ((i * 130 + t * 80) % (W + 130)) - 130; x.fillStyle = '#fff'; x.beginPath(); x.roundRect ? x.roundRect(px, 176, 100, 34, 10) : x.rect(px, 176, 100, 34); x.fill(); x.fillStyle = '#12A89D'; x.fillRect(px + 8, 184, 26, 18); x.fillStyle = '#0E8A81'; x.fillRect(px + 100, 182, 16, 22); } caption('Every tube is made with care.'); }
+    else if (t < 17) { sky(); hills(400); pearl(W / 2, 250, 1.8, Math.sin(t * 6) * 6); caption('See you soon, friend!'); }
+    else if (t < 17.22) {
+      x.fillStyle = '#000'; x.fillRect(0, 0, W, H); x.globalAlpha = .95; x.drawImage(stare, W / 2 - 165, -40, 330, 440); x.globalAlpha = 1;
+      x.fillStyle = 'rgba(0,0,0,.4)'; for (let y = 0; y < H; y += 3) x.fillRect(0, y, W, 1); scrawl(x, '④ 9', W - 100, H - 110, 64, '#d01818', 4);
+      x.fillStyle = '#d0d0d0'; x.font = '16px "VT323", monospace'; x.textAlign = 'left'; x.fillText('ROOM 7  02:14:09', 18, 28);
+    }
+    else { const k = clamp((t - 17.22) / 1.5); x.fillStyle = '#F2FBFA'; x.fillRect(0, 0, W, H); x.globalAlpha = k; x.fillStyle = '#0E8A81'; x.font = '700 46px Fredoka, Nunito, sans-serif'; x.textAlign = 'center'; x.fillText('Gleamwell', W / 2, 150); x.fillStyle = '#1C2A30'; x.font = '22px Nunito, sans-serif'; x.fillText('Smile brighter. Smile forever.', W / 2, 190); x.globalAlpha = 1;
+      if (t > 21) { x.globalAlpha = clamp((t - 21) / 1.5) * .9; pearl(W / 2, 290, .55, 0); x.globalAlpha = 1; x.fillStyle = '#7a7a7a'; x.font = '14px Nunito, sans-serif'; x.fillText('see you soon', W / 2, 345); } }
+    x.globalAlpha = .07; x.drawImage(NOISE.c, 0, 0, W, H); x.globalAlpha = 1;
+    x.fillStyle = 'rgba(255,255,255,.75)'; x.font = '18px "VT323", monospace'; x.textAlign = 'right'; x.fillText('GLEAMWELL TOUR \'94', W - 14, 24);
+    x.restore();
+  }
+  function setT(v) { t = clamp(v, 0, DUR); seek.value = Math.round(t * 100); lab.textContent = `${fmt(t)} / 0:24`; }
+  function toggle() { AU.init(); playing = !playing; if (t >= DUR - .05) { setT(0); flashed = false; } play.textContent = playing ? '❚❚' : '▶'; play.setAttribute('aria-label', playing ? 'Pause' : 'Play'); big.hidden = true; last = performance.now(); if (playing && t < .5 && !startedSong) { startedSong = true; AU.jingle('happy'); } }
+  listen(play, 'click', toggle); listen(big, 'click', toggle); listen(cv, 'click', toggle);
+  listen(seek, 'input', () => { big.hidden = true; setT(seek.value / 100); draw(); });
+  loop(now => {
+    if (playing) { const prev = t; setT(t + (now - last) / 1000); if (prev < 17 && t >= 17 && !flashed) { flashed = true; AU.glitch(); } if (t >= DUR) { playing = false; play.textContent = '▶'; big.hidden = false; } }
+    last = now; NOISE.tick(); draw();
+  });
+}
+
+/* ---------- CAREERS ---------- */
+function pageCareers() {
+  const jobs = [
+    ['Dental Hygienist', 'Full time · Main clinic', ['Clean and polish with a gentle touch', 'Keep every patient calm, quiet and comfortable', 'Smile at the patients. They copy you.']],
+    ['Packing Associate', 'Full time · Plant 2', ['Operate filling and capping machines', 'Check every veneer kit for matching sets', 'Report any kits that are warm']],
+    ['Night Attendant: Room 7', 'Overnight · Room 7 observation desk', ['Remain at the observation desk until dawn', 'Under no circumstances unlock Room 7', 'Note any humming in the logbook', 'Never answer when you are called by name', 'Only pass meals through the slot', 'Wear the provided earplugs at all times'], true],
+    ['Patient Intake Coordinator', 'Full time · Front desk', ['Welcome walk-ins and new arrivals', 'Make sure every patient feels at home', 'Make sure every patient stays']]
+  ];
+  return publicShell('careers', `
+  <section class="page-head"><div class="wrap"><span class="kicker">Careers</span><h1>Join our smiling team.</h1><p class="lead">At Gleamwell you're not just staff, you're family. Once you're part of the Gleamwell family, you're part of it for life.</p></div></section>
+  <section class="sec"><div class="wrap">
+    <div class="perks">${[['Free dental for life', 'Full Forever Smile™ coverage. Mandatory after year one.'], ['On-site housing', 'Comfortable chairs, sorry, rooms, right in the clinic.'], ['Job security', 'Nobody has ever left Gleamwell.'], ['Family culture', 'Everyone here is smiling. You will be too.']].map(([a, b]) => `<div class="perk"><b>${a}</b><span>${b}</span></div>`).join('')}</div>
+    <h2 class="h-open">Open positions</h2>
+    <div class="jobs">${jobs.map(([t, m, d, filled], i) => `<details class="job" ${i === 2 ? 'id="night-shepherd"' : ''}><summary><span><b>${t}</b><small>${m}</small></span><span class="job-x" aria-hidden="true">+</span></summary><div class="job-body"><h4>Responsibilities</h4><ul>${d.map(l => `<li>${l}</li>`).join('')}</ul>${filled ? '<button class="btn btn-sm btn-white" type="button" id="ns-apply">Apply for this role</button><p class="filled" id="ns-msg" role="status"></p>' : '<button class="btn btn-sm btn-red" type="button" data-jump="apply-form">Apply below</button>'}</div></details>`).join('')}</div>
+    <form class="apply" id="apply-form" aria-labelledby="apply-h"><h2 id="apply-h">Apply now</h2>
+      <div class="f-row"><label for="a-name">Full name</label><input id="a-name" required autocomplete="name"></div>
+      <div class="f-row"><label for="a-email">Email</label><input id="a-email" type="email" required autocomplete="email"></div>
+      <div class="f-row"><label for="a-role">Position</label><select id="a-role"><option>Dental Hygienist</option><option>Packing Associate</option><option>Patient Intake Coordinator</option></select></div>
+      <div class="f-row"><label for="a-why">Why do you want to join the Gleamwell family?</label><textarea id="a-why" rows="4" required></textarea></div>
+      <button class="btn btn-red" type="submit">Submit application</button>
+      <div class="apply-result" id="apply-result" role="status" hidden></div>
+    </form>
+  </div></section>`);
+}
+function mountCareers() {
+  $$('[data-jump]').forEach(b => listen(b, 'click', () => { const f = document.getElementById(b.dataset.jump); f.scrollIntoView({ behavior: 'smooth', block: 'start' }); later(500, () => $('#a-name').focus({ preventScroll: true })); }));
+  const ns = $('#ns-apply');
+  if (ns) listen(ns, 'click', async () => { const m = $('#ns-msg'); ns.disabled = true; let s = ''; for (let i = 0; i < 7; i++) { s += 'Position filled. '; m.textContent = s; AU.click(); await wait(260); if (!m.isConnected) return; } m.textContent = s + 'Position fi'; });
+  listen($('#apply-form'), 'submit', async e => {
+    e.preventDefault(); const name = ($('#a-name').value.trim().split(' ')[0] || 'friend');
+    const r = $('#apply-result'); r.hidden = false; r.className = 'apply-result'; r.textContent = 'Reviewing your application…';
+    await wait(2200); if (!r.isConnected) return;
+    r.classList.add('done');
+    r.innerHTML = `<b>Congratulations, ${esc(name)}. You have a lovely smile.</b><p>We've reviewed your application, your photos and your dental records. A driver will collect you. Please don't bring anything with you. You won't need it.</p><p>Your first Forever Smile™ appointment is already booked. Your family can come too.</p><p class="sig">— Gleamwell Intake · ref ⑤ 3</p>`;
+    AU.knock(.4, .4);
+  });
+}
+
+/* ---------- CONTACT ---------- */
+function pageContact() {
+  return publicShell('contact', `
+  <section class="page-head"><div class="wrap"><span class="kicker">Book a visit</span><h1>We'd love to see you smile.</h1><p class="lead">Questions about a product, an appointment or the Forever Smile™? The Gleamwell family is here to help.</p></div></section>
+  <section class="sec"><div class="wrap contact">
+    <div class="contact-info">
+      <div class="ci"><b>Visit the clinic</b><span>1 Harrow Lane, Harlow County</span><span>Walk-ins welcome daily. Appointments sometimes run long.</span></div>
+      <div class="ci"><b>Call us</b><span>1-800-GLEAM-77</span><span>Mon–Fri, 8am–6pm. After 6pm, someone else answers.</span></div>
+      <div class="ci"><b>Product recalls</b><span>There are no active recalls. There have never been any recalls.</span></div>
+      <details class="faq-mini"><summary>Does the Forever Smile™ hurt?</summary><p>Only until it doesn't.</p></details>
+      <details class="faq-mini"><summary>Why is the window on Room 7 painted over?</summary><p>Room 7 is closed for renovation.</p></details>
+      <details class="faq-mini"><summary>There's a filling in my veneer kit that isn't mine.</summary><p>Please don't throw it away. Mail it to the clinic in the envelope provided, along with your name and address.</p></details>
+    </div>
+    <form class="apply" id="contact-form"><h2>Send a message</h2>
+      <div class="f-row"><label for="c-name">Your name</label><input id="c-name" required autocomplete="name"></div>
+      <div class="f-row"><label for="c-email">Email</label><input id="c-email" type="email" required autocomplete="email"></div>
+      <div class="f-row"><label for="c-msg">Message</label><textarea id="c-msg" rows="5" required></textarea></div>
+      <button class="btn btn-red" type="submit">Send message</button>
+      <div class="apply-result" id="contact-result" role="status" hidden></div>
+    </form>
+  </div></section>`);
+}
+function mountContact() {
+  listen($('#contact-form'), 'submit', e => {
+    e.preventDefault(); const r = $('#contact-result'); r.hidden = false; r.className = 'apply-result done';
+    r.innerHTML = `<b>Thanks, ${esc($('#c-name').value.trim().split(' ')[0] || 'friend')}!</b><p>Someone from the Gleamwell family will make a house call to discuss your message in person. Please leave the porch light on and your mouth open.</p>`;
+    later(7000, () => { toast("They're on their way."); AU.knock(0, .5); AU.knock(.35, .5); });
+  });
+}
+
+/* ---------- STAFF LOGIN ---------- */
+function pageLogin() {
+  return `<div class="login-wrap crt"><div class="login-card" id="login-card">
+    <div class="login-head"><span class="gh-badge">GW</span><div><b>Gleamwell Staff Access</b><small>Authorized personnel only. All access is logged and kept forever.</small></div></div>
+    <label for="code" class="login-label">Enter your 5-digit staff code</label>
+    <div class="code-boxes" id="code-boxes" aria-hidden="true">${'<span></span>'.repeat(5)}</div>
+    <input id="code" class="code-input" inputmode="numeric" pattern="[0-9]*" maxlength="5" autocomplete="off" aria-describedby="login-msg">
+    <div class="keypad">${[1, 2, 3, 4, 5, 6, 7, 8, 9, 'CLR', 0, '⏎'].map(k => `<button type="button" data-k="${k}" ${k === 'CLR' ? 'aria-label="Clear"' : k === '⏎' ? 'aria-label="Enter"' : ''}>${k}</button>`).join('')}</div>
+    <p id="login-msg" class="login-msg" role="status">${isUnlocked() ? 'This terminal remembers you.' : '&nbsp;'}</p>
+    <a href="#home" class="login-back">← Back to gleamwell.com</a>
+  </div></div>`;
+}
+let loginFails = 0;
+function mountLogin() {
+  const input = $('#code'), boxes = $$('#code-boxes span'), msg = $('#login-msg'), card = $('#login-card');
+  const show = () => boxes.forEach((b, i) => { b.textContent = input.value[i] ? '•' : ''; b.classList.toggle('on', i === input.value.length); });
+  later(50, () => input.focus());
+  let busy = false;
+  async function submit() {
+    if (busy || input.value.length < 5) return; busy = true;
+    if (input.value === CODE) {
+      AU.init(); [660, 880, 990].forEach((f, i) => AU.tone(f, .1, { type: 'square', gain: .05, when: i * .12 }));
+      for (const line of ['VERIFYING ATTENDANT…', 'CHECKING PULSE… 112 BPM', 'SMILE DETECTED', 'WELCOME BACK, ATTENDANT #0447']) { msg.textContent = line; msg.className = 'login-msg ok'; await wait(650); if (!msg.isConnected) return; }
+      store.set('gh-unlocked', '1'); location.hash = '#portal'; return;
+    }
+    loginFails++; AU.buzz(); card.classList.remove('shake'); void card.offsetWidth; card.classList.add('shake');
+    const lines = ['Incorrect code.', "That isn't your number.", 'Are you staff, or are you a patient?', 'Stop guessing.'];
+    msg.textContent = lines[Math.min(loginFails - 1, 3)]; msg.className = 'login-msg bad';
+    if (loginFails === 4) { await wait(500); await jumpscare('face2', { line: 'STOP GUESSING' }); }
+    if (loginFails > 4) msg.textContent = ['We know which house is yours.', 'Find the numbers.', 'They are on the website. They have always been on the website.'][(loginFails - 5) % 3];
+    input.value = ''; show(); busy = false;
+  }
+  listen(input, 'input', () => { input.value = input.value.replace(/\D/g, '').slice(0, 5); AU.beep(700 + input.value.length * 60); show(); if (input.value.length === 5) submit(); });
+  listen(input, 'keydown', e => { if (e.key === 'Enter') submit(); });
+  $$('.keypad button').forEach(b => listen(b, 'click', () => {
+    AU.init(); const k = b.dataset.k;
+    if (k === 'CLR') input.value = ''; else if (k === '⏎') { submit(); return; } else if (input.value.length < 5) input.value += k;
+    AU.beep(700 + input.value.length * 60); show(); if (input.value.length === 5) submit();
+  }));
+  show();
+}
+
+/* ---------- 404 ---------- */
+function page404(name) {
+  return publicShell('', `<section class="page-head p404"><div class="wrap"><span class="kicker">Error 404</span><h1>This page has been extracted.</h1><p class="lead">We couldn't find <b>#${esc(name)}</b>. It was here a moment ago. It was making a noise.</p><canvas id="c404" width="200" height="250" aria-hidden="true"></canvas><p><a class="btn btn-red" href="#home">Go home</a></p></div></section>`);
+}
+function mount404() { const c = $('#c404'); c.getContext('2d').drawImage(renderFace({ w: 200, h: 250, seed: 404, smile: 1, open: .2, teeth: true, eyes: 'closed', mode: 'gray', bg: [.92, .9, .86], hair: 0, grain: .08 }), 0, 0); later(4000, () => { if (!c.isConnected) return; c.getContext('2d').drawImage(renderFace({ w: 200, h: 250, seed: 404, smile: 1, open: .2, teeth: true, eyeOpen: 1.5, irisR: .025, mode: 'gray', bg: [.92, .9, .86], hair: 0, grain: .08 }), 0, 0); AU.sting(); }); }
+/* ============ the staff intranet (behind the code) ============ */
+const PNAV = [['portal', 'Dashboard'], ['registry', 'Patient registry'], ['cameras', 'Cameras'], ['memos', 'Memos'], ['tapes', 'Recovered tape'], ['room7', 'Room 7']];
+function portalShell(route, inner) {
+  return `<div class="portal crt">
+  <aside class="p-side">
+    <div class="p-brand"><span class="gh-badge">GW</span><span>GLEAMWELL<small>CLINICAL SYSTEMS v2.3</small></span></div>
+    <nav class="p-nav" aria-label="Intranet">${PNAV.map(([k, l]) => `<a href="#${k}" class="${k === 'room7' ? 'p-danger' : ''}" ${k === route ? 'aria-current="page"' : ''}>${l}</a>`).join('')}</nav>
+    <div class="p-user"><b>ATTENDANT #0447</b><span>Shift: 22:00 – ∞</span><button type="button" id="logout" class="p-btn">Log out</button></div>
+  </aside>
+  <section class="p-main"><header class="p-top"><span>TERMINAL 03 · NIGHT SHIFT · ${esc(CITY.toUpperCase())}</span><span id="p-clock" class="tnum"></span></header><div class="p-body">${inner}</div></section>
+</div>`;
+}
+function mountPortalCommon() {
+  const clk = $('#p-clock'); const tick = () => { if (clk) clk.textContent = new Date().toLocaleTimeString([], { hour12: false }); }; tick(); every(1000, tick);
+  listen($('#logout'), 'click', () => { toast("You can't log out during a shift."); AU.buzz(); later(2200, () => { toast('Fine. Go. We know where you live.', 3500); location.hash = '#home'; }); });
+  const ghost = () => later(35000 + Math.random() * 40000, () => { subliminal(Math.random() < .5 ? 'stare' : 'face2', 110, .16); AU.breath(1.5); ghost(); });
+  ghost();
+}
+
+/* ---------- dashboard ---------- */
+function pagePortal() {
+  const pts = []; const R = rng(30);
+  for (let i = 0; i < 30; i++) pts.push(i === 19 ? 61.2 : i === 20 ? 84 : 98.6 + R() * 1.3);
+  const W = 560, H = 160, px = i => 34 + i * (W - 44) / 29, py = v => 14 + (100 - v) / 45 * (H - 34);
+  const line = pts.map((v, i) => `${px(i).toFixed(1)},${py(v).toFixed(1)}`).join(' ');
+  return portalShell('portal', `
+  <h1 class="p-h1">Good evening, Attendant.</h1>
+  <p class="p-sub">You are logged in as <b>#0447</b>. Your predecessor was <b>#0446</b>. Please do not read #0446's notes.</p>
+  <div class="tiles">
+    <div class="tile"><span>PATIENTS IN CARE</span><b class="tnum" id="t-stock">1,204</b><small>+1 walk-in pending</small></div>
+    <div class="tile"><span>SMILE RETENTION</span><b class="tnum">99.7%</b><small>target 100%</small></div>
+    <div class="tile"><span>STAFF ON SHIFT</span><b class="tnum">3</b><small>2 responding</small></div>
+    <div class="tile tile-red"><span>DAYS SINCE INCIDENT</span><b class="tnum" id="t-inc">0</b><small id="t-inc-s">counting</small></div>
+  </div>
+  <div class="p-grid">
+    <section class="panel span2"><h2>NOTICES</h2><ul class="notices">
+      <li><b>REMINDER</b> Do not speak to patients after the procedure. They will ask you to take it out. They do not mean it.</li>
+      <li><b>OPS</b> Pearl's Morning Message plays at 06:00 in every ward. Do not mute it. The patients need to hear that they are happy.</li>
+      <li><b>LOST</b> One (1) Night Attendant, answers to 0446. If found, do not return to staff. Return to a chair.</li>
+      <li><b>FACILITIES</b> Room 7 is closed. Room 7 has always been closed. Please stop leaving trays outside the door.</li>
+      <li><b>CLINICAL</b> Smile maintenance is now performed weekly instead of monthly. Thank you for your patience during the screaming.</li>
+      <li><b>HR</b> Staff who express concern will be offered the Forever Smile™. Most accept. The rest accept later.</li>
+    </ul></section>
+    <section class="panel eom"><h2>EMPLOYEE OF THE MONTH</h2><canvas id="eom" width="160" height="200" aria-label="Photo of Dale Pruitt"></canvas><b>Dale Pruitt</b><p>Sterilization, Plant 2. Dale has received the Forever Smile™. Congratulations, Dale!</p></section>
+    <section class="panel span2"><h2>SMILE RETENTION · LAST 30 NIGHTS</h2>
+      <div class="chart-wrap"><svg viewBox="0 0 ${W} ${H}" class="chart" role="img" aria-label="Smile retention, steady near 99 percent except one drop to 61.2 percent">
+        ${[100, 80, 60].map(v => `<line x1="34" x2="${W - 10}" y1="${py(v)}" y2="${py(v)}" class="gridl"/><text x="28" y="${py(v) + 4}" text-anchor="end" class="axis">${v}</text>`).join('')}
+        <polyline points="${line}" class="spark"/><circle cx="${px(19)}" cy="${py(61.2)}" r="4" class="dot-red"/><text x="${px(19) + 8}" y="${py(61.2) + 4}" class="axis red">61.2 · Room 7 opened</text>
+        <circle cx="${px(29)}" cy="${py(pts[29])}" r="4" class="dot"/></svg></div></section>
+    <section class="panel"><h2>MORNING MESSAGE</h2><p>Broadcast in every ward at 06:00. Preview only. Do not play near patients outside scheduled hours.</p><button class="p-btn" id="mm-play" type="button">▶ Play morning message</button><p id="mm-text" class="mm-text" aria-live="polite"></p></section>
+  </div>`);
+}
+function mountPortal() {
+  mountPortalCommon();
+  $('#eom').getContext('2d').drawImage(renderFace({ w: 160, h: 200, seed: 77, smile: 1, open: .25, teeth: true, eyeOpen: 1.4, irisR: .028, hair: .5, mode: 'cctv', bg: [.3, .3, .3], grain: .12, gaunt: .4 }), 0, 0);
+  let inc = 0; every(1000, () => { inc++; const el = $('#t-inc'); if (!el) return; if (inc > 6 && Math.random() < .12) { inc = 0; el.textContent = '0'; $('#t-inc-s').textContent = 'INCIDENT LOGGED · BARN 7'; AU.glitch(); } else { el.textContent = (inc / 86400).toFixed(5); $('#t-inc-s').textContent = 'counting'; } });
+  const lines = ['Good morning, Gleamwell!', 'It is a beautiful day at the clinic.', 'You are happy.', 'You are calm.', 'Keep smiling.', 'You do not remember before.', 'You are happy.', 'You are happy.', 'YOU ARE HAPPY.', 'please'];
+  let playing = false;
+  listen($('#mm-play'), 'click', async () => {
+    if (playing) return; playing = true; AU.init(); const out = $('#mm-text'); out.textContent = '';
+    const end = AU.jingle('happy'); await wait(end * 1000 + 300);
+    for (let i = 0; i < lines.length; i++) {
+      if (!out.isConnected) return;
+      const l = lines[i]; out.textContent = l; out.classList.toggle('loud', i === 8); out.classList.toggle('faint', i === 9);
+      if (i === 9) { AU.glitch(); AU.speak(l, { rate: .5, pitch: .1, volume: .5 }); } else AU.speak(l, { rate: i > 5 ? .8 : 1, pitch: i > 5 ? .6 : 1.4 });
+      await wait(i === 8 ? 1800 : 1500);
+    }
+    playing = false;
+  });
+}
+
+/* ---------- registry ---------- */
+const STOCK_NAMES = ['Walter Gleam', 'Dale Pruitt', 'Marion Keele', 'Tom Ashby', 'Lucy Varga', 'Night Attendant #0446', 'Evan Morrow', 'Ruth Delaney', 'Sam Okafor', 'Joan Pike', 'Leo Brandt', 'Anita Shah', 'Cody Reyes', 'Beth Hollis', 'Grace Kim', 'Walt Becker', 'Nora Quinn', 'Felix Dunn', 'Ivy Moreno', 'Paul Stroud', 'June Abbott', 'Owen Tate', 'Mia Lund', 'Rosa Ferreira'];
+const ROLES = ['Former hygienist', 'Walk-in (second visit)', 'Packing associate', 'Delivery driver', 'Answered careers ad', 'Night Attendant', 'Intake coordinator', 'Local resident'];
+const NOTES = ['Stopped asking for her children on day 9.', 'Smile maintained weekly. Responds well to Pearl.', 'Came back for the second visit. Stayed.', 'Sings at night. Do not record.', 'Accepted transfer on first night.', 'Says she remembers before. Scheduled for re-telling.', 'Very content. Very, very content.', 'Has asked for a mirror 41 times. Denied.', 'Enamel optimal. Ready for extraction.', 'Keeps scratching his name into the ceiling above his chair. Ceiling repainted.', 'Hums the jingle in her sleep. Good.', 'Asked what day it is. Told it is always morning.'];
+const STATUSES = ['SMILING', 'SMILING', 'SMILING', 'IN TREATMENT', 'EXTRACTED', 'SMILING', 'RESISTING', 'SMILING'];
+function stockList() {
+  const R = rng(1205);
+  const list = STOCK_NAMES.map((n, i) => {
+    const y = 1989 + Math.floor(R() * 37), m = 1 + Math.floor(R() * 12), d = 1 + Math.floor(R() * 28);
+    return { i, id: `GW-P-${String(i === 0 ? 1 : i === 5 ? 446 : 12 + i * 47).padStart(4, '0')}`, name: n, role: ROLES[Math.floor(R() * ROLES.length)], intake: `${String(m).padStart(2, '0')}/${String(d).padStart(2, '0')}/${y}`, status: STATUSES[Math.floor(R() * STATUSES.length)], note: NOTES[Math.floor(R() * NOTES.length)], seed: 500 + i * 13 };
+  });
+  Object.assign(list[0], { role: 'Founder', intake: '10/31/2003', status: 'ROOM 7', note: 'Gave himself the Forever Smile in 2003 and asked to be placed in Room 7. Granted. Still treating the others.', seed: 1962 });
+  Object.assign(list[1], { role: 'Sterilization · Employee of the Month', status: 'IN TREATMENT', note: 'Received the Forever Smile the day he won Employee of the Month. Very proud. Will not stop showing it.', seed: 77 });
+  Object.assign(list[5], { role: 'Night Attendant (your predecessor)', intake: 'last week', status: 'RESISTING', note: 'Hid five numbers on the public website so an outsider could get in. Located at 03:12 at the observation desk. Still talking. Still warning people.' });
+  const now = new Date();
+  list.push({ i: 24, id: 'GW-P-1205', name: isStock() ? 'GW-P-1205' : 'VISITOR', role: `Visitor from ${CITY}`, intake: isStock() ? fmtDate(now) : `${fmtDate(now)} (scheduled)`, status: isStock() ? 'SMILING' : 'EN ROUTE', note: isStock() ? 'Intake complete. Settling in well. Smiling already.' : 'Found the numbers. Logged in as #0447. Photo will be taken on arrival.', seed: 1205, you: true });
+  return list;
+}
+function mugshot(p, w = 120, h = 150) {
+  const c = document.createElement('canvas'); c.width = w; c.height = h; const x = c.getContext('2d');
+  if (p.you && !isStock()) { x.fillStyle = '#1a201c'; x.fillRect(0, 0, w, h); x.strokeStyle = '#3c5a45'; x.setLineDash([4, 4]); x.strokeRect(8, 8, w - 16, h - 40); x.fillStyle = '#6f9a7a'; x.font = `${w * .1}px "IBM Plex Mono", monospace`; x.textAlign = 'center'; x.fillText('PHOTO', w / 2, h * .38); x.fillText('PENDING', w / 2, h * .48); }
+  else {
+    const harold = p.seed === 1962, s446 = p.id === 'GW-P-0446';
+    const f = renderFace({ w, h, seed: p.seed, scale: 1.05, cy: -.08, smile: 1, open: harold ? .5 : .22, stretch: harold ? .5 : 0, teeth: true, eyes: harold ? 'hollow' : 'open', eyeOpen: 1.35, irisR: .03, age: harold ? 1 : 0, hair: harold ? 0 : .3 + hash2(p.i, 1, 2) * .7, hairCol: harold ? [.7, .7, .68] : [.12, .1, .08], gaunt: .25 + hash2(p.i, 2, 2) * .5, tone: [[.86, .66, .54], [.6, .42, .3], [.92, .75, .62], [.45, .3, .22]][p.i % 4], mode: 'gray', bg: [.62, .62, .6], grain: .1, light: [0, -.2, 1], blood: harold ? .5 : 0, vignette: .3 });
+    x.drawImage(f, 0, 0);
+    x.strokeStyle = 'rgba(0,0,0,.35)'; x.lineWidth = 1; for (let y = 10; y < h - 30; y += 12) { x.beginPath(); x.moveTo(0, y); x.lineTo(w * .14, y); x.moveTo(w * .86, y); x.lineTo(w, y); x.stroke(); }
+    if (s446) { x.strokeStyle = '#000'; x.lineWidth = 3; const R = rng(446); for (let i = 0; i < 40; i++) { x.beginPath(); x.moveTo(w * .28 + R() * w * .44, h * .36 + R() * h * .08); x.lineTo(w * .28 + R() * w * .44, h * .36 + R() * h * .08); x.stroke(); } }
+  }
+  x.fillStyle = '#111'; x.fillRect(w * .12, h - 28, w * .76, 22); x.fillStyle = '#eee'; x.font = `${Math.round(w * .095)}px "IBM Plex Mono", monospace`; x.textAlign = 'center'; x.fillText(p.id, w / 2, h - 12);
+  return c;
+}
+const statusCls = s => ({ SMILING: 'st-ok', 'IN TREATMENT': 'st-amb', EXTRACTED: 'st-dim', RESISTING: 'st-red', 'ROOM 7': 'st-blk', 'EN ROUTE': 'st-you' }[s] || '');
+function pageRegistry() {
+  return portalShell('registry', `
+  <h1 class="p-h1">Patient registry</h1><p class="p-sub">Forever Smile™ recipients only. Every patient is smiling at the time of photograph. Click an entry for its file.</p>
+  <div class="reg-tools"><label class="sr" for="reg-q">Search patients</label><input id="reg-q" class="p-input" placeholder="Search by name or ID" autocomplete="off">
+    <div class="reg-filters" role="group" aria-label="Filter by status">${['ALL', 'SMILING', 'IN TREATMENT', 'RESISTING', 'EXTRACTED'].map((s, i) => `<button class="p-chip" type="button" data-s="${s}" aria-pressed="${i === 0}">${s}</button>`).join('')}</div></div>
+  <p class="reg-none" id="reg-none" hidden>No match. <b>1 result</b> found anyway: you are already in the system.</p>
+  <div class="reg-grid" id="reg-grid"></div>`);
+}
+function mountRegistry() {
+  mountPortalCommon();
+  const list = stockList(), grid = $('#reg-grid');
+  list.forEach(p => {
+    const b = document.createElement('button'); b.type = 'button'; b.className = 'reg' + (p.you ? ' reg-you' : ''); b.dataset.name = (p.name + ' ' + p.id).toLowerCase(); b.dataset.status = p.status;
+    b.innerHTML = `<span class="reg-photo"></span><span class="reg-meta"><b>${esc(p.name)}</b><small>${esc(p.role)}</small><span class="st ${statusCls(p.status)}">${p.status}</span></span>`;
+    grid.appendChild(b);
+    listen(b, 'click', () => openDossier(p));
+  });
+  // draw faces progressively so the page appears at once
+  let k = 0; const draw = () => { const el = grid.children[k]; if (!el) return; el.querySelector('.reg-photo').appendChild(mugshot(list[k])); k++; later(16, draw); }; draw();
+  let st = 'ALL';
+  const apply = () => { const q = $('#reg-q').value.trim().toLowerCase(); let n = 0; [...grid.children].forEach(el => { const ok = (st === 'ALL' || el.dataset.status === st) && (!q || el.dataset.name.includes(q)); el.hidden = !ok; if (ok) n++; }); $('#reg-none').hidden = n > 0; if (!n) grid.lastElementChild.hidden = false; };
+  listen($('#reg-q'), 'input', apply);
+  $$('.p-chip').forEach(c => listen(c, 'click', () => { $$('.p-chip').forEach(x => x.setAttribute('aria-pressed', x === c)); st = c.dataset.s; apply(); }));
+}
+function openDossier(p) {
+  openModal(`<div class="dossier"><div class="dos-photo" id="dos-photo"></div><div class="dos-copy"><span class="st ${statusCls(p.status)}">${p.status}</span><h2 id="modal-title">${esc(p.name)}</h2>
+    <dl><dt>Patient ID</dt><dd>${p.id}</dd><dt>Previously</dt><dd>${esc(p.role)}</dd><dt>Intake</dt><dd>${esc(p.intake)}</dd><dt>Room</dt><dd>${p.status === 'ROOM 7' || p.you ? '7' : 1 + (p.i % 6)}</dd><dt>Smile</dt><dd>${p.you && !isStock() ? 'not yet fitted' : 'fitted, permanent'}</dd></dl>
+    <p class="dos-note">${esc(p.note)}</p></div></div>`, 'm-dark');
+  $('#dos-photo').appendChild(mugshot(p, 220, 275));
+  if (p.seed === 1962) { AU.voice(98, 3, 0, 0); }
+  if (p.id === 'GW-P-0446') AU.breath(2);
+}
+
+/* ---------- cameras ---------- */
+const CAMS = [[1, 'WARD A · RECOVERY'], [2, 'STERILIZATION · PLANT 2'], [3, 'PARKING LOT · NORTH'], [7, 'ROOM 7 · INTERIOR']];
+const CAMSTATE = { yard: +(store.get('gh-yard') || 0), packTurned: false, b7seen: false };
+function person(x, cx, by, s, { front = true, tilt = 0, glow = .75, eyes = 'dots' } = {}) {
+  x.save(); x.translate(cx, by); x.scale(s, s);
+  x.fillStyle = '#141414'; x.beginPath(); x.moveTo(-14, 0); x.lineTo(-11, -42); x.quadraticCurveTo(0, -50, 11, -42); x.lineTo(14, 0); x.fill();
+  x.translate(0, -52); x.rotate(tilt);
+  x.fillStyle = front ? `rgba(${Math.round(255 * glow)},${Math.round(255 * glow)},${Math.round(250 * glow)},1)` : '#262626';
+  x.beginPath(); x.ellipse(0, 0, 7.5, 9.5, 0, 0, 7); x.fill();
+  if (front) { x.fillStyle = '#000'; if (eyes === 'dots') { x.fillRect(-4, -2, 2.4, 2.6); x.fillRect(1.6, -2, 2.4, 2.6); } else { x.beginPath(); x.ellipse(-3, -1, 2, 2.8, 0, 0, 7); x.ellipse(3, -1, 2, 2.8, 0, 0, 7); x.fill(); } x.fillRect(-4.5, 4, 9, 1.6); }
+  x.restore();
+}
+function camDraw(id, x, w, h, t, big, local) {
+  x.save(); x.scale(w / 240, h / 135);
+  if (id === 1) {
+    x.fillStyle = '#1c1c1c'; x.fillRect(0, 0, 240, 135);
+    const g = x.createRadialGradient(120, 0, 10, 120, 40, 150); g.addColorStop(0, 'rgba(200,200,190,.55)'); g.addColorStop(1, 'rgba(0,0,0,0)'); x.fillStyle = g; x.fillRect(0, 0, 240, 135);
+    x.strokeStyle = '#333'; for (let i = 0; i < 7; i++) { x.beginPath(); x.moveTo(120 + (i - 3) * 14, 40); x.lineTo(120 + (i - 3) * 60, 135); x.stroke(); }
+    const tilting = (t % 9) > 7.6;
+    for (let r = 0; r < 3; r++) for (let c = 0; c < 6; c++) person(x, 120 + (c - 2.5) * (20 + r * 10), 72 + r * 22, .38 + r * .17, { tilt: tilting ? .35 : 0, glow: .55 + r * .12 });
+  } else if (id === 2) {
+    x.fillStyle = '#242424'; x.fillRect(0, 0, 240, 135); x.fillStyle = '#3a3a3a'; x.fillRect(0, 70, 240, 18);
+    for (let i = 0; i < 14; i++) { x.fillStyle = '#2a2a2a'; x.fillRect((i * 20 + t * 22) % 260 - 20, 70, 3, 18); }
+    for (let i = 0; i < 5; i++) { const px = (i * 60 + t * 22) % 300 - 60; x.fillStyle = '#9a9a9a'; x.fillRect(px, 58, 34, 13); x.fillStyle = '#6a6a6a'; x.fillRect(px + 4, 61, 26, 7); }
+    person(x, 205, 118, .95, { front: CAMSTATE.packTurned, eyes: 'holes' });
+  } else if (id === 3) {
+    x.fillStyle = '#121412'; x.fillRect(0, 0, 240, 135); const g = x.createLinearGradient(0, 60, 0, 135); g.addColorStop(0, '#222622'); g.addColorStop(1, '#3a403a'); x.fillStyle = g; x.fillRect(0, 60, 240, 75);
+    for (let i = 0; i < 7; i++) { x.fillStyle = i === 6 ? '#000' : '#0c0d0c'; const bx = 20 + i * 30; x.beginPath(); x.moveTo(bx, 60); x.lineTo(bx, 50); x.lineTo(bx + 8, 44); x.lineTo(bx + 16, 50); x.lineTo(bx + 16, 60); x.fill(); }
+    x.strokeStyle = '#5a605a'; x.lineWidth = 1.2; for (let i = 0; i < 9; i++) { const k = i / 8, px = lerp(10, 110, k), py = lerp(130, 64, k); x.beginPath(); x.moveTo(px, py); x.lineTo(px, py - lerp(22, 6, k)); x.stroke(); }
+    x.beginPath(); x.moveTo(10, 116); x.lineTo(110, 60); x.stroke();
+    const L = Math.min(CAMSTATE.yard, 5), k = L / 5;
+    const fy = lerp(64, 150, k), fs = lerp(.32, 2.6, k * k);
+    person(x, 150 - k * 30, fy, fs, { glow: .85, eyes: k > .5 ? 'holes' : 'dots' });
+    x.fillStyle = 'rgba(0,0,0,.25)'; x.fillRect(0, 0, 240, 135);
+  } else if (id === 7) {
+    const el = big ? (t - local) : 0;
+    if (!big || (el < 5 && !CAMSTATE.b7seen)) {
+      x.fillStyle = '#000'; x.fillRect(0, 0, 240, 135); x.globalAlpha = .9; x.drawImage(NOISE.c, 0, 0, 240, 135); x.globalAlpha = 1;
+      x.fillStyle = '#fff'; x.font = '16px VT323, monospace'; x.textAlign = 'center'; x.fillText('NO SIGNAL', 120, 72);
+    } else {
+      x.fillStyle = '#0d0d0d'; x.fillRect(0, 0, 240, 135); x.strokeStyle = '#2b2b2b'; x.lineWidth = 2;
+      x.strokeRect(70, 25, 100, 110); x.beginPath(); x.moveTo(0, 135); x.lineTo(70, 100); x.moveTo(240, 135); x.lineTo(170, 100); x.stroke();
+      x.fillStyle = '#000'; x.fillRect(74, 29, 92, 106);
+      if (CAMSTATE.b7seen) { person(x, 120, 170, 3.2, { eyes: 'holes', glow: .7 }); x.fillStyle = '#ddd'; x.font = '14px VT323, monospace'; x.textAlign = 'center'; if ((t * 2 | 0) % 2) x.fillText('SHE SEES YOU', 120, 20); }
+      else { const peek = clamp((el - 5) / 3); x.save(); x.beginPath(); x.rect(74, 29, 92, 106); x.clip(); x.fillStyle = '#c9c9c0'; x.beginPath(); x.ellipse(166 - peek * 10, 70, 9, 12, -.2, 0, 7); x.fill(); x.fillStyle = '#000'; x.beginPath(); x.ellipse(163 - peek * 10, 67, 2.4, 3.4, 0, 0, 7); x.fill(); x.restore(); }
+      x.globalAlpha = Math.max(0, .9 - (el - 5) * .5); x.drawImage(NOISE.c, 0, 0, 240, 135); x.globalAlpha = 1;
+    }
+  }
+  x.restore();
+  // dressing
+  x.globalAlpha = .16; x.drawImage(NOISE.c, 0, 0, w, h); x.globalAlpha = 1;
+  x.fillStyle = 'rgba(0,0,0,.22)'; for (let y = 0; y < h; y += 3) x.fillRect(0, y, w, 1);
+  x.globalCompositeOperation = 'multiply'; x.fillStyle = '#b6e3c1'; x.fillRect(0, 0, w, h); x.globalCompositeOperation = 'source-over';
+  const fs = Math.max(10, w / 22); x.font = `${fs}px VT323, monospace`; x.textAlign = 'left'; x.fillStyle = '#e8f5ea';
+  const label = CAMS.find(c => c[0] === id)[1];
+  x.fillText(`CAM 0${id}  ${label}`, fs * .6, fs * 1.2);
+  const d = new Date(); x.textAlign = 'right'; x.fillText(`${fmtDate(d)} ${d.toLocaleTimeString([], { hour12: false })}`, w - fs * .6, h - fs * .5);
+  if ((t * 1.5 | 0) % 2) { x.fillStyle = '#e33'; x.beginPath(); x.arc(w - fs * 1.6, fs * .9, fs * .3, 0, 7); x.fill(); x.fillStyle = '#e8f5ea'; x.fillText('REC', w - fs * 2.1, fs * 1.2); }
+}
+function pageCameras() {
+  return portalShell('cameras', `<h1 class="p-h1">Cameras</h1><p class="p-sub">Live feeds. Select a camera to enlarge it. If you see something on a feed, it has already seen you.</p>
+  <div class="cams">${CAMS.map(([id, l]) => `<button class="cam" type="button" data-cam="${id}" aria-label="Camera ${id}, ${l}"><canvas width="240" height="135"></canvas></button>`).join('')}</div>
+  <p class="p-sub small">Camera 07 has not transmitted since 1989. Please stop reporting that it is working.</p>`);
+}
+function mountCameras() {
+  mountPortalCommon();
+  const cams = $$('.cam').map(b => ({ id: +b.dataset.cam, x: b.querySelector('canvas').getContext('2d'), b }));
+  let big = null; const t0 = performance.now();
+  cams.forEach(c => listen(c.b, 'click', () => openCam(c.id)));
+  function openCam(id) {
+    if (id === 3) { CAMSTATE.yard++; store.set('gh-yard', CAMSTATE.yard); }
+    openModal(`<div class="cam-big"><canvas id="cam-big" width="720" height="405" aria-label="Enlarged camera ${id}"></canvas><p class="p-sub" id="cam-note"></p></div>`, 'm-dark m-wide');
+    big = { id, x: $('#cam-big').getContext('2d'), start: (performance.now() - t0) / 1000, fired: false };
+    if (id === 2 && !CAMSTATE.packTurned) later(2500, () => { CAMSTATE.packTurned = true; AU.tone(60, 1.2, { gain: .2, wet: .8 }); });
+    if (id === 7) AU.setAmbient('static');
+    closeModal.after = () => { if (big && big.id === 7) AU.setAmbient('portal'); big = null; };
+  }
+  let fr = 0;
+  loop(now => {
+    const t = (now - t0) / 1000; fr++;
+    if (fr % 2) return; NOISE.tick();
+    if (!big) cams.forEach(c => camDraw(c.id, c.x, 240, 135, t, false, 0));
+    else if ($('#cam-big')) {
+      camDraw(big.id, big.x, 720, 405, t, true, big.start);
+      const el = t - big.start;
+      if (big.id === 3 && CAMSTATE.yard >= 5 && el > 1.2 && !big.fired) { big.fired = true; CAMSTATE.yard = 1; store.set('gh-yard', 1); jumpscare('stare', { line: 'YOU KEPT LOOKING' }).then(closeModal); }
+      if (big.id === 7 && !CAMSTATE.b7seen && el > 9 && !big.fired) { big.fired = true; CAMSTATE.b7seen = true; jumpscare('face', { swap: 'face2' }).then(() => { AU.setAmbient('portal'); }); }
+      const note = $('#cam-note'); if (note) note.textContent = big.id === 3 ? ['It is far away.', 'It is closer than last time.', 'Every time you look away, it walks.', 'Stop looking away.', 'Please stop looking away.', ''][Math.min(CAMSTATE.yard, 5)] : big.id === 7 && !CAMSTATE.b7seen && el > 5 ? 'Signal acquired.' : '';
+    }
+  });
+}
+
+/* ---------- memos ---------- */
+const R_ = s => `<span class="redact" tabindex="0">${s}</span>`;
+const MEMOS = [
+  { d: '03/02/1974', f: 'Dr. W. Gleam', s: 'The Forever Smile', b: `<p>The new procedure works. Once the smile is fixed in place, the patient is calmer than anything I have ever seen. They are calmest when they are <b>told</b> they are happy. Every morning. Out loud. They believe it faster when the voice is friendly, so I have had a costume made.</p><p>We will call her Pearl. The children will love her. The ${R_('patients')} will love her more. They will love her until ${R_('the very end')}.</p><p>Do not let the patients see Pearl without the head on.</p>` },
+  { d: '10/19/1988', f: 'Facilities', s: 'Room 7 wing complete', b: `<p>The Room 7 wing is complete and ready for intake. It is reserved for patients who will not stop ${R_('trying to frown')}.</p><p>Soundproofing has been installed to the specification requested by Dr. Gleam. Please note that the soundproofing works in one direction only. Staff will be able to hear ${R_('everything')}.</p>` },
+  { d: '01/05/1989', f: 'Operations', s: 'Room 7 closure, effective immediately', b: `<p>Room 7 is sealed. Do not feed. Do not listen. Do not answer.</p><p>They are not singing. That is not singing. It only sounds like the brushing song because ${R_('they learned it from us')}.</p><p>The night attendant assigned to Room 7 has been ${R_('given the Forever Smile')}. His family has been informed that he is very happy.</p>` },
+  { d: '10/31/2003', f: 'Family Office', s: 'Re: Dr. Gleam', b: `<p>Dr. Gleam has performed the procedure on himself and asked to be placed in Room 7. We have honored his wishes. He can be heard most nights.</p><p>He sounds happy. He is ${R_('still wearing the Pearl head')}. We have stopped asking him to take it off.</p><p>Pearl will continue as our mascot. Nobody needs to know ${R_('who is inside')}.</p>` },
+  { d: '06/14/2019', f: 'Supply Chain', s: 'Veneer supply', b: `<p>Demand for Forever Smile™ veneer kits continues to exceed supply. Supply is tied directly to intake. Please make every walk-in feel welcome.</p><p>Reminder: the kits must never contain two teeth from ${R_('the same patient')}. Customers have started to notice the fillings.</p>` },
+  { d: 'tonight', f: 'Attendant #0446', s: 'to whoever is reading this', glitch: true, b: `<p>If you are reading this you found my numbers. I hid them on the website for someone like you. Someone from outside.</p><p>The veneers are real teeth. Every kit. Every <b>Little Smiles</b> gummy. Every smile on the reviews page. I checked the patient ledger against the missing persons lists for three counties. It matches. It all matches.</p><p>I was the night attendant. My number was 0446. Yours is 0447. Do you understand what that means? They had your number before you got here.</p><p>Do not go to Room 7. Do not go to Room 7. Do not go to Room 7. She's behind the door and she knows your name and she is ${R_('so happy you came')}</p>` }
+];
+function pageMemos() {
+  return portalShell('memos', `<h1 class="p-h1">Memos</h1><p class="p-sub">Internal correspondence. Redacted lines may be revealed by authorized staff (hover or select them).</p>
+  <div class="memos"><nav class="memo-list" aria-label="Memos">${MEMOS.map((m, i) => `<button type="button" class="memo-btn ${m.glitch ? 'memo-bad' : ''}" data-m="${i}" aria-pressed="${i === 0}"><small>${m.d}</small><b>${m.s}</b></button>`).join('')}</nav><article class="paper" id="paper"></article></div>`);
+}
+function mountMemos() {
+  mountPortalCommon();
+  const show = i => {
+    const m = MEMOS[i]; $$('.memo-btn').forEach(b => b.setAttribute('aria-pressed', +b.dataset.m === i));
+    $('#paper').className = 'paper' + (m.glitch ? ' paper-bad' : '');
+    $('#paper').innerHTML = `<div class="stamp">CONFIDENTIAL</div><dl class="memo-h"><dt>DATE</dt><dd>${m.d}</dd><dt>FROM</dt><dd>${m.f}</dd><dt>RE</dt><dd>${m.s}</dd></dl>${m.b}`;
+    if (m.glitch) { AU.breath(2.5); AU.voice(110, 3, 0, 0); later(6000, () => { if ($('.paper-bad')) { subliminal('face2', 140, .3); AU.sting(); } }); }
+  };
+  $$('.memo-btn').forEach(b => listen(b, 'click', () => show(+b.dataset.m)));
+  listen($('#paper'), 'pointerover', e => { if (e.target.classList.contains('redact')) AU.click(); });
+  show(0);
+}
+
+/* ---------- recovered tape ---------- */
+const TAPE = [[0, '[TAPE 0446-C · ROOM 7 OBSERVATION DESK · 02:09]', null], [2, "This is Attendant zero-four-four-six. Night of the fourteenth.", 1], [7.5, "The humming started again at two. It's the brushing song. Pearl's song. But slower.", 1], [14, "They aren't patients. I want that on the record. I went to the meal slot and one of them said my name.", 1], [22, 'She said it through her teeth. She can only talk through her teeth.', .8], [27.5, 'I hid the numbers. On the website. Somebody will find them. Somebody has to find them and come and', 1.1], [34, '[KNOCKING]', null], [37, "That isn't Room 7. That's behind me.", 1.2], [41.5, "The desk door is open. I didn't open it.", 1.3], [45.5, "She's smiling. Why is she smiling. Why are they always sm", 1.5], [49, '[END OF TAPE]', null]];
+function pageTapes() {
+  return portalShell('tapes', `<h1 class="p-h1">Recovered tape</h1><p class="p-sub">Recovered from the Room 7 observation desk. Cassette was found still warm.</p>
+  <div class="tape panel"><div class="cassette" aria-hidden="true"><span class="reel"></span><span class="tape-label">0446-C</span><span class="reel"></span></div>
+    <canvas id="wave" width="600" height="80" aria-hidden="true"></canvas>
+    <div class="tape-ctl"><button class="p-btn" id="tape-play" type="button">▶ Play tape</button><span class="tnum" id="tape-t">00:00</span></div>
+    <div class="transcript" id="transcript" aria-live="polite"></div></div>`);
+}
+function mountTapes() {
+  mountPortalCommon();
+  const wv = $('#wave').getContext('2d'); let playing = false, t0 = 0, idx = 0, level = .1, scared = false;
+  listen($('#tape-play'), 'click', () => {
+    if (playing) return; AU.init(); playing = true; t0 = performance.now(); idx = 0; scared = false; $('#transcript').innerHTML = ''; $('#tape-play').disabled = true;
+    document.querySelector('.cassette').classList.add('spin'); AU.noise(50, { gain: .03, f: 3000, q: .3, a: .5 });
+    later(7600, () => AU.jingle('wrong'));
+    later(34000, () => { AU.knock(0, .8); AU.knock(.45, .8); AU.knock(.9, .8); });
+    later(37200, () => { AU.knock(0, 1.3); AU.knock(.3, 1.3); });
+  });
+  loop(now => {
+    const t = playing ? (now - t0) / 1000 : 0;
+    if (playing) {
+      $('#tape-t').textContent = `00:${String(Math.floor(t)).padStart(2, '0')}`;
+      while (idx < TAPE.length && t >= TAPE[idx][0]) {
+        const [_, line, pitch] = TAPE[idx]; const p = document.createElement('p'); p.textContent = line; if (pitch === null) p.className = 'cue'; $('#transcript').appendChild(p); p.scrollIntoView({ block: 'nearest' });
+        if (pitch !== null) { try { speechSynthesis.cancel(); } catch (e) {} AU.speak(line.replace(/\[.*?\]/g, ''), { rate: 1 + (pitch - 1) * .5, pitch: pitch, volume: 1 }); level = .9; }
+        idx++;
+      }
+      if (t > 48.6 && !scared) { scared = true; try { speechSynthesis.cancel(); } catch (e) {} jumpscare('face', { swap: 'merry', line: 'sm i l e' }).then(() => { playing = false; const b = $('#tape-play'); if (b) b.disabled = false; const c = document.querySelector('.cassette'); if (c) c.classList.remove('spin'); }); }
+    }
+    level = Math.max(.08, level * .985);
+    const W = 600, H = 80; wv.fillStyle = '#0a100c'; wv.fillRect(0, 0, W, H); wv.fillStyle = '#7fd39a';
+    for (let i = 0; i < 100; i++) { const a = playing ? (Math.random() * .6 + .4) * level * (.5 + .5 * Math.sin(i * .3 + t * 9)) : .03; const bh = Math.max(2, a * H); wv.fillRect(i * 6, (H - bh) / 2, 4, bh); }
+  });
+}
+/* ============ Barn 7 ============ */
+function pageBarn() {
+  return `<div class="barn" id="barn">
+    <canvas id="barn-cv" aria-hidden="true"></canvas>
+    <div class="barn-ui" id="barn-ui">
+      <div class="b-warn" id="b-stage0">
+        <p class="b-tag">GLEAMWELL CLINICAL · RESTRICTED</p>
+        <h1 class="b-title">ROOM 7</h1>
+        <p class="b-sub">ACCESS PERMANENTLY REVOKED · SEALED 01/05/1989</p>
+        <p class="b-body">This area is not part of your shift. Nothing inside needs treatment. Nothing inside is asking for you.</p>
+        <button class="b-hold" id="b-hold" type="button"><svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="54" class="ring-bg"/><circle cx="60" cy="60" r="54" class="ring" id="b-ring"/></svg><span>Hold to override</span></button>
+        <a href="#portal" class="b-back">Return to the terminal</a>
+      </div>
+      <div class="b-story" id="b-story" hidden><div class="b-lines" id="b-lines" aria-live="polite"></div><div class="b-choices" id="b-choices"></div></div>
+      <p class="b-hint" id="b-hint" hidden></p>
+    </div>
+  </div>`;
+}
+function mountBarn() {
+  const cv = $('#barn-cv'), x = cv.getContext('2d');
+  let W = 0, H = 0; const fit = () => { W = cv.width = innerWidth; H = cv.height = innerHeight; }; fit(); listen(window, 'resize', fit);
+  let stage = 0, mode = 'door', light = { x: innerWidth / 2, y: innerHeight * .55 }, lightOn = true, doorOpen = 0;
+  listen(window, 'pointermove', e => { light.x = e.clientX; light.y = e.clientY; }, { passive: true });
+  listen(window, 'pointerdown', e => { light.x = e.clientX; light.y = e.clientY; }, { passive: true });
+  // the room of faces
+  const faces = [];
+  function buildRoom() {
+    const R = rng(7);
+    for (let i = 0; i < 12; i++) {
+      const z = .35 + R() * .65; const seed = 700 + i * 7;
+      const base = { w: 120, h: 150, seed, scale: 1.05, smile: 1, open: .22, teeth: true, eyeOpen: 1.4, irisR: .028, hair: R() * .8, gaunt: .3 + R() * .5, mode: 'gray', bg: [0, 0, 0], light: [0, -.1, 1], ambient: .2, grain: .06, vignette: 1, clothes: [.05, .05, .05], tone: [[.86, .66, .54], [.6, .42, .3], [.92, .75, .62]][i % 3] };
+      faces.push({ x: .08 + R() * .84, y: .38 + (1 - z) * .2, z, a: renderFace(base), b: renderFace({ ...base, eyes: 'hollow', open: .6, stretch: .5, blood: .6 }), lit: 0, seen: false });
+    }
+    faces.sort((a, b) => a.z - b.z);
+  }
+  function drawDoor(t) {
+    x.fillStyle = '#030202'; x.fillRect(0, 0, W, H);
+    const dw = Math.min(W * .5, H * .55), dh = dw * 1.35, dx = (W - dw) / 2, dy = H * .52 - dh / 2;
+    const flick = .75 + .25 * Math.sin(t * 13) * Math.sin(t * 3.1);
+    const g = x.createLinearGradient(0, dy + dh, 0, dy + dh + 120); g.addColorStop(0, `rgba(255,190,120,${.35 * flick})`); g.addColorStop(1, 'rgba(255,190,120,0)'); x.fillStyle = g; x.fillRect(dx - 80, dy + dh, dw + 160, 120);
+    x.fillStyle = `rgba(255,200,140,${.9 * flick})`; x.fillRect(dx + 4, dy + dh - 3, dw - 8, 3);
+    if (doorOpen > 0) { const ow = dw / 2 * doorOpen; x.fillStyle = '#000'; x.fillRect(W / 2 - ow, dy, ow * 2, dh); }
+    for (const side of [-1, 1]) {
+      x.save(); x.translate(W / 2, dy); x.scale(side * (1 - doorOpen * .85), 1);
+      const wg = x.createLinearGradient(0, 0, dw / 2, 0); wg.addColorStop(0, '#1b1210'); wg.addColorStop(1, '#2a1c17'); x.fillStyle = wg; x.fillRect(0, 0, dw / 2, dh);
+      x.strokeStyle = '#120b09'; x.lineWidth = 3; for (let i = 1; i < 6; i++) { x.beginPath(); x.moveTo(dw / 12 * i, 0); x.lineTo(dw / 12 * i, dh); x.stroke(); }
+      x.fillStyle = '#0a0806'; x.beginPath(); x.arc(dw / 4, dh * .3, dw * .09, 0, 7); x.fill(); x.strokeStyle = '#4a3a32'; x.lineWidth = 5; x.stroke(); if (side > 0 && Math.sin(t * .7) > .6) { x.fillStyle = 'rgba(215,205,190,.55)'; x.beginPath(); x.ellipse(dw / 4, dh * .31, dw * .045, dw * .06, 0, 0, 7); x.fill(); x.fillStyle = '#000'; x.fillRect(dw / 4 - dw * .025, dh * .3, dw * .014, dw * .014); x.fillRect(dw / 4 + dw * .011, dh * .3, dw * .014, dw * .014); x.fillStyle = '#eee'; x.fillRect(dw / 4 - dw * .025, dh * .3 + dw * .03, dw * .05, dw * .008); } x.fillStyle = '#3a2a24'; x.fillRect(dw / 2 - 18, dh * .5, 10, 46);
+      x.restore();
+    }
+    x.fillStyle = '#5a1010'; x.font = `${dw * .09}px "IM Fell English", Georgia, serif`; x.textAlign = 'center'; if (doorOpen < .3) x.fillText('7', W / 2, dy - dw * .05);
+    x.globalAlpha = .045; x.drawImage(NOISE.c, 0, 0, W, H); x.globalAlpha = 1;
+  }
+  let litCount = 0, roomStart = 0, ending = false;
+  function drawRoom(t) {
+    x.fillStyle = '#000'; x.fillRect(0, 0, W, H);
+    x.strokeStyle = '#0f0c0b'; x.lineWidth = 2; for (let i = 0; i < 14; i++) { const fx = i / 13; x.beginPath(); x.moveTo(W * fx, H); x.lineTo(W * .5 + (fx - .5) * W * .3, H * .42); x.stroke(); }
+    const r = Math.min(W, H) * .2;
+    for (const f of faces) {
+      const s = f.z * Math.min(W, H) * .36, fx = f.x * W, fy = H * f.y + (1 - f.z) * -40;
+      const d = Math.hypot(light.x - fx, light.y - (fy + s * .6));
+      const inLight = lightOn && d < r * 1.1;
+      if (inLight) { f.lit += 1 / 60; if (!f.seen && f.lit > .25) { f.seen = true; litCount++; AU.tone(180 + litCount * 20, .4, { type: 'sine', gain: .05, wet: .8 }); } }
+      const img = f.lit > 1.3 ? f.b : f.a;
+      const lean = clamp((light.x - fx) / W) * 12 * (f.lit > .3 ? 1 : 0);
+      x.save(); x.translate(fx, fy); x.rotate(lean * .01);
+      x.fillStyle = '#060505'; x.beginPath(); x.moveTo(-s * .45, s * 2.4); x.lineTo(-s * .34, s * 1.05); x.quadraticCurveTo(0, s * .85, s * .34, s * 1.05); x.lineTo(s * .45, s * 2.4); x.fill();
+      x.drawImage(img, -s / 2, 0, s, s * 1.25); x.restore();
+    }
+    // darkness with a hole for the torch
+    const flick = lightOn ? (.92 + Math.random() * .08) : 0;
+    const g = x.createRadialGradient(light.x, light.y, r * .15, light.x, light.y, r * 1.2);
+    g.addColorStop(0, `rgba(0,0,0,${1 - .95 * flick})`); g.addColorStop(.6, `rgba(0,0,0,${1 - .6 * flick})`); g.addColorStop(1, 'rgba(0,0,0,.985)');
+    x.fillStyle = g; x.fillRect(0, 0, W, H);
+    x.globalCompositeOperation = 'multiply'; x.fillStyle = '#ffdcb0'; x.fillRect(0, 0, W, H); x.globalCompositeOperation = 'source-over';
+    x.globalAlpha = .06; x.drawImage(NOISE.c, 0, 0, W, H); x.globalAlpha = 1;
+    const hint = $('#b-hint'); if (hint && !ending) hint.textContent = `Move your light. Count them. ${litCount} / ${faces.length}`;
+    if (!ending && (litCount >= faces.length || t - roomStart > 28)) finale();
+  }
+  async function finale() {
+    ending = true; const hint = $('#b-hint');
+    hint.textContent = 'Your light is dying.';
+    for (let i = 0; i < 5; i++) { lightOn = false; AU.click(); await wait(120 + Math.random() * 200); lightOn = true; await wait(90 + Math.random() * 300); }
+    lightOn = false; hint.textContent = ''; AU.setAmbient('none');
+    await wait(1800); if (!cv.isConnected) return;
+    AU.breath(2.2); AU.speak('welcome home', { rate: .45, pitch: .05, volume: .8 });
+    hint.textContent = 'welcome home'; hint.classList.add('whisper');
+    await wait(2600); if (!cv.isConnected) return;
+    hint.textContent = '';
+    await jumpscare('merry', { dur: 1500, swap: 'face', level: 1.2 });
+    store.set('gh-stock', '1'); location.hash = '#patient';
+  }
+  async function story() {
+    $('#b-stage0').hidden = true; $('#b-story').hidden = false; AU.setAmbient('barn'); stage = 1;
+    const lines = $('#b-lines'), choices = $('#b-choices');
+    const say = async (s, ms = 2200) => { const p = document.createElement('p'); p.textContent = s; lines.appendChild(p); requestAnimationFrame(() => p.classList.add('in')); await wait(ms); return cv.isConnected; };
+    if (!await say('The door to Room 7 is warm.')) return;
+    if (!await say('Someone on the other side is humming the brushing song.', 600)) return;
+    const end = AU.jingle('wrong'); await wait(end * 1000);
+    if (!await say('They know you are here.', 1500)) return;
+    choices.innerHTML = '<button type="button" class="b-btn" id="b-knock">Knock</button><button type="button" class="b-btn" id="b-leave">Leave</button>';
+    $('#b-leave').addEventListener('click', async () => { $('#b-leave').remove(); await say("You can't leave. You're on shift.", 100); AU.thump(0, 1.4); });
+    $('#b-knock').addEventListener('click', async () => {
+      choices.innerHTML = ''; AU.knock(0); AU.knock(.4); AU.knock(.8);
+      await wait(1400); if (!await say('The singing stops.', 2600)) return;
+      AU.knock(0, 1.6); AU.knock(.25, 1.6); AU.knock(.5, 1.6); document.body.classList.add('quake-s'); later(700, () => document.body.classList.remove('quake-s'));
+      if (!await say('Someone knocks back.', 2400)) return;
+      if (!await say('The door opens on its own.', 300)) return;
+      AU.creak(2.6); const s0 = performance.now(); await new Promise(res => { const f = n => { doorOpen = clamp((n - s0) / 2600); if (doorOpen < 1 && cv.isConnected) requestAnimationFrame(f); else res(); }; requestAnimationFrame(f); });
+      $('#b-story').hidden = true; const hint = $('#b-hint'); hint.hidden = false;
+      buildRoom(); mode = 'room'; roomStart = performance.now() / 1000;
+    });
+  }
+  // hold to override
+  const hold = $('#b-hold'), ring = $('#b-ring'); let hs = 0, hid = null;
+  const C = 2 * Math.PI * 54; ring.style.strokeDasharray = C; ring.style.strokeDashoffset = C;
+  const down = e => { e.preventDefault(); AU.init(); hs = performance.now(); clearInterval(hid); AU.heartbeat(1); hid = setInterval(() => { const k = clamp((performance.now() - hs) / 3000); ring.style.strokeDashoffset = C * (1 - k); if (Math.random() < .2) AU.thump(0, .6 + k); if (k >= 1) { clearInterval(hid); AU.sting(); story(); } }, 60); };
+  const up = () => { if (stage) return; clearInterval(hid); ring.style.strokeDashoffset = C; };
+  listen(hold, 'pointerdown', down); listen(hold, 'pointerup', up); listen(hold, 'pointerleave', up); listen(hold, 'pointercancel', up);
+  listen(hold, 'keydown', e => { if ((e.key === 'Enter' || e.key === ' ') && !e.repeat) down(e); });
+  listen(hold, 'keyup', up);
+  onClean(() => clearInterval(hid));
+  loop(now => { const t = now / 1000; NOISE.tick(); if (mode === 'door') drawDoor(t); else drawRoom(t); });
+}
+
+/* ---------- after: you are stock ---------- */
+function pageStock() {
+  const now = new Date();
+  return `<div class="stock-page"><div class="idcard" id="idcard">
+    <div class="id-top"><span class="gh-badge">GW</span><div><b>GLEAMWELL FOREVER SMILE™ PATIENT</b><small>Property of Gleamwell Smile Co.</small></div></div>
+    <div class="id-body"><canvas id="id-photo" width="180" height="225" aria-label="Your intake photograph"></canvas>
+      <dl><dt>Patient ID</dt><dd>GW-P-1205</dd><dt>Name</dt><dd>Not required</dd><dt>Origin</dt><dd>${esc(CITY)}</dd><dt>Intake</dt><dd>${fmtDate(now)} ${fmtTime(now)}</dd><dt>Assigned</dt><dd>Room 7</dd><dt>Status</dt><dd class="st st-ok">SMILING</dd></dl></div>
+    <div class="barcode" aria-hidden="true">${Array.from({ length: 48 }, (_, i) => `<i style="width:${1 + (hash2(i, 5, 5) * 4 | 0)}px"></i>`).join('')}</div>
+  </div>
+  <div class="stock-copy"><h1>Treatment complete.</h1><p>Your Forever Smile™ is fitted. You are happy here. You have always been happy here.</p>
+    <div class="stock-ctas"><a class="btn btn-white" href="#home">Return to gleamwell.com</a><a class="btn btn-ghost-d" href="#registry">View the registry</a></div>
+    <p class="stock-fine">The site will look normal again. It always does. Some of it will remember you.</p></div></div>`;
+}
+function mountStock() {
+  const p = renderFace({ w: 180, h: 225, seed: 1205, smile: 1, open: .25, teeth: true, eyeOpen: 1.45, irisR: .027, hair: .5, gaunt: .3, mode: 'cctv', bg: [.55, .58, .55], grain: .12, light: [0, -.2, 1] });
+  const x = $('#id-photo').getContext('2d'); x.drawImage(p, 0, 0);
+  AU.setAmbient('barn'); later(1500, () => AU.speak('You are happy here.', { rate: .7, pitch: .3 }));
+}
+/* ============ routing, the gate, and site-wide secrets ============ */
+const ROUTES = {
+  home: { r: pageHome, m: mountHome, amb: 'clinic', title: 'Gleamwell Smile Co. · Smile brighter. Smile forever.' },
+  story: { r: pageStory, m: mountStory, amb: 'clinic', title: 'Our Story · Gleamwell' },
+  products: { r: pageProducts, m: mountProducts, amb: 'clinic', title: 'Products · Gleamwell' },
+  tips: { r: pageTips, m: mountTips, amb: 'clinic', title: 'Smile Tips · Gleamwell' },
+  careers: { r: pageCareers, m: mountCareers, amb: 'clinic', title: 'Careers · Gleamwell' },
+  contact: { r: pageContact, m: mountContact, amb: 'clinic', title: 'Book a Visit · Gleamwell' },
+  login: { r: pageLogin, m: mountLogin, amb: 'portal', title: 'Staff Access · Gleamwell' },
+  portal: { r: pagePortal, m: mountPortal, amb: 'portal', gated: true, title: 'GW Clinical · Dashboard' },
+  registry: { r: pageRegistry, m: mountRegistry, amb: 'portal', gated: true, title: 'GW Clinical · Patient registry' },
+  cameras: { r: pageCameras, m: mountCameras, amb: 'portal', gated: true, title: 'GW Clinical · Cameras' },
+  memos: { r: pageMemos, m: mountMemos, amb: 'portal', gated: true, title: 'GW Clinical · Memos' },
+  tapes: { r: pageTapes, m: mountTapes, amb: 'portal', gated: true, title: 'GW Clinical · Tape 0446-C' },
+  room7: { r: pageBarn, m: mountBarn, amb: 'none', gated: true, title: 'ROOM 7' },
+  patient: { r: pageStock, m: mountStock, amb: 'barn', title: 'GW-P-1205', need: () => isStock() }
+};
+let currentRoute = 'home';
+function route() {
+  const name = (location.hash.slice(1) || 'home').toLowerCase();
+  CLEAN.forEach(f => { try { f(); } catch (e) {} }); CLEAN = [];
+  $('#modal').hidden = true; $('#toast').hidden = true; closeModal.after = null;
+  try { speechSynthesis.cancel(); } catch (e) {}
+  const R = ROUTES[name];
+  if (R && R.gated && !isUnlocked()) { location.replace('#login'); return; }
+  if (R && R.need && !R.need()) { location.replace('#home'); return; }
+  currentRoute = name;
+  const app = $('#app');
+  document.body.dataset.zone = !R ? 'pub' : R.gated || name === 'login' || name === 'patient' ? (name === 'room7' || name === 'patient' ? 'barn' : 'portal') : 'pub';
+  if (R) { app.innerHTML = R.r(); document.title = R.title; R.m(); AU.setAmbient(R.amb); }
+  else { app.innerHTML = page404(name); document.title = 'Page not found · Gleamwell'; mount404(); AU.setAmbient('clinic'); }
+  scrollTo(0, 0);
+  const h = $('h1', app); if (h) { h.setAttribute('tabindex', '-1'); }
+}
+addEventListener('hashchange', route);
+
+/* modal + toast wiring */
+$('#modal-x').addEventListener('click', closeModal);
+$('#modal').addEventListener('click', e => { if (e.target.id === 'modal') closeModal(); });
+addEventListener('keydown', e => { if (e.key === 'Escape' && !$('#modal').hidden) closeModal(); });
+
+/* mute */
+const muteBtn = $('#mute');
+function syncMute() { muteBtn.setAttribute('aria-pressed', SETTINGS.sound); muteBtn.querySelector('span').textContent = SETTINGS.sound ? 'Sound on' : 'Sound off'; }
+muteBtn.addEventListener('click', () => { AU.init(); AU.mute(!SETTINGS.sound); syncMute(); });
+
+/* secrets that live everywhere */
+const KONAMI = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+let kIdx = 0, typed = '';
+addEventListener('keydown', e => {
+  if (!$('#gate').hidden) return;
+  const k = e.key.length === 1 ? e.key.toLowerCase() : e.key;
+  kIdx = k === KONAMI[kIdx] ? kIdx + 1 : (k === KONAMI[0] ? 1 : 0);
+  if (kIdx === KONAMI.length) { kIdx = 0; jumpscare('merry', { line: 'NO CHEATING' }); }
+  const tag = (e.target.tagName || '').toLowerCase(); if (tag === 'input' || tag === 'textarea') return;
+  if (e.key.length === 1) { typed = (typed + e.key.toLowerCase()).slice(-12); }
+  if (typed.endsWith('help')) { typed = ''; const o = $('#whisper'); o.textContent = 'WE CAN\'T HELP YOU EITHER'; o.hidden = false; AU.breath(2); AU.speak('we cant help you either', { rate: .5, pitch: .05, volume: .7 }); setTimeout(() => { o.hidden = true; }, 1800); }
+  if (typed.endsWith('pearl')) { typed = ''; toast('Pearl is right behind you, friend!'); AU.tone(880, .2, { type: 'triangle', gain: .1 }); }
+});
+document.addEventListener('copy', e => {
+  const sel = String(getSelection()); if (!sel || !e.clipboardData) return;
+  e.clipboardData.setData('text/plain', sel + '\n\n(the teeth are real)'); e.preventDefault();
+});
+const baseTitle = () => (ROUTES[currentRoute] || {}).title || 'Gleamwell Smile Co.';
+document.addEventListener('visibilitychange', () => {
+  if (document.hidden) document.title = isStock() ? 'we miss you, GW-P-1205' : document.body.dataset.zone === 'pub' ? 'Come back and smile!' : 'ATTENDANT, RETURN TO YOUR POST';
+  else document.title = baseTitle();
+});
+
+/* the gate */
+const gate = $('#gate');
+$('#g-intense').checked = SETTINGS.intense;
+$('#g-enter').addEventListener('click', () => {
+  SETTINGS.intense = $('#g-intense').checked; SETTINGS.sound = $('#g-sound').checked;
+  AU.init(); AU.mute(SETTINGS.sound); syncMute();
+  gate.hidden = true; document.body.classList.remove('gated');
+  if (currentRoute === 'home') AU.setAmbient('clinic', true);
+  const h = $('h1', $('#app')); if (h) h.focus({ preventScroll: true });
+});
+$('#g-leave').addEventListener('click', () => { $('#g-card').innerHTML = '<h2>Good call.</h2><p>Close this tab whenever you like. The clinic will still be here. We will keep your chair warm.</p>'; });
+$('#g-reset').addEventListener('click', () => { ['gh-unlocked', 'gh-stock', 'gh-yard', 'gh-cart'].forEach(k => store.del(k)); cartN = 0; CAMSTATE.yard = 0; $('#g-reset').textContent = 'Progress reset'; location.hash = '#home'; route(); });
+if (isUnlocked() || isStock()) $('#g-reset').hidden = false;
+syncMute();
+route();
+
+/* test hook: only active with ?ghdebug in the URL */
+if (/[?&]ghdebug/.test(location.search)) window.__gh = { jumpscare, scareSource, subliminal };
+})();
+</script>
