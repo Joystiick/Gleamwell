@@ -1,5 +1,7 @@
 # Gleamwell Smile Co.
 
+**Play it:** https://gleamwell.arg.qturn.dev
+
 *Smile brighter. Smile forever.*
 
 A satirical horror ARG told through a website. Gleamwell looks like a cheerful, family-run toothpaste brand and dental clinic, with a cartoon tooth mascot called Pearl. Dig around and you'll find five hidden digits, a staff login, a grim clinical intranet, and whatever is inside Room 7.
